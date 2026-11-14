@@ -1423,10 +1423,10 @@ function compatHeadline(t){
   });
 
   function render(r){
-    var nm=r.input.name||'당신';
+    var nm=(r.input.name||'').trim();
     var P=r.p;
 
-    $('resWho').textContent=nm+'님의 사주 · '+(r.solar.y)+'년 '+(r.solar.m)+'월 '+(r.solar.d)+'일생';
+    $('resWho').textContent=(nm?nm+'님의 사주':'나의 사주')+' · '+(r.solar.y)+'년 '+(r.solar.m)+'월 '+(r.solar.d)+'일생';
     $('resTitle').textContent='2027 정미년 종합운';
     $('resScore').textContent=r.scores.total;
     var g=$('gauge');
