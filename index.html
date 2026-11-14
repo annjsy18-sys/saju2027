@@ -3498,6 +3498,8 @@ function compatHeadline(t){
      if(delivery)delivery.value='이메일';
      const prod=document.getElementById('consultProduct');
      if(prod)prod.dispatchEvent(new Event('change'));
+     const ci=document.getElementById('couponInput');
+     if(ci)ci.dispatchEvent(new Event('input'));
    }catch(err){feedback.textContent='접수 완료를 확인하지 못했습니다. 중복 신청을 피하려면 운영자에게 먼저 확인해 주세요. ('+err.message+')';}
    finally{btn.disabled=false;btn.textContent='서면 사주 신청하기';}
  },true);
