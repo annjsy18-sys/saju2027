@@ -168,7 +168,8 @@
   .pil{border:1px solid var(--line);border-radius:12px;padding:11px 3px 11px;background:var(--card-2)}
   .pil .nm{font-size:10.5px;color:var(--ink-3);font-weight:700;margin-bottom:6px;letter-spacing:.01em}
   .pil .ch{font-family:'Nanum Myeongjo','Noto Serif KR',serif;font-size:24px;font-weight:800;line-height:1.25;color:var(--ink)}
-  .pil .ko{font-size:10.8px;color:var(--ink-3);margin-top:2px;letter-spacing:-.03em}
+  .pil .ko{font-size:11px;color:var(--ink-2);margin-top:2px;letter-spacing:-.02em;line-height:1.3}
+  .pil .role{font-size:9.2px;color:var(--ink-3);margin-top:1px;letter-spacing:-.04em;line-height:1.35;white-space:nowrap}
   .pil .e{display:inline-block;font-size:10px;padding:1px 6px;border-radius:7px;color:#fff;margin-top:5px;font-weight:700}
   .pil.unknown .ch{color:#C4B7A8}
   .e0{background:var(--mok)} .e1{background:var(--hwa)} .e2{background:var(--to)} .e3{background:var(--geum)} .e4{background:var(--su)}
@@ -2003,7 +2004,8 @@ function compatHeadline(t){
       var se=S_ELEM[p.stem], be=B_ELEM[p.branch];
       html+='<div class="pil"><div class="nm">'+labels[i]+'</div>'
         +'<div class="ch">'+S_HANJA[p.stem]+'<span style="font-size:15px;color:#9a8b7c">'+B_HANJA[p.branch]+'</span></div>'
-        +'<div class="ko">'+S_KO[p.stem]+B_KO[p.branch]+' · '+subs[i]+'</div>'
+        +'<div class="ko">'+S_KO[p.stem]+B_KO[p.branch]+'</div>'
+        +'<div class="role">'+subs[i]+'</div>'
         +'<div><span class="e '+ELEM_CLASS[se]+'">'+ELEM_KO[se]+'</span> '
         +'<span class="e '+ELEM_CLASS[be]+'">'+ELEM_KO[be]+'</span></div></div>';
     }
