@@ -1522,6 +1522,7 @@ function analyze(input){
     months:months, animal:B_ANIMAL[(P.solarYearPillar-4)%12<0?((P.solarYearPillar-4)%12+12):((P.solarYearPillar-4)%12)]
   };
 }
+function roJosa(word){ return (word==='중화')?'로':'으로'; }
 function scoreLabel(v){
   if(v>=90) return '매우 좋음';
   if(v>=82) return '좋음';
@@ -2011,7 +2012,7 @@ function compatHeadline(t){
     var ds=r.dayStem, dHanja=S_HANJA[ds]+B_HANJA[r.dayBranch];
     $('daymaster').innerHTML='<div class="t">나를 나타내는 일간(日干) · '+S_HANJA[ds]+'('+S_KO[ds]+')'+ELEM_HANJA[S_ELEM[ds]]+' · 일주 '+dHanja+'</div>'
       +'<p>'+DAY_MASTER[ds]+'</p>'
-      +'<p style="margin-top:8px">명식의 기운은 <b>'+r.stats.level+'</b>으로 읽힙니다. '
+      +'<p style="margin-top:8px">명식의 기운은 <b>'+r.stats.level+'</b>'+roJosa(r.stats.level)+' 읽힙니다. '
       +(r.stats.level==='신강'?'내 기운이 강해 밀어붙이는 힘은 좋지만, 나눠주고 비워야 할 자리에서 막히기 쉽습니다.':(r.stats.level==='신약'?'내 기운이 약한 편이라 혼자 다 짊어지면 오래가지 못합니다. 나를 도와주는 사람과 환경을 곁에 두는 것이 중요합니다.':'기운이 고르게 섞여 있어 균형을 잡는 힘이 좋습니다. 한쪽으로 치우치지 않는 판단이 강점입니다.'))
       +' 2027년에 부족한 '+ELEM_KO[r.stats.minIdx]+'('+ELEM_HANJA[r.stats.minIdx]+') 기운을 보완하는 것이 올해 개운의 핵심입니다.</p>';
 
@@ -2077,7 +2078,7 @@ function compatHeadline(t){
         +'<p class="rx-sub" style="margin-top:6px">'+rx.levelLine+'</p>'
       +'</div>';
     $('rxList').innerHTML=rxh;
-    $('rxBasis').innerHTML='내 사주에서 가장 적은 <b>'+ELEM_KO[rx.elem]+'('+ELEM_HANJA[rx.elem]+')</b> 기운을 보완하는 기준으로 구성했습니다. 명식의 기운은 <b>'+rx.level+'</b>으로 읽혀 그에 맞춰 조언의 방향을 달리했습니다.';
+    $('rxBasis').innerHTML='내 사주에서 가장 적은 <b>'+ELEM_KO[rx.elem]+'('+ELEM_HANJA[rx.elem]+')</b> 기운을 보완하는 기준으로 구성했습니다. 명식의 기운은 <b>'+rx.level+'</b>'+roJosa(rx.level)+' 읽혀 그에 맞춰 조언의 방향을 달리했습니다.';
     window.__rx=rx;
 
     /* 월별 */
@@ -2978,7 +2979,7 @@ function compatHeadline(t){
       +'<section><h2>1. 사주 명식</h2>'
       +'<table><tr><th>구분</th>'+th+'</tr><tr><td>천간</td>'+tr+'</tr><tr><td>지지</td>'+trs+'</tr><tr><td>역할</td>'+trk+'</tr></table>'
       +'<p><b>일간 '+S_HANJA[r.dayStem]+'('+S_KO[r.dayStem]+') '+ELEM_HANJA[S_ELEM[r.dayStem]]+' · 일주 '+S_HANJA[r.dayStem]+B_HANJA[r.dayBranch]+'</b> — '+esc(DAY_MASTER[r.dayStem])+'</p>'
-      +'<p>명식의 기운은 <b>'+r.stats.level+'</b>으로 읽혀, 2027년에 부족한 <b>'+ELEM_KO[r.stats.minIdx]+'('+ELEM_HANJA[r.stats.minIdx]+')</b> 기운을 보완하는 것이 올해 개운의 핵심입니다.</p>'
+      +'<p>명식의 기운은 <b>'+r.stats.level+'</b>'+roJosa(r.stats.level)+' 읽혀, 2027년에 부족한 <b>'+ELEM_KO[r.stats.minIdx]+'('+ELEM_HANJA[r.stats.minIdx]+')</b> 기운을 보완하는 것이 올해 개운의 핵심입니다.</p>'
       +'<table><tr><th>오행</th>'+elemRow+'</tr><tr><td>개수</td>'+elemCnt+'</tr></table></section>'
 
       +'<section><h2>2. 5대 운세 오각형</h2><div class="p-row">'
