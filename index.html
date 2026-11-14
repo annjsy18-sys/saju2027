@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2027 정미년 무료 사주풀이 · AI 신년운세 테스트 | 재물운·건강운·개운법</title>
-<meta name="description" content="생년월일시로 사주팔자(천간·지지·오행)를 계산해 2027 정미년(丁未年) 신년운세를 풀이합니다. 재물운, 직장운, 애정운, 건강운, 대인운과 12개월 흐름, 오각형 운세 그래프, 오늘의 포춘쿠키, 2인 궁합, 오행으로 짜는 공간·웰니스 개운 처방까지 무료로 확인하세요. 설치 없이 3초, 모든 계산은 내 브라우저에서만 이뤄집니다.">
-<meta name="keywords" content="2027 신년운세, 정미년, 사주풀이, 무료 사주, 사주팔자, 오행, 재물운, 궁합, 2인궁합, 포춘쿠키, 토정비결, 만세력">
+<title>2027 정미년 무료 사주풀이 · 오늘의 타로 · 2027 띠별 운세 | 재물운·개운법</title>
+<meta name="description" content="생년월일시로 사주팔자(천간·지지·오행)를 계산해 2027 정미년(丁未年) 신년운세를 풀이합니다. 재물운, 직장운, 애정운, 건강운, 대인운과 12개월 흐름, 오각형 운세 그래프, 오늘의 포춘쿠키, 오늘의 타로 카드, 2027 띠별 운세, 2인 궁합, 오행으로 짜는 공간·웰니스 개운 처방, PDF로 저장하는 심층 리포트까지 무료로 확인하세요. 설치 없이 3초, 모든 계산은 내 브라우저에서만 이뤄집니다.">
+<meta name="keywords" content="2027 신년운세, 정미년, 사주풀이, 무료 사주, 사주팔자, 오행, 재물운, 궁합, 2인궁합, 포춘쿠키, 토정비결, 만세력, 오늘의 타로, 타로카드, 띠별운세, 2027 띠운세, 무료 타로">
 <link rel="canonical" href="https://annjsy18-sys.github.io/saju2027/">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#5d1313">
@@ -303,6 +303,92 @@
     font-weight:800;background:#fff6f4;color:var(--wine);cursor:pointer;font-family:inherit;margin-top:8px}
   #cardHolder{position:fixed;left:-9999px;top:0;opacity:0;pointer-events:none}
 
+  /* ── 탭 3개: 폭이 좁으면 가로 스크롤 ── */
+  .tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tabs .tab{flex:1 0 auto;white-space:nowrap;font-size:13.5px;padding:11px 9px}
+
+  /* ── 오늘의 타로 ── */
+  .tw-lead{font-size:12.6px;color:#5d5246;line-height:1.66;background:#fbf5e9;border:1px solid #f0e2c6;
+    border-radius:11px;padding:10px 12px;margin-bottom:14px}
+  .tw-stage{display:flex;flex-direction:column;align-items:center;gap:11px}
+  .tw-card{width:176px;height:276px;padding:0;border:none;background:none;cursor:pointer;
+    perspective:1100px;font-family:inherit;display:block;margin:2px auto 0}
+  .tw-card:focus-visible{outline:2px solid var(--gold);outline-offset:5px;border-radius:18px}
+  .tw-inner{position:relative;display:block;width:100%;height:100%;transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;transition:transform .85s cubic-bezier(.2,.85,.25,1)}
+  .tw-card.flip .tw-inner{transform:rotateY(180deg)}
+  .tw-face{position:absolute;inset:0;border-radius:15px;backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;overflow:hidden;box-shadow:0 12px 26px rgba(87,16,16,.22)}
+  .tw-back{background:radial-gradient(circle at 50% 30%,#8d2626 0%,#6a1414 46%,#340808 100%);
+    border:2px solid var(--gold);display:grid;place-items:center}
+  .tw-back:before{content:"";position:absolute;inset:8px;border:1px solid rgba(233,209,139,.42);border-radius:10px}
+  .tw-back .bk{position:relative;z-index:1;text-align:center;color:var(--gold-l);line-height:1.5}
+  .tw-back .bk .mo{display:block;font-size:36px;margin-bottom:6px;filter:drop-shadow(0 2px 5px rgba(0,0,0,.35))}
+  .tw-back .bk .tg{font-family:'Nanum Myeongjo','Noto Serif KR',serif;font-size:14px;font-weight:800;letter-spacing:.2em}
+  .tw-back .bk .sm{font-size:10px;color:rgba(233,209,139,.72);margin-top:6px;letter-spacing:.06em}
+  .tw-front{transform:rotateY(180deg);border:2px solid var(--gold);background:linear-gradient(170deg,#fffdf7,#f5e9d3);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:14px 10px;text-align:center}
+  .tw-front .no{font-size:10px;letter-spacing:.18em;color:#b8901c;font-weight:800}
+  .tw-front .sym{font-size:50px;line-height:1;margin:5px 0 1px}
+  .tw-front .ko{font-family:'Nanum Myeongjo','Noto Serif KR',serif;font-size:20px;font-weight:800;color:var(--wine)}
+  .tw-front .en{font-size:10px;color:#9a8b7c;letter-spacing:.05em}
+  .tw-front .kx{font-size:10px;color:#6b5e51;margin-top:7px;line-height:1.45}
+  .tw-hint{font-size:11.5px;color:#9a8b7c;text-align:center;line-height:1.5}
+  .tw-hint b{color:var(--wine)}
+  .tw-out{display:none;width:100%;margin-top:2px;border:1px solid #f0e2c6;background:#fffaf0;
+    border-radius:14px;padding:15px 16px}
+  .tw-out.on{display:block;animation:pop .35s ease}
+  .tw-out .tl{font-family:'Nanum Myeongjo','Noto Serif KR',serif;font-size:16.5px;font-weight:800;
+    color:var(--wine);line-height:1.55}
+  .tw-out .tm{font-size:13.6px;color:#4a3f34;line-height:1.72;margin-top:7px}
+  .tw-grid{display:grid;gap:7px;margin-top:11px}
+  .tw-row{display:flex;gap:9px;border-top:1px dashed #e6d9c1;padding-top:7px}
+  .tw-row .k{flex:0 0 52px;font-size:11.3px;font-weight:800;color:#9a7d2a;padding-top:2px}
+  .tw-row .v{flex:1;font-size:12.7px;color:#4a3f34;line-height:1.62}
+  .tw-actions{display:flex;gap:7px;margin-top:12px;flex-wrap:wrap;width:100%}
+  .btn-go{flex:1;min-width:148px;border:none;border-radius:12px;padding:13px;font-size:13.5px;font-weight:800;
+    background:var(--wine);color:#fff;cursor:pointer;font-family:inherit}
+  .btn-ghost{flex:0 0 auto;border:1.5px solid #e2d6c3;border-radius:12px;padding:13px 13px;font-size:12.5px;
+    font-weight:700;background:#fff;color:#6b5e51;cursor:pointer;font-family:inherit}
+
+  /* ── 2027 띠별 운세 ── */
+  .zz-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+  .zz-btn{border:1.5px solid #e6dac6;background:#fffdf9;border-radius:12px;padding:9px 3px 8px;cursor:pointer;
+    font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:2px;transition:.15s}
+  .zz-btn .em{font-size:20px;line-height:1.1}
+  .zz-btn .nm{font-size:11.2px;font-weight:800;color:#5d5246;letter-spacing:-.02em}
+  .zz-btn .yr{font-size:8.4px;color:#a2947f;letter-spacing:-.04em;line-height:1.25;text-align:center}
+  .zz-btn.on{border-color:var(--wine);background:#fff1ee;box-shadow:0 3px 10px rgba(122,27,27,.12)}
+  .zz-btn.on .nm{color:var(--wine)}
+  .zz-out{display:none;margin-top:12px;border:1px solid var(--line);border-radius:14px;padding:15px 16px;
+    background:linear-gradient(165deg,#fffdf7,#fbf3e4)}
+  .zz-out.on{display:block;animation:pop .3s ease}
+  .zz-head{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+  .zz-head .t{font-family:'Nanum Myeongjo','Noto Serif KR',serif;font-size:16px;font-weight:800;color:var(--wine);line-height:1.4}
+  .zz-head .s{margin-left:auto;flex:0 0 auto;font-size:12.5px;font-weight:900;color:#fff;background:var(--wine);padding:3px 10px;border-radius:11px}
+  .zz-rel{font-size:11.3px;color:#9a7d2a;font-weight:800;margin-bottom:6px;letter-spacing:-.01em}
+  .zz-txt{font-size:13.1px;color:#4a3f34;line-height:1.72}
+  .zz-months{display:grid;gap:6px;margin-top:10px}
+  .zz-mrow{display:flex;gap:8px}
+  .zz-mrow .k{flex:0 0 58px;font-size:11.3px;font-weight:800;color:#9a7d2a;padding-top:3px}
+  .zz-mrow .v{flex:1;color:#4a3f34;font-size:12.5px;line-height:1.55}
+  .zz-mrow .chip{display:inline-block;background:#fff;border:1px solid #e9ddc7;border-radius:8px;
+    padding:1px 7px;margin:0 3px 3px 0;font-size:11.3px;font-weight:700;color:#5d5246}
+  .zz-warn{background:#fff7f5;border:1px solid #f0d9d3;border-radius:10px;padding:9px 11px;
+    font-size:12.4px;color:#7a3a34;line-height:1.62;margin-top:10px}
+  .zz-warn b{color:#a8595b}
+
+  /* ── 심층 리포트 PDF ── */
+  .rep{border:1.5px dashed #e0cfa8;background:linear-gradient(160deg,#fff8e6,#f7ecd4);
+    border-radius:16px;padding:16px 15px;margin-top:14px}
+  .rep h4{font-size:14.5px;color:var(--wine);margin-bottom:6px}
+  .rep p{font-size:12.2px;color:#7a6a52;line-height:1.62}
+  .rep .btn-rep{width:100%;margin-top:10px;border:none;border-radius:12px;padding:14px;font-size:14.5px;
+    font-weight:800;background:linear-gradient(135deg,#7a1b1b,#4a0d0d);color:#fff;cursor:pointer;
+    font-family:inherit;box-shadow:0 8px 20px rgba(87,16,16,.2)}
+  .rep .btn-rep:active{transform:scale(.99)}
+
   @media (max-width:360px){
     .hero h1{font-size:23px}
     .pil .ch{font-size:22px}
@@ -315,6 +401,42 @@
     .months{grid-template-columns:1fr 1fr 1fr}
   }
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+  /* ── 인쇄용 심층 리포트 ── */
+  #printDoc{display:none}
+  @media print{
+    @page{size:A4;margin:12mm 11mm}
+    html,body{background:#fff!important;color:#111!important;padding:0!important;margin:0!important}
+    body>*{display:none!important}
+    #printDoc{display:block!important;color:#1a1a1a;font-family:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;
+      font-size:10pt;line-height:1.62;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    #printDoc *{box-shadow:none!important}
+    #printDoc .p-head{border-bottom:2pt solid #7a1b1b;padding-bottom:7pt;margin-bottom:2pt}
+    #printDoc .p-kicker{font-size:8pt;letter-spacing:.14em;color:#8a6a2a;font-weight:800}
+    #printDoc h1{font-family:'Nanum Myeongjo','Noto Serif KR',serif;font-size:19pt;color:#571010;margin:4pt 0 3pt;line-height:1.3}
+    #printDoc .p-meta{font-size:8.8pt;color:#444;line-height:1.6}
+    #printDoc h2{font-family:'Nanum Myeongjo','Noto Serif KR',serif;font-size:12pt;color:#571010;
+      border-bottom:1pt solid #c9a227;padding-bottom:2.5pt;margin:11pt 0 6pt;page-break-after:avoid}
+    #printDoc h3{font-size:10pt;color:#571010;margin:7pt 0 3pt;page-break-after:avoid}
+    #printDoc section{page-break-inside:avoid}
+    #printDoc .p-nobreak{page-break-inside:avoid}
+    #printDoc table{width:100%;border-collapse:collapse;font-size:8.8pt;margin:3pt 0 5pt}
+    #printDoc th,#printDoc td{border:.6pt solid #cbbfa8;padding:3pt 4.5pt;vertical-align:top;text-align:left}
+    #printDoc th{background:#f6efdf;font-weight:800;color:#4a3f34}
+    #printDoc td.num{text-align:center;white-space:nowrap}
+    #printDoc .p-row{display:flex;gap:10pt;align-items:flex-start}
+    #printDoc .p-row>*{flex:1}
+    #printDoc .p-row .p-radar{flex:0 0 62mm}
+    #printDoc .p-radar svg{display:block;width:100%;height:auto}
+    #printDoc ul{margin:3pt 0 4pt 12pt}
+    #printDoc li{font-size:9pt;line-height:1.6;margin-bottom:1.5pt}
+    #printDoc .p-quote{border-left:3pt solid #c9a227;background:#fbf5e9;padding:5pt 7pt;
+      font-family:'Nanum Myeongjo','Noto Serif KR',serif;font-size:10.5pt;font-weight:800;color:#571010;margin:4pt 0}
+    #printDoc .p-small{font-size:8pt;color:#777;line-height:1.55}
+    #printDoc footer{border-top:.6pt solid #cbbfa8;margin-top:8pt;padding-top:5pt}
+    #printDoc .p-tag{display:inline-block;border:.6pt solid #cbbfa8;border-radius:3pt;padding:0 4pt;
+      font-size:7.8pt;color:#8a6a2a;margin-right:3pt}
+  }
 </style>
 </head>
 <body>
@@ -324,7 +446,7 @@
     <span class="badge">2027 정미년(丁未年) · 붉은 양의 해</span>
     <h1>2027년, 내 사주에 <span class="gold">어떤 한 해</span>가 오는가</h1>
     <p>생년월일시로 사주팔자(천간·지지·오행)를 계산하고<br>2027 정미년의 재물운·직장운·애정운·건강운을 풀어드립니다.</p>
-    <div class="meta"><span>무료</span><span>회원가입 없음</span><span>3초 계산</span><span>입력값 서버 전송 없음</span></div>
+    <div class="meta"><span>무료</span><span>회원가입 없음</span><span>3초 계산</span><span>오늘의 타로</span><span>2027 띠별 운세</span><span>PDF 리포트</span><span>입력값 서버 전송 없음</span></div>
   </div>
 </header>
 
@@ -332,7 +454,8 @@
 
   <nav class="tabs" role="tablist" aria-label="메뉴">
     <button class="tab on" type="button" role="tab" data-tab="saju" aria-selected="true">2027 내 사주운세</button>
-    <button class="tab" type="button" role="tab" data-tab="gunghap" aria-selected="false">2인 궁합 보기</button>
+    <button class="tab" type="button" role="tab" data-tab="tarot" aria-selected="false">🃏 타로·띠운세</button>
+    <button class="tab" type="button" role="tab" data-tab="gunghap" aria-selected="false">2인 궁합</button>
   </nav>
 
   <div id="tabSaju">
@@ -468,13 +591,20 @@
 
       <!-- 개운템 · 제휴 -->
       <div class="sec" id="itemSec">
-        <div class="sec-t"><i class="dot"></i>부족한 기운을 채우는 개운템 3가지</div>
+        <div class="sec-t"><i class="dot"></i>부족한 기운을 채우는 개운템 <span class="sub">sy스토어 실상품</span></div>
         <div class="items" id="itemList"></div>
-        <a class="btn-coupang" id="coupangBtn" href="https://influencers.coupang.com/s/annsy" target="_blank" rel="noopener sponsored">🛒 쿠팡 마이스토어에서 개운템 보기 →</a>
-        <p class="aff">이 페이지의 쿠팡 링크는 제휴 활동으로, 링크를 통해 구매가 이뤄지면 일정 수수료를 받을 수 있습니다. 상품 가격과 조건은 쿠팡에서 확인해 주세요. 사주 풀이는 재미와 참고용입니다.</p>
+        <a class="btn-coupang" id="coupangBtn" href="https://influencers.coupang.com/s/annsy" target="_blank" rel="noopener sponsored">🛒 sy스토어에서 개운템 보기 →</a>
+        <p class="aff">개운템은 sy스토어(쿠팡 마이스토어)에 실제 등록된 상품 중에서 오행에 맞는 것을 골랐습니다(2026-11-14 기준). 가격·재고·배송 조건은 쿠팡에서 확인해 주세요. 이 링크는 제휴 활동으로, 링크를 통해 구매가 이뤄지면 일정 수수료를 받을 수 있습니다. 구매를 권하는 것이 아니라 필요한 사람만 참고하도록 안내드립니다.</p>
       </div>
 
       <p class="disclaimer" id="disclaimer"></p>
+
+      <!-- 📄 2027 심층 리포트 PDF -->
+      <div class="rep" id="reportSec">
+        <h4>📄 2027 정미년 내 사주 심층 리포트</h4>
+        <p>사주 명식·오각형 5대 운세·12개월 캘린더·개운 처방을 한 장씩 깔끔한 인쇄용 레이아웃으로 정리합니다. 버튼을 누르고 인쇄 창에서 <b>“PDF로 저장”</b>을 고르세요.</p>
+        <button class="btn-rep" id="btnReport" type="button">📄 심층 리포트 PDF 저장 / 인쇄</button>
+      </div>
 
       <div class="actions">
         <button class="btn-share" id="btnShare" type="button">💬 친구에게 운세 공유하기</button>
@@ -542,7 +672,15 @@
     </details>
     <details>
       <summary>개운템 추천과 쿠팡 링크는 광고인가요?</summary>
-      <div class="ans">개운템은 사주에서 가장 부족한 오행을 보완하는 기준으로 고른 생활용품 예시이고, 쿠팡 마이스토어 링크는 제휴 활동입니다. 링크를 통해 구매가 이뤄지면 이 사이트가 일정 수수료를 받을 수 있으며, 상품 가격과 조건은 쿠팡에서 확인하실 수 있습니다. 구매를 권하는 것이 아니라 필요한 사람만 참고하도록 안내드립니다.</div>
+      <div class="ans">개운템은 사주에서 가장 부족한 오행(목·화·토·금·수)을 보완하는 기준으로 <strong>sy스토어(쿠팡 마이스토어)에 실제 등록된 상품 중에서</strong> 골렀습니다. 스토어에 해당 오행의 물건이 없을 때는 가장 가까운 대체 상품을 안내하고, 무엇을 대신했는지 상자에 명시했습니다. 쿠팡 링크는 제휴 활동으로, 링크를 통해 구매가 이뤄지면 이 사이트가 일정 수수료를 받을 수 있으며, 상품 가격·재고·조건은 쿠팡에서 확인하실 수 있습니다. 구매를 권하는 것이 아니라 필요한 사람만 참고하도록 안내드립니다.</div>
+    </details>
+    <details>
+      <summary>오늘의 타로는 어떻게 뽑나요?</summary>
+      <div class="ans">메이저 아르카나 22장(0번 바보부터 21번 세계까지) 중 한 장을 날짜로 정해 보여줍니다. 그래서 같은 날에는 몇 번을 열어도 같은 카드가 나오고, 자정이 지나면 바뀝니다. 카드에는 오늘의 핵심 메시지와 재물·연애·주의점 네 가지를 담았고, '카드 다시 뽑기'를 누르면 다른 카드도 볼 수 있습니다. 타로는 점을 치는 도구라기보다 오늘의 생각을 정리하는 질문지로 쓰시길 권합니다.</div>
+    </details>
+    <details>
+      <summary>띠별 운세는 어떻게 계산하나요?</summary>
+      <div class="ans">태어난 해의 지지(띠)와 2027년 정미년의 未가 육합·삼합·충·형·파·해 중 무엇을 이루는지, 그리고 2027년 12개월의 절기 월(丑月~子月)과 어떻게 맞물리는지를 함께 계산해 총운 점수·길한 달·주의할 달을 냅니다. 그래서 띠마다 길한 달이 다르고, 같은 달이라도 띠에 따라 반대가 되기도 합니다.</div>
     </details>
     <details>
       <summary>입력한 생년월일은 어디에 저장되나요?</summary>
@@ -685,6 +823,55 @@
       <p style="font-size:12.6px;color:#8b7c68">이 궁합 풀이는 재미와 참고용입니다. 결혼·동업·투자 같은 결정의 근거로 쓰지 마세요.</p>
     </section>
   </div><!-- /tabGunghap -->
+
+  <!-- ═══ 타로 · 띠운세 탭 ═══ -->
+  <div id="tabTarot" style="display:none">
+
+    <!-- 오늘의 타로 -->
+    <section class="card" id="tarotCard">
+      <div class="form-lead">
+        <div class="num">🃏</div>
+        <div>
+          <h2>오늘의 타로</h2>
+          <p>메이저 아르카나 22장 중 오늘의 카드 한 장을 뒤집어 보세요.</p>
+        </div>
+      </div>
+      <p class="tw-lead">오늘의 카드는 <b>날짜</b>로 정해집니다. 아침에 한 번, 저녁에 한 번 열어 보면 같은 카드가 다른 말을 건네요.</p>
+      <div class="tw-stage">
+        <button class="tw-card" id="twCard" type="button" aria-label="오늘의 타로 카드 뒤집어 보기">
+          <span class="tw-inner">
+            <span class="tw-face tw-back">
+              <span class="bk"><span class="mo">☾ ✦</span><span class="tg">TAROT</span><span class="sm">TAP TO OPEN</span></span>
+            </span>
+            <span class="tw-face tw-front" id="twFront"></span>
+          </span>
+        </button>
+        <p class="tw-hint" id="twHint">카드를 <b>탭</b>하면 오늘의 카드가 열립니다</p>
+        <div class="tw-out" id="twOut"></div>
+      </div>
+    </section>
+
+    <!-- 2027 띠별 운세 -->
+    <section class="card" id="ttiCard">
+      <div class="form-lead">
+        <div class="num">🐲</div>
+        <div>
+          <h2>2027 정미년 띠별 운세</h2>
+          <p>내 띠 하나만 누르면 총운·길한 달·주의할 점이 바로 나옵니다.</p>
+        </div>
+      </div>
+      <div class="zz-grid" id="zzGrid"></div>
+      <div class="zz-out" id="zzOut"></div>
+      <p class="privacy">태어난 해의 띠(지지)와 2027년 未의 관계, 그리고 12개월 절기 월과의 합·충을 계산한 결과입니다. 정확한 풀이는 내 사주운세에서 확인하세요.</p>
+    </section>
+
+    <section class="card info">
+      <h2>타로와 띠운세, 이렇게 봅니다</h2>
+      <p>타로의 메이저 아르카나 22장은 인생의 큰 국면을 상징하는 카드입니다. 여기서는 0번 바보부터 21번 세계까지를 <strong>하루의 한 장</strong>으로 뽑아, 오늘의 핵심 메시지와 재물·연애·주의점 네 가지로 읽습니다. 같은 카드라도 어제와 오늘의 내 상황이 다르니, 문장에서 나에게 해당하는 한 줄만 가져가세요.</p>
+      <p><strong>2027 띠별 운세</strong>는 태어난 해의 지지(띠)와 정미년의 未가 육합·삼합·충·형·파·해 중 무엇을 이루는지, 그리고 그 해 12개월의 절기 월(丑月~子月)과 어떻게 맞물리는지로 만듭니다. 그래서 띠마다 길한 달과 주의할 달이 다릅니다.</p>
+      <p style="font-size:12.6px;color:#8b7c68">타로와 띠운세는 재미와 참고용입니다. 의료·투자·법률 판단의 근거로 쓰지 마세요.</p>
+    </section>
+  </div><!-- /tabTarot -->
 
   <footer>
     <p>2027 정미년 사주풀이 · 사주 명리학의 천간·지지·오행·십성 이론을 바탕으로 계산합니다.</p>
@@ -1227,25 +1414,218 @@ function fortuneCookie(r,now){
   };
 }
 
-/* ─────────── 제휴: 맞춤 개운템 ─────────── */
+/* ─────────── 제휴: 맞춤 개운템 — sy스토어 실제 등록 상품 기준 (2026-11-14 스토어 확인) ─────────── */
+var STORE_CHECKED='2026-11-14';
 var ITEMS=[
-[{n:'미니 스투키·산세베리아 화분',w:'물 주기가 길어 관리가 쉽고, 책상 왼쪽에 두면 눈이 쉬어 갑니다.'},
- {n:'원목 데스크 트레이',w:'자주 쓰는 것만 남기게 되어 정리가 습관이 됩니다.'},
- {n:'린넨 커튼',w:'아침 햇빛을 부드럽게 들여 하루의 시작을 돕습니다.'}],
-[{n:'시트러스·우디 아로마 캔들',w:'저녁 한 시간의 온기를 만들어 하루의 열을 내려 줍니다.'},
- {n:'코랄·테라코타 쿠션 커버',w:'가장 오래 앉는 자리에 두면 기분이 먼저 바뀝니다.'},
- {n:'따뜻한 색 스탠드 조명',w:'늦은 밤의 눈부심을 줄이고 방의 온도를 올려 줍니다.'}],
-[{n:'황토색 도자기 머그',w:'매일 손에 쥐는 물건이라 기운이 오래 붙습니다.'},
- {n:'테라코타 화분',w:'흙을 만지는 짧은 시간이 그대로 휴식이 됩니다.'},
- {n:'두툼한 면 러그',w:'발이 닿는 자리를 따뜻하게 해 숙면을 돕습니다.'}],
-[{n:'스테인리스 트레이·오거나이저',w:'서류와 소품이 제자리를 찾으면 결정이 빨라집니다.'},
- {n:'금속 윈드차임·풍경',w:'창가에 두면 소리로 공간의 흐름을 바꿔 줍니다.'},
- {n:'화이트 세라믹 무드 트레이',w:'무채색 하나로 책상이 정돈되어 보입니다.'}],
-[{n:'유리 화병·작은 오브제',w:'물이 보이는 소품 하나로 공간이 깊어집니다.'},
- {n:'가습기',w:'건조한 방의 호흡을 편하게 해 수면의 질을 올립니다.'},
- {n:'딥블루 물병·텀블러',w:'물을 자주 마시게 되어 수 기운을 채워 줍니다.'}]
+ {items:[
+   {n:'크리스마스트리 풀세트 전구 무장식 전나무 대형',w:'연말 시즌 스토어 대표 상품. 실내에 나무를 들이는 것과 같은 뜻으로, 거실 한쪽에 두면 목(木)의 기운과 연말의 들뜸을 함께 채웁니다.'},
+   {n:'플라팜 원형 화분받침대',w:'스토어에서 확인한 화분 소품. 책상 왼쪽 작은 화분 아래에 깔아 두면 눈이 쉬어 가고 목의 기운이 자리를 잡습니다.'},
+   {n:'미다스북스 「세상을 읽는 생각의 지도」',w:'종이와 배움의 목. 잠들기 전 10분 읽기로 두면 올해의 공부운을 붙잡는 가장 싼 투자가 됩니다.'}],
+  note:''},
+ {items:[
+   {n:'마농 트윈 충전식 보조배터리 손난로 5000mAh',w:'손안에서 열을 내는 가장 작은 화(火). 가방에 넣어 두면 추운 날 몸의 온기가 먼저 올라옵니다.'},
+   {n:'비나잇 리모컨형 온수매트 (워셔블·양면사용)',w:'잠자리의 온기를 채우는 화. 잠들기 전 발끝이 따뜻하면 다음 날의 판단이 달라집니다.'},
+   {n:'슈어홈 즉각발열 스마트 PTC 온풍기',w:'방 하나를 데우는 화. 몸이 움츠러드는 날 기운을 위로 올려 주는 자리에 두세요.'}],
+  note:''},
+ {items:[
+   {n:'해남 화산농협 꿀고구마',w:'화산 흙에서 자란 뿌리작물. 사주에서 땅의 기운(土)은 곡식으로 채웁니다. 아침 한 끼면 충분합니다.'},
+   {n:'농협 정품 수향미 햅쌀 10kg (골든퀸3호)',w:'밥 한 그릇이 곧 토의 기운. 집안의 가장 기본을 채우는 소비가 올해의 바탕을 만듭니다.'}],
+  note:'도자기·황토·테라코타 소품은 현재 스토어에 등록되어 있지 않습니다. 흙의 기운은 곡식과 마당·들길 산책으로 대신하세요.'},
+ {items:[
+   {n:'SGAKIC 진공 보온 도시락통 316스텐 480ml',w:'스테인리스는 사주에서 말하는 금(金) 그 자체. 매일 챙기는 물건이라 기운이 오래 붙습니다.'},
+   {n:'센테르 디지털 키패드 스마트 금고',w:'쇠로 지키는 금. 재물을 보관하는 자리를 만드는 일이 올해의 금 기운입니다.'},
+   {n:'녹스게이밍기어 기계식 광축 RGB 키보드',w:'금속 축과 알루미늄 판의 금. 결정을 내리는 책상 위에 두면 손이 먼저 움직입니다.'}],
+  note:''},
+ {items:[
+   {n:'끌리젠 가열식 올스텐 대용량 가습기 6L',w:'물과 습기의 수(水). 건조한 방의 호흡을 편하게 해 수면의 질을 올립니다.'},
+   {n:'코멧 UV 99.9% 차단 초경량 5단 미니 우산 (양산 겸용)',w:'비를 막는 물의 기운을 몸에 지니는 물건. 가방에 하나면 갑작스러운 비에도 젖지 않습니다.'}],
+  note:'물병·유리 화병은 현재 스토어에 없습니다. 물은 하루 여섯 잔, 잠들기 전 발을 따뜻하게로 채우세요.'}
 ];
 var COUPANG_URL='https://influencers.coupang.com/s/annsy';
+
+/* ─────────── 오늘의 타로: 메이저 아르카나 22장 ─────────── */
+var TAROT=[
+{n:0,ko:'바보',en:'The Fool',sym:'🌱',keys:['새 시작','순수','도약'],
+ msg:'아직 아무것도 정해지지 않았다는 것이 오늘의 무기입니다. 완벽한 계획을 기다리지 말고 첫 한 걸음만 떼어 보세요.',
+ money:'작게 시작한 지출이 크게 돌아오는 날입니다. 다만 충동 결제 한 번은 하루 묵혀 두세요.',
+ love:'새로운 인연 앞에서 계산이 앞서면 문이 닫힙니다. 먼저 웃어 주는 쪽이 오늘의 주인공입니다.',
+ warn:'준비 없는 도약은 사고로 이어지기 쉽습니다. 가방과 일정 하나만 다시 확인하세요.'},
+{n:1,ko:'마법사',en:'The Magician',sym:'🪄',keys:['의지','실행','도구'],
+ msg:'이미 가진 것만으로도 오늘은 충분히 만들어 낼 수 있습니다. 말보다 손이 먼저 움직이는 날입니다.',
+ money:'아이디어를 문서로 만들면 돈이 붙습니다. 견적서·제안서를 오늘 한 장 정리해 보세요.',
+ love:'말솜씨가 빛나는 날입니다. 고마웠던 일을 구체적으로 말해 주면 관계가 한 칸 올라갑니다.',
+ warn:'능력을 보여주려다 남의 일까지 떠안기 쉽습니다. “해볼게요”보다 “언제까지”를 붙이세요.'},
+{n:2,ko:'여사제',en:'The High Priestess',sym:'🌙',keys:['직관','침묵','기다림'],
+ msg:'답은 이미 알고 있는데 말하지 않고 있을 수 있습니다. 오늘은 결론 대신 질문을 붙잡아 두세요.',
+ money:'확신이 서기 전에는 계약하지 마세요. 정보가 하나 더 모이면 금액이 달라집니다.',
+ love:'상대의 말보다 표정을 읽는 날입니다. 다만 혼자 짐작해 결론내리지는 마세요.',
+ warn:'침묵이 오해를 부릅니다. 중요한 것은 짧게라도 말로 꺼내 두세요.'},
+{n:3,ko:'여황제',en:'The Empress',sym:'🌷',keys:['풍요','돌봄','결실'],
+ msg:'이미 심어 둔 것이 익어 가는 날입니다. 새로 벌이기보다 지금 자라고 있는 것을 돌보세요.',
+ money:'돈이 들어오는 통로가 부드러워집니다. 식탁과 집 안을 채우는 소비는 이득이 됩니다.',
+ love:'온기가 사람을 부릅니다. 함께 먹고 함께 쉬는 시간이 관계를 가장 단단하게 만듭니다.',
+ warn:'받는 것에 익숙해지면 관계가 기웁니다. 고마움을 한 번 말로 옮기세요.'},
+{n:4,ko:'황제',en:'The Emperor',sym:'🏛',keys:['질서','책임','기반'],
+ msg:'오늘은 감정보다 규칙이 편을 듭니다. 정해 둔 시간과 순서를 지키는 것만으로 절반이 해결됩니다.',
+ money:'고정지출과 계약 조건을 확인하기 좋은 날입니다. 숫자를 문서로 남기세요.',
+ love:'약속을 지키는 모습이 가장 설득력 있는 표현입니다. 시간 약속 하나만 정확히 지켜 보세요.',
+ warn:'원칙을 세우다 융통성을 잃기 쉽습니다. 한 번은 상대의 사정을 물어보세요.'},
+{n:5,ko:'교황',en:'The Hierophant',sym:'📜',keys:['배움','전통','조언'],
+ msg:'혼자 고민하기보다 이미 그 길을 걸은 사람에게 물어보세요. 어른의 말 한 줄이 시간을 아껴 줍니다.',
+ money:'검증된 방식이 안전한 날입니다. 새로운 투자보다 정해진 절차를 따르는 쪽이 남습니다.',
+ love:'소개와 가족·지인의 자리가 인연을 만듭니다. 공식적인 자리에 나가 보세요.',
+ warn:'형식에 기대다 본질을 놓치기 쉽습니다. 규칙이 목적인지 다시 확인하세요.'},
+{n:6,ko:'연인',en:'The Lovers',sym:'💞',keys:['선택','인연','균형'],
+ msg:'무엇을 고르느냐보다 누구와 함께 서느냐가 오늘의 열쇠입니다. 마음이 끌리는 쪽을 먼저 인정하세요.',
+ money:'함께하는 일에 돈이 붙습니다. 공동구매·동업 제안은 조건을 글로 남기고 시작하세요.',
+ love:'관계의 온도가 올라가는 날입니다. 오래 미뤄 둔 고백이나 사과를 하기에 좋습니다.',
+ warn:'두 마음을 동시에 저울질하면 둘 다 잃습니다. 오늘 하나만 고르세요.'},
+{n:7,ko:'전차',en:'The Chariot',sym:'🛞',keys:['추진','통제','승부'],
+ msg:'멈춰 있던 일이 앞으로 나갑니다. 다만 속도보다 방향을 먼저 확인하세요.',
+ money:'밀어붙여 받아내는 돈이 있습니다. 미뤄 둔 정산·청구를 오늘 처리해 보세요.',
+ love:'주도권을 잡으려다 상대를 지치게 하기 쉬운 날입니다. 한 번은 양보하세요.',
+ warn:'과속은 사고를 부릅니다. 일정 사이에 빈 시간을 하나 넣으세요.'},
+{n:8,ko:'힘',en:'Strength',sym:'🦁',keys:['절제','용기','부드러움'],
+ msg:'이기는 방법은 세게 미는 것이 아니라 오래 버티는 것입니다. 오늘은 부드러움이 힘입니다.',
+ money:'지출을 참아내는 절제가 곧 이득입니다. 사고 싶은 것을 하루만 미뤄 보세요.',
+ love:'상대의 예민함을 받아 주면 관계가 깊어집니다. 화가 나도 목소리를 낮추세요.',
+ warn:'참는 것과 삼키는 것은 다릅니다. 할 말은 조용히, 그러나 분명히 하세요.'},
+{n:9,ko:'은둔자',en:'The Hermit',sym:'🕯',keys:['성찰','정리','거리'],
+ msg:'사람 사이에서 잠깐 물러나야 보이는 것이 있습니다. 오늘 한 시간은 혼자 쓰세요.',
+ money:'큰 결정은 미루고 지출을 점검하는 날입니다. 구독과 자동결제를 정리해 보세요.',
+ love:'연락을 줄이면 오히려 그리움이 커집니다. 다만 사라지지는 마세요. 짧게 안부만 남기세요.',
+ warn:'혼자 결론내면 오해가 굳습니다. 판단은 내일로 미루세요.'},
+{n:10,ko:'운명의 수레바퀴',en:'Wheel of Fortune',sym:'🎡',keys:['전환','기회','순환'],
+ msg:'흐름이 바뀌는 자리에 서 있습니다. 막혔던 일은 때가 되어 풀리고, 좋았던 일은 잠시 쉬어 갑니다.',
+ money:'뜻밖의 돈이 오가기 쉬운 날입니다. 들어온 것의 절반은 건드리지 않는 자리로 옮기세요.',
+ love:'오래 끊긴 인연이 다시 이어지기 좋은 날입니다. 먼저 연락해 보세요.',
+ warn:'운이 좋다고 크게 걸지 마세요. 오늘의 한 번은 내일의 두 배가 됩니다.'},
+{n:11,ko:'정의',en:'Justice',sym:'⚖',keys:['공정','계약','균형'],
+ msg:'오늘은 정직함이 가장 빠른 길입니다. 애매하게 넘긴 것을 정리하면 마음이 가벼워집니다.',
+ money:'계약서·정산서를 확인하기 좋은 날입니다. 숫자가 맞으면 서명하고, 틀리면 그 자리에서 말하세요.',
+ love:'주고받음의 균형을 점검하는 날입니다. 한쪽만 참고 있다면 오늘 이야기하세요.',
+ warn:'감정으로 판단하면 손해를 봅니다. 사실과 기록을 먼저 보세요.'},
+{n:12,ko:'매달린 사람',en:'The Hanged Man',sym:'🙃',keys:['멈춤','관점','인내'],
+ msg:'지금은 움직여서 풀 일이 아니라, 보는 각도를 바꿔야 풀 일입니다. 하루 멈춰도 흐름은 끊기지 않습니다.',
+ money:'돈이 묶여 답답해도 서두르면 더 잃습니다. 기한과 조건을 다시 읽어 보세요.',
+ love:'상대의 입장에서 한 번만 다시 생각해 보세요. 그 한 번이 오래 막힌 대화를 엽니다.',
+ warn:'기다림과 회피는 다릅니다. 기다린다면 언제까지인지 정하세요.'},
+{n:13,ko:'죽음',en:'Death',sym:'🍂',keys:['끝과 시작','정리','전환'],
+ msg:'끝내야 새것이 들어옵니다. 오늘은 미련이 남은 하나를 정리하기 좋은 날입니다.',
+ money:'새는 돈의 통로를 끊는 날입니다. 쓰지 않는 구독과 카드 한 장을 정리하세요.',
+ love:'관계의 한 국면이 끝나고 다음이 시작됩니다. 붙잡기보다 인사하는 편이 서로에게 낫습니다.',
+ warn:'끝을 두려워해 미루면 더 길게 아픕니다. 오늘 결정하면 내일이 가볍습니다.'},
+{n:14,ko:'절제',en:'Temperance',sym:'🍶',keys:['조율','중용','회복'],
+ msg:'한쪽으로 기울어진 것을 가운데로 옮기는 날입니다. 일과 쉼, 줌과 받음의 비율을 다시 맞추세요.',
+ money:'들어오는 만큼 나가는 날입니다. 수입의 10%를 먼저 떼어 두면 연말이 다릅니다.',
+ love:'차분한 대화가 가장 잘 통하는 날입니다. 감정이 올라오면 물 한 잔 마시고 말하세요.',
+ warn:'적당함에 머물다 결정을 놓치지 마세요. 오늘 하나는 정해야 합니다.'},
+{n:15,ko:'악마',en:'The Devil',sym:'🔗',keys:['집착','유혹','습관'],
+ msg:'끊고 싶었던 습관이 오늘 유난히 손짓합니다. 그 손짓을 알아차리는 것만으로 절반은 이긴 것입니다.',
+ money:'충동과 할인의 유혹이 큰 날입니다. 장바구니에 넣고 하루만 두세요.',
+ love:'집착과 애정은 종이 한 장 차이입니다. 상대의 시간을 존중하는 쪽이 오래 갑니다.',
+ warn:'쉬운 길로 보이는 것이 대개 함정입니다. 오늘의 “한 번만”을 조심하세요.'},
+{n:16,ko:'탑',en:'The Tower',sym:'⚡',keys:['붕괴','자각','재정비'],
+ msg:'예상 밖의 일로 판이 흔들릴 수 있습니다. 다만 무너진 것은 원래 고쳐야 할 자리였습니다.',
+ money:'갑작스러운 지출에 대비하세요. 비상금을 건드리지 않는 것이 오늘의 목표입니다.',
+ love:'말이 세게 나가기 쉬운 날입니다. 화가 나면 하루를 두고 이야기하세요.',
+ warn:'흔들릴 때 큰 결정을 내리지 마세요. 정리는 내일 해도 늦지 않습니다.'},
+{n:17,ko:'별',en:'The Star',sym:'✨',keys:['희망','회복','소망'],
+ msg:'어두운 구간을 지나 다시 빛이 드는 날입니다. 오래 미뤄 둔 소망을 오늘 한 줄로 적어 보세요.',
+ money:'작지만 꾸준한 수입이 살아납니다. 지금 하는 일을 계속하는 것이 답입니다.',
+ love:'마음이 정직하게 전해지는 날입니다. 표현을 아끼지 마세요.',
+ warn:'기대가 커지면 실망도 커집니다. 상대에게 정해 둔 기대치를 한 번 점검하세요.'},
+{n:18,ko:'달',en:'The Moon',sym:'🌕',keys:['불안','혼란','직감'],
+ msg:'보이는 것이 전부가 아닌 날입니다. 확신이 서지 않으면 결정을 미루고 사실을 확인하세요.',
+ money:'숨은 비용이 드러나기 쉬운 날입니다. 결제 전 약관과 배송비를 확인하세요.',
+ love:'혼자 상상해 서운해지기 쉬운 날입니다. 짐작 대신 물어보세요.',
+ warn:'불안할수록 말이 앞섭니다. 오늘은 확인한 것만 이야기하세요.'},
+{n:19,ko:'해',en:'The Sun',sym:'☀',keys:['성과','기쁨','명료'],
+ msg:'가장 밝은 카드가 나왔습니다. 오늘 시작한 일은 사람들 앞에 내놓아도 좋습니다.',
+ money:'성과가 돈으로 확인되는 날입니다. 미뤄 둔 청구·영수증을 정리하면 이득이 보입니다.',
+ love:'웃는 얼굴이 가장 좋은 개운입니다. 함께 밖에 나가 햇볕을 쬐세요.',
+ warn:'기세가 좋아 말이 커지기 쉽습니다. 약속은 지킬 수 있는 만큼만 하세요.'},
+{n:20,ko:'심판',en:'Judgement',sym:'📯',keys:['결산','부름','재기'],
+ msg:'미뤄 둔 일이 다시 불려 나오는 날입니다. 도망쳤던 그 일을 오늘 마주하면 생각보다 가볍습니다.',
+ money:'지난 지출을 결산하기 좋은 날입니다. 가계부 한 장이 새는 돈을 막습니다.',
+ love:'과거의 인연이나 오해가 다시 올라올 수 있습니다. 변명보다 인정이 먼저입니다.',
+ warn:'과거를 반복하지 않으려면 한 가지만 다르게 하세요. 그 하나를 오늘 정하세요.'},
+{n:21,ko:'세계',en:'The World',sym:'🌍',keys:['완성','마무리','확장'],
+ msg:'하나의 주기가 끝나고 다음 문이 열립니다. 오늘 끝내는 일 하나가 내년의 시작이 됩니다.',
+ money:'큰 지출을 마무리하기 좋은 날입니다. 정리하고 나면 다음 통로가 열립니다.',
+ love:'관계가 한 단계 완성되는 날입니다. 함께한 시간을 말로 정리해 보세요.',
+ warn:'끝났다고 방심하면 다음 준비를 놓칩니다. 마무리 인사를 미루지 마세요.'}
+];
+function tarotOfDay(now){
+  var d=now||new Date();
+  var seed=(d.getFullYear()*372+(d.getMonth()+1)*31+d.getDate())*7+13;
+  var idx=Math.abs(seed)%TAROT.length;
+  return {card:TAROT[idx],idx:idx,date:d};
+}
+function tarotPick(exclude){
+  var i=Math.floor(Math.random()*TAROT.length);
+  if(exclude!=null && TAROT.length>1){ var guard=0; while(i===exclude&&guard<20){ i=Math.floor(Math.random()*TAROT.length); guard++; } }
+  return {card:TAROT[i],idx:i};
+}
+
+/* ─────────── 2027 띠별 운세 (12지지) ─────────── */
+var TTI_REL_DELTA={hap:12,samhap:7,none:0,pa:-5,hae:-6,hyeong:-8,chung:-11};
+var TTI_REL_KO={hap:'육합(六合)',samhap:'삼합(三合)',none:'무관(無關)',pa:'파(破)',hae:'해(害)',hyeong:'형(刑)',chung:'충(沖)'};
+var TTI=[
+{b:0,emo:'🐭',nm:'쥐띠',hj:'子',years:'1936·1948·1960·1972·1984·1996·2008·2020',
+ sum:'2027년은 내 띠 子와 未가 해(害)를 이루는 해입니다. 가까운 사이에서 서운함이 쌓이면 관계가 먼저 상하니, 짐작하지 말고 확인하는 쪽이 이깁니다. 계약·문서·금액은 한 번 더 읽어 보세요. 대신 배움과 정리의 힘은 살아 있어, 미뤄 둔 공부나 자격 하나를 붙잡기엔 좋은 해입니다.',
+ warn:'말을 아끼면 오해가 굳습니다. 중요한 것은 짧게라도 확인하고, 돈이 오가는 약속은 문자로 남기세요.'},
+{b:1,emo:'🐮',nm:'소띠',hj:'丑',years:'1937·1949·1961·1973·1985·1997·2009·2021',
+ sum:'내 띠 丑과 未가 정면으로 충(沖)하는 해입니다. 이사·이직·이별처럼 판을 바꾸는 일이 생기기 쉽지만, 충은 변화의 힘이라 새 자리를 잡기에는 오히려 유리합니다. 크게 벌이기보다 하나를 정해 확실히 옮기는 해로 쓰세요.',
+ warn:'급하게 결정하면 두 번 일합니다. 이사·계약은 날짜와 조건을 서면으로 확인하고, 몸의 피로를 먼저 살피세요.'},
+{b:2,emo:'🐯',nm:'호랑이띠',hj:'寅',years:'1938·1950·1962·1974·1986·1998·2010·2022',
+ sum:'내 띠 寅은 2027년 未와 직접 부딪히지도 얽히지도 않습니다. 큰 사건보다 하던 일의 완성도가 평가받는 담백한 해이고, 그만큼 결과가 고르게 쌓입니다. 새 일을 벌이기보다 지금 하는 일의 마감을 지키는 쪽이 남습니다.',
+ warn:'변화가 없다고 마음을 놓으면 기회도 지나갑니다. 한 달에 하나씩 새로 시도할 것을 정해 두세요.'},
+{b:3,emo:'🐰',nm:'토끼띠',hj:'卯',years:'1939·1951·1963·1975·1987·1999·2011·2023',
+ sum:'내 띠 卯가 未와 亥卯未 목 삼합의 한 자리를 이뤄, 나를 도와주는 사람이 모이는 해입니다. 협업과 소개로 일이 커지고, 사람을 통해 들어오는 기회가 재물이 됩니다. 혼자 다 하려는 마음을 내려놓으면 판이 넓어집니다.',
+ warn:'사람에 대한 기대치를 조금만 낮추세요. 함께 하는 일의 몫과 정산은 처음에 글로 정해 두면 관계가 오래갑니다.'},
+{b:4,emo:'🐲',nm:'용띠',hj:'辰',years:'1940·1952·1964·1976·1988·2000·2012·2024',
+ sum:'내 띠 辰은 未와 부딪힘 없이 지나갑니다. 기반을 다지고 저축을 늘리기에 좋은 해이며, 큰 승부는 다음 해로 미루는 편이 낫습니다. 눈에 띄는 성과보다 새지 않는 구조를 만드는 데 힘을 쓰세요.',
+ warn:'큰 지출과 보증은 피하세요. 통장과 고정지출을 분리해 두면 연말에 남는 금액이 달라집니다.'},
+{b:5,emo:'🐍',nm:'뱀띠',hj:'巳',years:'1941·1953·1965·1977·1989·2001·2013·2025',
+ sum:'내 띠 巳는 겉으로 조용하지만 안으로 여무는 해입니다. 배움과 자격에 투자하면 그 값이 다음 해에 붙고, 혼자 몰입하는 일에서 성과가 납니다. 사람을 넓히기보다 깊이를 만드는 쪽이 유리합니다.',
+ warn:'생각이 길어지면 시작을 못 합니다. 배운 것은 한 장으로 요약해 남기고, 결정은 기한을 정해 내리세요.'},
+{b:6,emo:'🐴',nm:'말띠',hj:'午',years:'1942·1954·1966·1978·1990·2002·2014·2026',
+ sum:'내 띠 午가 未와 육합(六合)을 이루는, 12띠 가운데 흐름이 가장 부드러운 해입니다. 인연과 인맥이 살아나 결혼·동업·소개처럼 사람을 통한 일이 잘 풀립니다. 미뤄 둔 관계의 일을 정리하기에도 좋습니다.',
+ warn:'기세가 좋을수록 약속을 많이 잡기 쉽습니다. 지킬 수 있는 만큼만 약속하고, 몸을 쉬는 시간을 비워 두세요.'},
+{b:7,emo:'🐑',nm:'양띠',hj:'未',years:'1943·1955·1967·1979·1991·2003·2015·2027',
+ sum:'2027년은 내 띠 未가 그대로 돌아오는 본명년(伏吟)입니다. 크게 벌이기보다 몸과 마음을 정비하고, 평생 쓸 습관 하나를 만드는 해로 쓰면 좋습니다. 다만 未와 합을 이루는 달에는 문이 열리니 그 달에 미뤄 둔 일을 처리하세요.',
+ warn:'같은 자리에서 맴도는 느낌이 들면 방향을 바꿔야 할 신호입니다. 검진·정리·저축처럼 나를 보수하는 일에 먼저 돈을 쓰세요.'},
+{b:8,emo:'🐵',nm:'원숭이띠',hj:'申',years:'1944·1956·1968·1980·1992·2004·2016',
+ sum:'내 띠 申은 정리와 결실의 해입니다. 미뤄 둔 일을 마무리하고 사람 사이의 빚을 정리하면 다음 해가 가볍습니다. 큰 변화 없이도 손에 남는 것이 많은, 실속형 한 해입니다.',
+ warn:'부딪힘이 생기기 쉬운 달에는 말과 서류를 한 번 더 확인하고, 무리한 일정은 줄이세요.'},
+{b:9,emo:'🐔',nm:'닭띠',hj:'酉',years:'1945·1957·1969·1981·1993·2005·2017',
+ sum:'내 띠 酉는 결과가 숫자로 드러나는 해입니다. 꼼꼼한 기록과 정산이 재물을 지켜 주고, 酉와 합을 이루는 달에 일이 잘 풀립니다. 화려함보다 정확함이 평가받는 한 해입니다.',
+ warn:'서운함과 지출이 겹치기 쉬운 달에는 가계부와 일정표를 그 달만 더 자주 여세요.'},
+{b:10,emo:'🐶',nm:'개띠',hj:'戌',years:'1946·1958·1970·1982·1994·2006·2018',
+ sum:'내 띠 戌과 未가 형(刑)과 파(破)를 이루는 해입니다. 가까운 사이의 서운함과 돈 문제가 엮이기 쉬우니, 역할과 액수를 글로 정해 두세요. 다만 戌과 합을 이루는 달에는 오히려 일이 풀리니 그 달에 중요한 결정을 몰아 두면 좋습니다.',
+ warn:'감정이 올라올 때 결정하지 마세요. 가족·동업 사이의 돈은 금액과 날짜를 문서로 남기는 것이 예의입니다.'},
+{b:11,emo:'🐷',nm:'돼지띠',hj:'亥',years:'1947·1959·1971·1983·1995·2007·2019',
+ sum:'내 띠 亥는 亥卯未 목 삼합의 첫 자리로, 도움과 기회가 밖에서 들어오는 해입니다. 새로 만나는 사람을 반기면 복이 커지고, 배움·여행·소개가 모두 재물의 통로가 됩니다.',
+ warn:'말이 어긋나기 쉬운 달에는 오해를 그날 안에 풀고, 11월(亥月)에는 몸을 아끼세요.'}
+];
+function ttiInfo(b){
+  var good=[],warn=[],plain=[],m,bp,rel;
+  for(m=1;m<=12;m++){
+    bp=fourPillars(2027,m,15,12).month.branch;
+    rel=branchRelation(b,bp);
+    if(rel==='hap'||rel==='samhap') good.push(m);
+    else if(rel==='chung'||rel==='hyeong'||rel==='pa'||rel==='hae') warn.push(m);
+    else plain.push(m);
+  }
+  var rel2027=branchRelation(b,7);
+  var score=80+(TTI_REL_DELTA[rel2027]||0)+good.length*2-warn.length*1.5;
+  if(b===7) score-=5;              /* 본명년(복음)은 한 단계 낮춰 읽는다 */
+  score=Math.round(Math.max(62,Math.min(95,score)));
+  var d=TTI[b];
+  return {b:b,item:d,rel2027:rel2027,relKo:TTI_REL_KO[rel2027],good:good,warn:warn,plain:plain,score:score,
+          band:(score>=88?'아주 좋음':(score>=80?'좋음':(score>=72?'무난':'신중'))) };
+}
 
 /* ─────────── 2인 궁합 ─────────── */
 function elemRelation(a,b){
@@ -1701,9 +2081,12 @@ function compatHeadline(t){
     }
     $('tabSaju').style.display=(name==='saju')?'block':'none';
     $('tabGunghap').style.display=(name==='gunghap')?'block':'none';
+    if($('tabTarot')) $('tabTarot').style.display=(name==='tarot')?'block':'none';
     if(name==='gunghap') prefillSelf();
+    if(name==='tarot' && window.__tarotShow) window.__tarotShow();
     try{ window.scrollTo({top:0,behavior:'smooth'}); }catch(e){ window.scrollTo(0,0); }
   }
+  window.__showTab=showTab;
   for(var ti=0;ti<TABS.length;ti++){
     TABS[ti].addEventListener('click',function(){ showTab(this.getAttribute('data-tab')); });
   }
@@ -1876,15 +2259,17 @@ function compatHeadline(t){
   /* ── 개운템 · 쿠팡 제휴 ── */
   function renderItems(r){
     var e=(r.stats.yongsin==null?0:r.stats.yongsin);
-    var list=ITEMS[e], h='';
+    var pack=ITEMS[e]||ITEMS[0], list=pack.items, h='';
     for(var i=0;i<list.length;i++){
       h+='<div class="item"><div class="no">'+(i+1)+'</div><div>'
         +'<div class="nm">'+esc(list[i].n)+'</div>'
         +'<div class="w">'+esc(list[i].w)+'</div></div></div>';
     }
+    if(pack.note) h+='<p class="aff" style="margin-top:3px">※ '+esc(pack.note)+'</p>';
     $('itemList').innerHTML=h;
     var t=$('itemSec').querySelector('.sec-t');
-    if(t) t.innerHTML='<i class="dot"></i>부족한 '+ELEM_KO[e]+'('+ELEM_HANJA[e]+') 기운을 채우는 개운템 3가지';
+    if(t) t.innerHTML='<i class="dot"></i>부족한 '+ELEM_KO[e]+'('+ELEM_HANJA[e]+') 기운을 채우는 개운템'
+      +' <span class="sub">sy스토어 실상품 '+list.length+'종</span>';
     $('coupangBtn').setAttribute('href',COUPANG_URL);
   }
 
@@ -2188,6 +2573,262 @@ function compatHeadline(t){
 
 </script>
 
+<script>
+/* ─────────── 확장 UI 2: 오늘의 타로 · 2027 띠별 운세 · 심층 리포트 PDF ─────────── */
+(function(){
+  var $=function(id){ return document.getElementById(id); };
+  function esc(s){
+    return String(s==null?'':s).replace(/[&<>"]/g,function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];
+    });
+  }
+  function toast(msg){
+    var el=$('toast'); if(!el) return;
+    el.textContent=msg; el.classList.add('on');
+    clearTimeout(window.__toastT3);
+    window.__toastT3=setTimeout(function(){ el.classList.remove('on'); },2800);
+  }
+  function pad(n){ return (n<10?'0':'')+n; }
+  var CANON='https://annjsy18-sys.github.io/saju2027/';
+  function goSaju(){
+    if(window.__showTab) window.__showTab('saju');
+    setTimeout(function(){
+      var r=$('result');
+      var t=(r && r.style.display==='block')? r : $('formCard');
+      if(t && t.scrollIntoView){ try{ t.scrollIntoView({behavior:'smooth',block:'start'}); }catch(e){ t.scrollIntoView(); } }
+    },240);
+  }
+
+  /* ══════════ 1. 오늘의 타로 ══════════ */
+  var tw={day:null,card:null,idx:null,revealed:false,inited:false};
+  function roman(n){
+    if(n===0) return '0';
+    var R=['','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV','XV','XVI','XVII','XVIII','XIX','XX','XXI'];
+    return R[n]||String(n);
+  }
+  function twFrontHtml(c){
+    return '<span class="no">'+roman(c.n)+'</span>'
+      +'<span class="sym">'+c.sym+'</span>'
+      +'<span class="ko">'+esc(c.ko)+'</span>'
+      +'<span class="en">'+esc(c.en)+'</span>'
+      +'<span class="kx">'+esc(c.keys.join(' · '))+'</span>';
+  }
+  function twOutHtml(c){
+    return '<div class="tl">“'+esc(c.msg)+'”</div>'
+      +'<div class="tw-grid">'
+      +'<div class="tw-row"><div class="k">재물·일</div><div class="v">'+esc(c.money)+'</div></div>'
+      +'<div class="tw-row"><div class="k">연애·관계</div><div class="v">'+esc(c.love)+'</div></div>'
+      +'<div class="tw-row"><div class="k">주의점</div><div class="v">'+esc(c.warn)+'</div></div>'
+      +'</div>'
+      +'<div class="tw-actions">'
+      +'<button class="btn-go" type="button" id="twGoSaju">🔮 내 사주로 더 자세히 보기</button>'
+      +'<button class="btn-ghost" type="button" id="twAgain">카드 다시 뽑기</button>'
+      +'</div>';
+  }
+  function twShowOut(c){
+    var out=$('twOut');
+    out.innerHTML=twOutHtml(c);
+    out.classList.add('on');
+    var g=$('twGoSaju'), a=$('twAgain');
+    if(g) g.onclick=goSaju;
+    if(a) a.onclick=function(){
+      tw.revealed=false;
+      $('twCard').classList.remove('flip');
+      $('twOut').classList.remove('on');
+      $('twOut').innerHTML='';
+      $('twHint').innerHTML='카드를 다시 골라 보세요…';
+      setTimeout(function(){
+        var pick=tarotPick(tw.idx);
+        tw.idx=pick.idx; tw.card=pick.card; tw.revealed=true;
+        $('twFront').innerHTML=twFrontHtml(pick.card);
+        $('twCard').classList.add('flip');
+        $('twHint').innerHTML='<b>'+esc(pick.card.ko)+'</b> · '+esc(pick.card.en)+' — 새로 뽑은 카드';
+        setTimeout(function(){ twShowOut(pick.card); },560);
+      },680);
+    };
+  }
+  function twOpen(){
+    if(tw.revealed) return;
+    var c=tw.card; if(!c) return;
+    tw.revealed=true;
+    $('twFront').innerHTML=twFrontHtml(c);
+    $('twCard').classList.add('flip');
+    $('twCard').setAttribute('aria-label', c.ko+' 카드 — 결과가 열렸습니다');
+    $('twHint').innerHTML='<b>'+esc(c.ko)+'</b> · '+esc(c.en)+' — 오늘의 카드';
+    setTimeout(function(){ twShowOut(c); },520);
+  }
+  function twInit(){
+    var day=tarotOfDay();
+    tw.day=day; tw.card=day.card; tw.idx=day.idx;
+    $('twFront').innerHTML=twFrontHtml(day.card);
+    $('twCard').onclick=function(){ if(!tw.revealed) twOpen(); };
+    $('twCard').addEventListener('keydown',function(e){
+      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); if(!tw.revealed) twOpen(); }
+    });
+  }
+
+  /* ══════════ 2. 2027 띠별 운세 ══════════ */
+  function zzInit(){
+    var grid=$('zzGrid'), h='';
+    for(var i=0;i<TTI.length;i++){
+      var d=TTI[i];
+      h+='<button class="zz-btn" type="button" data-b="'+d.b+'" aria-label="'+esc(d.nm)+' 2027 운세">'
+        +'<span class="em">'+d.emo+'</span><span class="nm">'+esc(d.nm.replace('띠',''))+'</span>'
+        +'<span class="yr">'+esc(d.hj)+'</span></button>';
+    }
+    grid.innerHTML=h;
+    grid.addEventListener('click',function(e){
+      var t=e.target;
+      while(t && t!==grid && !(t.getAttribute && t.getAttribute('data-b')!=null)) t=t.parentNode;
+      if(!t || t===grid) return;
+      zzRender(+t.getAttribute('data-b'));
+    });
+    var r=window.__sajuResult;
+    if(r && r.p && r.p.year && r.p.year.branch!=null){
+      var b=r.p.year.branch;
+      if(b>=0 && b<12) zzRender(b,true);
+    }
+  }
+  function chip(m){ return '<span class="chip">'+m+'월</span>'; }
+  function zzRender(b,fromMySaju){
+    var info=ttiInfo(b), d=info.item, out=$('zzOut');
+    var btns=$('zzGrid').querySelectorAll('.zz-btn');
+    for(var i=0;i<btns.length;i++) btns[i].classList.toggle('on', +btns[i].getAttribute('data-b')===b);
+    var good=info.good.length?info.good.map(chip).join(''):'<span class="chip">특별히 강한 달은 없음</span>';
+    var warn=info.warn.length?info.warn.map(chip).join(''):'<span class="chip">따로 없음</span>';
+    out.innerHTML='<div class="zz-head"><span class="t">'+d.emo+' '+esc(d.nm)+' '+d.hj+' · 2027 정미년</span>'
+        +'<span class="s">'+info.score+'점</span></div>'
+      +'<div class="zz-rel">2027년 未와 '+esc(info.relKo)+' · '+esc(info.band)
+        +(fromMySaju?' · <b>내 사주로 짚은 띠</b>':'')+'</div>'
+      +'<p class="zz-txt">'+esc(d.sum)+'</p>'
+      +'<div class="zz-months">'
+        +'<div class="zz-mrow"><div class="k">길한 달</div><div class="v">'+good+'</div></div>'
+        +'<div class="zz-mrow"><div class="k">주의할 달</div><div class="v">'+warn+'</div></div>'
+        +'<div class="zz-mrow"><div class="k">출생 연도</div><div class="v">'+esc(d.years)+'</div></div>'
+      +'</div>'
+      +'<div class="zz-warn"><b>주의할 점</b> — '+esc(d.warn)+'</div>'
+      +'<div class="tw-actions"><button class="btn-go" type="button" id="zzGoSaju">🔮 내 생년월일시로 정확히 보기</button></div>';
+    out.classList.add('on');
+    var g=$('zzGoSaju'); if(g) g.onclick=goSaju;
+  }
+
+  /* ══════════ 3. 심층 리포트 · PDF ══════════ */
+  function buildReport(r){
+    var d=$('printDoc'); if(!d||!r) return;
+    var nm=(r.input.name||'').trim();
+    var P=r.p, now=new Date();
+    var keys=['year','month','day','hour'], lab=['년주','월주','일주','시주'], subs=['조상·사회','부모·직장','나·배우자','자녀·말년'];
+    var th='',tr='',trs='',trk='';
+    for(var i=0;i<4;i++){
+      var p=P[keys[i]];
+      th+='<th>'+lab[i]+'</th>';
+      tr+='<td>'+(p?S_HANJA[p.stem]+'<br><span class="p-small">'+ELEM_KO[S_ELEM[p.stem]]+'</span>':'?')+'</td>';
+      trs+='<td>'+(p?B_HANJA[p.branch]+'<br><span class="p-small">'+ELEM_KO[B_ELEM[p.branch]]+'</span>':'모름')+'</td>';
+      trk+='<td>'+subs[i]+'</td>';
+    }
+    var cnt=r.stats.cnt, elemRow='', elemCnt='';
+    for(var e=0;e<5;e++){ elemRow+='<th>'+ELEM_KO[e]+' '+ELEM_HANJA[e]+'</th>'; elemCnt+='<td class="num">'+cnt[e]+'</td>'; }
+
+    var five=[['재물운',r.scores.money],['직업·사업운',r.scores.work],['애정·가정운',r.scores.love],['건강운',r.scores.health],['대인운',r.scores.social]];
+    var fh='';
+    for(var f=0;f<five.length;f++) fh+='<tr><td>'+five[f][0]+'</td><td class="num">'+five[f][1]+'점</td><td>'+scoreLabel(five[f][1])+'</td></tr>';
+
+    var core=[
+      ['💰 재물운 &amp; 금전운',r.scores.money,TG_MONEY[r.tgStem]],
+      ['💼 직장운 &amp; 사업운',r.scores.work,TG_WORK[r.tgBranch]],
+      ['🏡 애정운 &amp; 가정운',r.scores.love,LOVE_TEXT[r.rel].t+' '+LOVE_TEXT[r.rel].p],
+      ['🌿 건강운 &amp; 활력',r.scores.health,HEALTH_WEAK[r.stats.minIdx]+' 넘치는 '+ELEM_KO[r.stats.maxIdx]+' 기운은 '+HEALTH_STRONG[r.stats.maxIdx]]
+    ];
+    var ch='';
+    for(var c=0;c<core.length;c++){
+      ch+='<h3>'+core[c][0]+' · '+core[c][1]+'점 ('+scoreLabel(core[c][1])+')</h3><p>'+esc(core[c][2])+'</p>';
+    }
+
+    var mh='';
+    for(var m=0;m<r.months.length;m++){
+      var mo=r.months[m];
+      mh+='<tr><td class="num">'+mo.label+'</td><td class="num">'+mo.gan+'</td><td class="num">'+mo.score+'</td><td class="num">'+mo.band+'</td><td>'+esc(mo.line)+' '+esc(mo.action)+'</td></tr>';
+    }
+
+    var rx=window.__rx||wellnessRx(r.stats,r.dayStem);
+    var y=r.stats.yongsin, tp=TIPS[y];
+    var itemPack=ITEMS[y]||ITEMS[0];
+    var ih='';
+    for(var it=0;it<itemPack.items.length;it++) ih+='<li>'+esc(itemPack.items[it].n)+' — '+esc(itemPack.items[it].w)+'</li>';
+    if(itemPack.note) ih+='<li class="p-small">※ '+esc(itemPack.note)+'</li>';
+
+    var radar=($('radarWrap')&&$('radarWrap').innerHTML)||'';
+    var meta=[];
+    if(r.input.cal==='l'&&r.lunarInfo) meta.push('음력 '+r.lunarInfo.y+'.'+r.lunarInfo.m+'.'+r.lunarInfo.d+(r.lunarInfo.leap?'(윤달)':''));
+    meta.push('양력 '+r.solar.y+'.'+r.solar.m+'.'+r.solar.d+(r.input.hour==null?' · 시간 모름':' '+pad(r.input.hour)+':00경'));
+    meta.push(r.animal+'띠');
+    if(r.lunar) meta.push('음력 '+r.lunar.y+'.'+r.lunar.m+'.'+r.lunar.d+(r.lunar.leap?'(윤달)':''));
+
+    d.innerHTML='<div class="p-head">'
+      +'<div class="p-kicker">2027 정미년(丁未年) · 내 사주 심층 리포트</div>'
+      +'<h1>'+(nm?esc(nm)+'님의 2027년 사주 리포트':'나의 2027년 사주 리포트')+'</h1>'
+      +'<div class="p-meta">'+esc(meta.join(' · '))+' · 종합 지수 <b>'+r.scores.total+'점</b> ('+scoreLabel(r.scores.total)+')<br>'
+      +'<span class="p-small">발행 '+now.getFullYear()+'.'+pad(now.getMonth()+1)+'.'+pad(now.getDate())+' · '+esc(CANON)+' · 입력한 생년월일시는 브라우저 안에서만 계산되었습니다.</span></div></div>'
+
+      +'<section><h2>1. 사주 명식</h2>'
+      +'<table><tr><th>구분</th>'+th+'</tr><tr><td>천간</td>'+tr+'</tr><tr><td>지지</td>'+trs+'</tr><tr><td>역할</td>'+trk+'</tr></table>'
+      +'<p><b>일간 '+S_HANJA[r.dayStem]+'('+S_KO[r.dayStem]+') '+ELEM_HANJA[S_ELEM[r.dayStem]]+' · 일주 '+S_HANJA[r.dayStem]+B_HANJA[r.dayBranch]+'</b> — '+esc(DAY_MASTER[r.dayStem])+'</p>'
+      +'<p>명식의 기운은 <b>'+r.stats.level+'</b>으로 읽혀, 2027년에 부족한 <b>'+ELEM_KO[r.stats.minIdx]+'('+ELEM_HANJA[r.stats.minIdx]+')</b> 기운을 보완하는 것이 올해 개운의 핵심입니다.</p>'
+      +'<table><tr><th>오행</th>'+elemRow+'</tr><tr><td>개수</td>'+elemCnt+'</tr></table></section>'
+
+      +'<section><h2>2. 5대 운세 오각형</h2><div class="p-row">'
+      +'<div class="p-radar">'+radar+'</div>'
+      +'<div><table><tr><th>운세</th><th>점수</th><th>평가</th></tr>'+fh+'</table>'
+      +'<p class="p-small">오각형은 재물·직업·애정·건강·대인 다섯 운을 100점 기준으로 이은 그래프입니다.</p></div>'
+      +'</div></section>'
+
+      +'<section><h2>3. 2027 정미년 핵심운</h2>'+ch+'</section>'
+
+      +'<section><h2>4. 12개월 운세 캘린더 (절기 월 기준)</h2>'
+      +'<table><tr><th>월</th><th>간지</th><th>점수</th><th>평가</th><th>핵심</th></tr>'+mh+'</table></section>'
+
+      +'<section><h2>5. 공간·웰니스 개운 처방</h2>'
+      +'<table>'
+      +'<tr><th>공간·인테리어</th><td>색감 '+esc(rx.space.color)+' · 소재 '+esc(rx.space.material)+' · 책상 '+esc(rx.space.desk)+' · 침실 '+esc(rx.space.bed)+'</td></tr>'
+      +'<tr><th>여행·나들이</th><td>방향 '+esc(rx.travel.dir)+' · '+esc(rx.travel.places)+' · '+esc(rx.travel.style)+'</td></tr>'
+      +'<tr><th>웰니스 루틴</th><td>'+esc(rx.wellness['do'])+' — '+esc(rx.wellness.why)+'</td></tr>'
+      +'<tr><th>오늘의 한 줄</th><td>'+esc(rx.line)+'</td></tr>'
+      +'</table></section>'
+
+      +'<section><h2>6. 2027년 맞춤 개운법</h2>'
+      +'<table>'
+      +'<tr><th>행운의 색</th><td>'+esc(tp.c)+'</td><th>행운의 방위</th><td>'+esc(tp.d)+'</td></tr>'
+      +'<tr><th>행운의 숫자</th><td>'+esc(tp.n)+'</td><th>두면 좋은 것</th><td>'+esc(tp.i)+'</td></tr>'
+      +'<tr><th>행동 처방</th><td colspan="3">'+esc(tp.a)+' ('+ELEM_KO[y]+' 기운 보충)</td></tr>'
+      +'</table>'
+      +'<h3>보완 오행 '+ELEM_KO[y]+'('+ELEM_HANJA[y]+') 개운템 · sy스토어 실상품</h3>'
+      +'<ul>'+ih+'</ul></section>'
+
+      +'<footer><p class="p-small">이 리포트는 사주 명리학의 천간·지지·오행·십성 이론으로 계산한 참고용 풀이입니다. 절기는 태양황경, 표준시(KST) 기준이며 출생지의 진태양시 보정은 하지 않았습니다. 의료·투자·법률 판단의 근거로 사용하지 마세요.</p>'
+      +'<p class="p-small">2027 정미년 무료 사주풀이 · 오늘의 타로 · 2027 띠별 운세 · 2인 궁합 — '+esc(CANON)+'</p></footer>';
+  }
+  window.__buildReport=buildReport;
+
+  if($('btnReport')){
+    $('btnReport').addEventListener('click',function(){
+      var r=window.__sajuResult;
+      if(!r){ toast('먼저 사주를 입력해 주세요.'); return; }
+      try{ buildReport(r); }catch(e){ toast('리포트를 만들지 못했습니다. 새로고침 후 다시 시도해 주세요.'); return; }
+      toast('인쇄 창에서 대상 프린터를 “PDF로 저장”으로 고르세요.');
+      setTimeout(function(){ try{ window.print(); }catch(e){} },260);
+    });
+  }
+
+  /* 탭을 처음 열 때 한 번만 초기화 */
+  window.__tarotShow=function(){
+    if(tw.inited) return;
+    tw.inited=true;
+    try{ twInit(); }catch(e){}
+    try{ zzInit(); }catch(e){}
+  };
+})();
+</script>
+
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -2198,9 +2839,15 @@ function compatHeadline(t){
     {"@type":"Question","name":"같은 생일이면 결과가 똑같은가요?","acceptedAnswer":{"@type":"Answer","text":"태어난 해·월·일·시와 성별이 같다면 같은 명식이므로 결과도 같습니다. 명식에서 도출되는 십성·오행·합충 관계에 따라 문장을 조합합니다."}},
     {"@type":"Question","name":"공간·웰니스 처방은 어떻게 정해지나요?","acceptedAnswer":{"@type":"Answer","text":"사주 여덟 글자의 오행 분포에서 가장 부족한 기운(보완 오행)과 일간의 강약을 기준으로 색감·소재·배치, 방향과 장소 유형, 생활 루틴을 구성합니다. 같은 오행이라도 신강·중화·신약에 따라 조언의 방향이 달라집니다."}},
     {"@type":"Question","name":"2인 궁합은 무엇을 보고 점수를 내나요?","acceptedAnswer":{"@type":"Answer","text":"일간 오행의 상생·상극, 일지의 육합·삼합·충·형·파·해, 서로의 빈 오행 보완, 두 명식의 오행 균형을 계산하고 연애·부부·직장에 가중치를 달리 적용합니다."}},
+    {"@type":"Question","name":"개운템 추천과 쿠팡 링크는 광고인가요?","acceptedAnswer":{"@type":"Answer","text":"개운템은 부족한 오행을 보완하는 기준으로 sy스토어(쿠팡 마이스토어)에 실제 등록된 상품 중에서 골랐습니다. 스토어에 해당 오행의 물건이 없으면 가장 가까운 대체 상품과 그 이유를 함께 안내합니다. 쿠팡 링크는 제휴 활동이며 가격과 조건은 쿠팡에서 확인할 수 있습니다."}},
+    {"@type":"Question","name":"오늘의 타로는 어떻게 뽑나요?","acceptedAnswer":{"@type":"Answer","text":"메이저 아르카나 22장 중 한 장을 날짜로 정해 보여줍니다. 같은 날에는 같은 카드가 나오고 자정이 지나면 바뀝니다. 카드마다 오늘의 핵심 메시지와 재물·연애·주의점을 담았습니다."}},
+    {"@type":"Question","name":"2027 띠별 운세는 어떻게 계산하나요?","acceptedAnswer":{"@type":"Answer","text":"태어난 해의 지지와 2027년 未의 육합·삼합·충·형·파·해 관계, 그리고 2027년 12개월의 절기 월과의 관계를 계산해 총운 점수·길한 달·주의할 달을 냅니다."}},
     {"@type":"Question","name":"입력한 생년월일은 어디에 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"저장되지 않습니다. 서버가 없는 정적 페이지이며 계산은 전부 브라우저 안에서 이뤄집니다."}}
   ]
 }
 </script>
+
+<!-- 인쇄·PDF 전용 리포트(화면에서는 숨김, JS가 채운다) -->
+<div id="printDoc" aria-hidden="true"></div>
 </body>
 </html>
