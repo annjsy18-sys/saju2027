@@ -2112,7 +2112,7 @@ function compatHeadline(t){
     for(var c=0;c<chips.length;c++) chh+='<span>'+chips[c]+'</span>';
     $('chips').innerHTML=chh;
 
-    $('disclaimer').innerHTML='<b>참고 안내</b> — 이 결과는 사주 명리학의 천간·지지·오행·십성 이론으로 계산한 참고용 풀이입니다. '
+    $('disclaimer').innerHTML='이 결과는 사주 명리학의 천간·지지·오행·십성 이론으로 계산한 참고용 풀이입니다. '
       +'절기는 태양황경으로 계산했고, 표준시(KST) 기준이며 출생지의 진태양시 보정은 하지 않았습니다. '
       +'의료·투자·법률 판단의 근거로 사용하지 마세요. 입력한 생년월일시는 서버로 전송되지 않으며 어디에도 저장되지 않습니다.';
 
@@ -2468,7 +2468,7 @@ function compatHeadline(t){
     $('itemList').innerHTML=h;
     var t=$('itemSec').querySelector('.sec-t');
     if(t) t.innerHTML='<i class="dot"></i>부족한 '+ELEM_KO[e]+'('+ELEM_HANJA[e]+') 기운을 채우는 개운템'
-      +' <span class="sub">sy스토어 실상품 '+list.length+'종</span>';
+      +' <span class="sub">스토어 '+list.length+'종</span>';
     $('coupangBtn').setAttribute('href',COUPANG_URL);
   }
 
