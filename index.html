@@ -2456,6 +2456,12 @@ function compatHeadline(t){
   function point(k,v){
     return '<div class="cp-point"><div class="k">'+esc(k)+'</div><div class="v">'+v+'</div></div>';
   }
+  /* 이름 뒤 조사: 받침 있으면 '이', 없으면 '가' */
+  function withKa(n){
+    var s=String(n||''), c=s.charCodeAt(s.length-1);
+    if(c>=0xAC00&&c<=0xD7A3) return s+((((c-0xAC00)%28)===0)?'가':'이');
+    return s+'가';
+  }
   function renderCompat(res,A,B){
     var nmA=A.name||'나', nmB=B.name||'상대';
     $('cpWho').textContent=nmA+' × '+nmB+' · '+A.y+'.'+pad(A.m)+'.'+pad(A.d)+' · '+B.y+'.'+pad(B.m)+'.'+pad(B.d);
@@ -2490,7 +2496,7 @@ function compatHeadline(t){
         var n=res.compNotes[k];
         notes.push((n.who==='상대')
           ? (nmB+'에게 '+ELEM_KO[n.e]+'('+ELEM_HANJA[n.e]+') 기운이 '+n.n+'개, '+nmA+'에게는 없습니다 — '+nmB+'가 '+nmA+'의 빈자리를 채워 줍니다.')
-          : (nmA+'에게 '+ELEM_KO[n.e]+'('+ELEM_HANJA[n.e]+') 기운이 '+n.n+'개, '+nmB+'에게는 없습니다 — '+nmA+'가 '+nmB+'의 빈자리를 채워 줍니다.'));
+          : (nmA+'에게 '+ELEM_KO[n.e]+'('+ELEM_HANJA[n.e]+') 기운이 '+n.n+'개, '+nmB+'에게는 없습니다 — '+withKa(nmA)+' '+nmB+'의 빈자리를 채워 줍니다.'));
       }
       ph+=point('오행 보완',notes.join(' '));
     } else {
