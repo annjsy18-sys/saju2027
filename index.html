@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>2027 정미년 무료 사주풀이 · AI 신년운세 테스트 | 재물운·건강운·개운법</title>
-<meta name="description" content="생년월일시로 사주팔자(천간·지지·오행)를 계산해 2027 정미년(丁未年) 신년운세를 풀이합니다. 재물운, 직장운, 애정운, 건강운과 월별 흐름, 개운법까지 무료로 확인하세요. 설치 없이 3초, 모든 계산은 내 브라우저에서만 이뤄집니다.">
+<meta name="description" content="생년월일시로 사주팔자(천간·지지·오행)를 계산해 2027 정미년(丁未年) 신년운세를 풀이합니다. 재물운, 직장운, 애정운, 건강운과 월별 흐름, 오행으로 짜는 공간·웰니스 개운 처방까지 무료로 확인하세요. 설치 없이 3초, 모든 계산은 내 브라우저에서만 이뤄집니다.">
 <meta name="keywords" content="2027 신년운세, 정미년, 사주풀이, 무료 사주, 사주팔자, 오행, 재물운, 토정비결, 만세력">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#5d1313">
@@ -106,7 +106,7 @@
   .res-body{padding:22px 20px 26px}
 
   .sec{margin-bottom:26px}
-  .sec-t{display:flex;align-items:center;gap:8px;font-size:16.5px;font-weight:800;margin-bottom:12px}
+  .sec-t{display:flex;align-items:center;gap:8px;font-size:16.5px;font-weight:800;margin-bottom:12px;text-wrap:balance}
   .sec-t .dot{width:6px;height:6px;border-radius:50%;background:var(--wine);flex:0 0 6px}
   .sec-t .sub{font-size:11.5px;font-weight:500;color:#9a8b7c;margin-left:auto}
 
@@ -160,6 +160,24 @@
   .tip .k{font-size:11px;color:#9a8b7c;font-weight:800;margin-bottom:3px}
   .tip .v{font-size:13.5px;font-weight:700;color:#3b3129;line-height:1.5}
 
+  /* space · wellness prescription */
+  .rx-list{display:grid;gap:10px}
+  .rx-card{border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:14px;
+    padding:14px 15px;background:#fffdf9}
+  .rx-card .rh{display:flex;align-items:center;gap:8px;margin-bottom:9px}
+  .rx-card .rh h4{font-size:14.5px;font-weight:800}
+  .rx-row{display:flex;gap:9px;margin-bottom:6px}
+  .rx-row:last-child{margin-bottom:0}
+  .rx-row .k{flex:0 0 46px;font-size:11.5px;font-weight:800;color:#9a7d2a;padding-top:2px}
+  .rx-row .v{flex:1;font-size:13.3px;color:#4a3f34;line-height:1.66}
+  .rx-note{background:#fbf5e9;border:1px solid #f0e2c6;border-radius:10px;padding:9px 11px;
+    font-size:12.5px;color:#5d5246;line-height:1.62;margin-top:9px}
+  .rx-quote{margin-top:9px;border-top:1px dashed #e6d9c1;padding-top:10px;
+    font-family:'Nanum Myeongjo','Noto Serif KR',serif;font-size:14.5px;font-weight:800;
+    color:var(--wine);line-height:1.62}
+  .rx-sub{font-size:12.5px;color:#5d5246;line-height:1.62;margin-top:2px}
+  .rx-basis{font-size:11.5px;color:#9a8b7c;line-height:1.65;margin-top:10px}
+
   .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
   .chips span{font-size:12px;background:#f7efdd;color:#7d6a3f;border-radius:20px;padding:4px 12px;font-weight:700}
 
@@ -197,6 +215,7 @@
   @media (max-width:360px){
     .hero h1{font-size:23px}
     .pil .ch{font-size:22px}
+    .rx-row .k{flex:0 0 40px}
     .months{grid-template-columns:1fr}
     .zodiac{grid-template-columns:1fr}
   }
@@ -305,6 +324,13 @@
         <div id="fortunes"></div>
       </div>
 
+      <!-- 공간·웰니스 처방 -->
+      <div class="sec">
+        <div class="sec-t"><i class="dot"></i>나만의 공간·웰니스 개운 처방</div>
+        <div class="rx-list" id="rxList"></div>
+        <p class="rx-basis" id="rxBasis"></p>
+      </div>
+
       <!-- 월별 -->
       <div class="sec">
         <div class="sec-t"><i class="dot"></i>2027년 월별 흐름 <span class="sub">절기 기준</span></div>
@@ -337,6 +363,7 @@
     <h3>사주는 어떻게 계산하나</h3>
     <p>사주팔자는 태어난 해·달·날·시를 각각 <strong>천간(하늘의 기운)과 지지(땅의 기운)</strong> 두 글자로 세운 여덟 글자입니다. 이 사이트는 해의 경계를 <strong>입춘(2월 4일경)</strong>, 달의 경계를 <strong>12절기</strong>로 잡습니다. 즉 1월 1일이 아니라 입춘이 지나야 새해의 기운으로 바뀌며, 태어난 시각이 절기를 넘겼는지까지 계산합니다. 음력으로 입력하면 양력으로 바꾼 뒤 같은 방식으로 계산합니다. 출생 시각이 밤 11시 이후라면 다음 날의 일진(日辰)을 기준으로 삼는 전통 방식(야자시)을 따릅니다.</p>
     <p>계산된 여덟 글자의 <strong>오행(목·화·토·금·수)</strong> 분포를 세어 어느 기운이 넘치고 어느 기운이 비었는지 보고, 일간(일주의 천간, 사주의 주인)이 강한지 약한지 판단합니다. 2027년의 천간 丁火와 지지 未土가 내 일간에 대해 <strong>비견·식신·정재·정관·정인</strong> 등 열 가지 관계(십성) 중 무엇이 되는지에 따라 재물운과 직장운의 결이 완전히 달라집니다.</p>
+    <p>결과지의 <strong>「나만의 공간·웰니스 개운 처방」</strong>도 같은 계산에서 이어집니다. 여덟 글자에서 가장 적은 오행과 일간의 강약(신강·중화·신약)을 함께 보고, 그 기운을 보충하는 색감·소재·책상과 침실 배치, 가보기 좋은 방향과 장소 유형, 매일 실천할 수 있는 휴식 루틴 한 가지를 골라 제안합니다. 같은 오행이 부족해도 일간이 강한 사람과 약한 사람은 조언의 방향이 달라집니다.</p>
 
     <h3>2027 정미년 띠별 운세 한눈에</h3>
     <p>태어난 해의 띠(지지)와 2027년의 未가 어떤 관계를 맺는지로 본 큰 흐름입니다. 정확한 풀이는 위에서 생년월일시로 사주를 세워 확인하세요.</p>
@@ -364,6 +391,10 @@
     <details>
       <summary>음력 생일인데 그대로 입력해도 되나요?</summary>
       <div class="ans">됩니다. 달력 기준을 '음력'으로 고르면 입력값을 양력으로 변환해 계산합니다. 윤달(閏月)에 태어났다면 '윤달 출생'에 체크해 주세요. 변환은 1900~2049년 범위를 지원합니다.</div>
+    </details>
+    <details>
+      <summary>공간·웰니스 처방은 어떻게 정해지나요?</summary>
+      <div class="ans">사주 여덟 글자의 오행 분포에서 가장 부족한 기운(보완 오행)과 일간의 강약을 기준으로 구성합니다. 부족한 오행에 따라 어울리는 색감·소재·배치, 가보기 좋은 방향과 장소, 생활 루틴이 달라지고, 같은 오행이라도 신강·중화·신약에 따라 '더하라'와 '덜어내라'의 방향이 갈립니다. 미신적 처방이 아니라 일상을 정돈하는 제안이니 부담 없이 하나씩 골라 해보세요.</div>
     </details>
     <details>
       <summary>같은 생일이면 결과가 똑같은가요?</summary>
@@ -677,6 +708,94 @@ var TIPS=[
 {c:'흰색·금색',d:'서쪽',n:'4 · 9',i:'금속 소품, 종소리',a:'환기, 결단, 미뤄둔 정리'},
 {c:'검정·남색',d:'북쪽',n:'1 · 6',i:'유리·어항 소품',a:'물 자주 마시기, 수영, 명상'}
 ];
+/* ─────────── 공간·웰니스 개운 처방 데이터 (보완 오행 기준) ─────────── */
+var RX_SPACE=[
+{c:'연두·청록·올리브 그린',
+ m:'원목·라탄·린넨처럼 결이 살아 있는 소재',
+ d:'창을 옆에 두고 앉으세요. 책상 왼쪽에 잎이 작은 화분 하나, 서류는 세워서 보관하면 좋습니다',
+ b:'침대 머리를 동쪽으로 두고, 잠들기 전 창을 5분 열어 밤 공기를 바꿔 주세요'},
+{c:'붉은색·주황·코랄',
+ m:'면 패브릭·향초·따뜻한 색의 간접 조명',
+ d:'정면에 작은 스탠드를 두고, 앉는 자리는 남쪽 벽을 등지게 놓으세요',
+ b:'침실 조명은 낮게, 무드등 하나면 충분합니다. 잠자리 곁 휴대폰은 한 뼘 멀리 두세요'},
+{c:'노랑·베이지·황토·테라코타',
+ m:'도자기·황토색 러그·두툼한 면 소재',
+ d:'책상을 벽에 붙이지 말고 조금 떼어 놓으세요. 서랍에는 자주 쓰는 것만 남기세요',
+ b:'침대 아래와 주변을 비우고, 발이 닿는 자리에 러그를 깔아 주세요'},
+{c:'흰색·금색·은색·옅은 회색',
+ m:'금속·유리·대리석처럼 매끈한 소재',
+ d:'서쪽 벽에 책상을 두고, 서랍 하나는 완전히 비워 두세요. 서류는 파일 하나로 통일하세요',
+ b:'물건 수를 줄여 침실을 비우고, 이불과 커튼은 무채색으로 맞춰 주세요'},
+{c:'검정·남색·짙은 청색',
+ m:'유리·거울·물이 보이는 소품',
+ d:'책상 북쪽에 유리 소품 하나를 두고, 화면 밝기와 실내 조명은 조금 낮추세요',
+ b:'머리맡에 물컵이나 가습기를 두고, 커튼은 빛을 부드럽게 거르는 두께로 고르세요'}
+];
+var RX_TRAVEL=[
+{p:'숲길·수목원·도시공원·강변이 보이는 산책로',
+ s:'걷는 속도로 천천히. 30분만 걸어도 머리가 맑아집니다.'},
+{p:'온천·노을 명소·전망대·공연이나 전시가 있는 도심',
+ s:'사람이 있는 곳이 약이 됩니다. 주말에 한 번은 밖에서 누군가를 만나 보세요.'},
+{p:'들길·농원·둘레길·가까운 근교 마을',
+ s:'멀리 가지 않아도 됩니다. 반나절 당일치기로 충분합니다.'},
+{p:'미술관·건축이 좋은 동네·정돈된 도심 산책로',
+ s:'조용하고 정돈된 공간에서 미뤄둔 결정을 정리하면 답이 빨리 섭니다.'},
+{p:'바다·호수·강변·계곡·물가 카페',
+ s:'물을 보는 시간이 곧 충전입니다. 반나절 물가에 앉아 있는 것만으로 달라집니다.'}
+];
+var RX_WELLNESS=[
+{r:'아침에 커튼 열고 햇빛 10분, 눈을 감고 목을 좌우로 천천히 돌리기',
+ w:'간과 눈의 피로를 먼저 풀어 주는 루틴입니다.'},
+{r:'잠들기 한 시간 전 화면 끄고 따뜻한 차 한 잔, 방 온도 조금 낮추기',
+ w:'열과 생각이 위로 뜨는 것을 내려 주는 루틴입니다.'},
+{r:'식사 시간을 정해 두고 저녁은 가볍게, 식후 10분 걷기',
+ w:'소화와 생활 리듬을 함께 잡는 가장 기본이 되는 루틴입니다.'},
+{r:'창문 열고 4초 들어쉬고 6초 내쉬는 호흡 열 번, 서랍 하나 정리',
+ w:'긴장과 건조함을 함께 다스리는 루틴입니다.'},
+{r:'물을 한 번에 한 컵씩 하루 여섯 번, 잠들기 전 발을 따뜻하게',
+ w:'수분과 체온을 같이 챙기는 루틴입니다.'}
+];
+var RX_LEVEL={
+신강:{space:'기운이 넘치는 편이니 더 채우기보다 비우는 쪽이 잘 맞습니다. 물건과 일정을 함께 줄여 보세요.',
+  travel:'일정은 짧게, 이동은 적게 잡으세요. 사람이 몰리는 시간대는 피하는 편이 낫습니다.',
+  wellness:'에너지가 남아 잠이 얕아지기 쉬우니 저녁에는 몸을 쓰는 운동으로 기운을 빼 주세요.',
+  line:'힘은 이미 충분합니다. 오늘은 하나를 덜어내는 쪽으로 써 보세요.'},
+중화:{space:'균형이 잡혀 있으니 크게 바꾸기보다 한 가지만 꾸준히 유지하는 쪽이 효과적입니다.',
+  travel:'한 번에 한 곳만 정해 다녀오면 충분합니다. 익숙한 곳을 다시 찾는 것도 좋습니다.',
+  wellness:'지금 하고 있는 것 하나를 정해 일주일만 이어 가 보세요.',
+  line:'잘 되고 있는 일은 이미 하고 있습니다. 그것을 알아차리는 것부터 오늘을 시작해 보세요.'},
+신약:{space:'혼자 버티기보다 환경의 도움을 빌리는 편이 좋습니다. 가장 오래 머무는 자리부터 바꿔 보세요.',
+  travel:'무리한 일정은 피하고 반나절 안쪽으로 다녀오세요. 함께 가는 사람이 있으면 더 좋습니다.',
+  wellness:'무리하지 말고 15분 안쪽의 짧은 루틴으로 시작하세요. 작게 시작한 것이 오래 갑니다.',
+  line:'오늘 다 해내지 않아도 됩니다. 하나만 해내면 충분한 하루입니다.'}
+};
+var RX_LINES=[
+['오늘 심은 작은 습관 하나가 석 달 뒤의 나를 바꿉니다.','자라는 데는 시간이 걸립니다. 조급함을 내려놓는 것도 실력입니다.','뿌리는 보이지 않아도 나무는 자랍니다. 오늘의 노력도 그렇습니다.'],
+['밝히는 사람은 오래 갑니다. 오늘은 누군가에게 먼저 인사를 건네 보세요.','열기는 짧게, 온기는 길게. 오늘은 서두르지 않아도 됩니다.','빛은 나누면 커집니다. 잘한 일을 오늘 한 번 말해 보세요.'],
+['흔들리지 않는 하루가 쌓여 단단한 한 해가 됩니다.','오늘은 한 가지를 끝까지. 그게 가장 빠른 길입니다.','기대어 쉬어도 괜찮습니다. 쉼도 성실함의 한 부분입니다.'],
+['결정은 미루는 동안 무거워집니다. 오늘 하나만 정해 보세요.','덜어내는 용기가 더하는 용기보다 어렵습니다. 오늘은 하나만 비워 보세요.','완벽하지 않아도 괜찮습니다. 70%에서 시작한 사람이 결국 끝냅니다.'],
+['생각이 많아지는 날일수록 몸을 먼저 움직여 보세요.','흐르는 물처럼, 오늘은 막힌 곳 하나만 트여도 충분합니다.','답은 조용한 곳에서 옵니다. 오늘 10분은 아무것도 하지 않아도 됩니다.']
+];
+/* 보완 오행·강약을 반영해 4가지 처방을 만든다 */
+function wellnessRx(st, dayStem){
+  var e=(st&&st.yongsin!=null)?st.yongsin:0;
+  if(e<0||e>4) e=0;
+  var sp=RX_SPACE[e], tv=RX_TRAVEL[e], wl=RX_WELLNESS[e], tp=TIPS[e];
+  var lvKey=(st&&RX_LEVEL[st.level])?st.level:'중화';
+  var lv=RX_LEVEL[lvKey];
+  var order=['중화','신강','신약'], li=order.indexOf(lvKey);
+  if(li<0) li=0;
+  var lines=RX_LINES[e]||RX_LINES[0];
+  var ds=(dayStem==null?0:dayStem);
+  var line=lines[((ds%lines.length)+li)%lines.length];
+  return {
+    elem:e, elemKo:ELEM_KO[e], elemHanja:ELEM_HANJA[e], level:lvKey, dayStem:ds,
+    space:{color:sp.c, material:sp.m, desk:sp.d, bed:sp.b, note:lv.space},
+    travel:{dir:tp.d, places:tv.p, style:tv.s+' '+lv.travel},
+    wellness:{do:wl.r, why:wl.w, note:lv.wellness},
+    line:line, levelLine:lv.line
+  };
+}
 var MONTH_LINE={
 비견:'내 힘으로 밀어붙이기 좋은 달. 동료와의 역할 분담이 관건.',
 겁재:'지출과 경쟁이 늘어나는 달. 큰 계약은 서류부터 확인.',
@@ -930,6 +1049,40 @@ function scoreLabel(v){
     }
     $('fortunes').innerHTML=fh;
 
+    /* 공간·웰니스 개운 처방 */
+    var rx=wellnessRx(r.stats,ds);
+    var rxAcc=['var(--mok)','var(--hwa)','var(--to)','var(--geum)','var(--su)'][rx.elem];
+    function rxRow(k,v){ return '<div class="rx-row"><div class="k">'+k+'</div><div class="v">'+v+'</div></div>'; }
+    var rxh=''
+      +'<div class="rx-card" style="border-left-color:'+rxAcc+'">'
+        +'<div class="rh"><h4>🛋 공간·인테리어 풍수</h4></div>'
+        +rxRow('색감',rx.space.color)
+        +rxRow('소재',rx.space.material)
+        +rxRow('책상',rx.space.desk)
+        +rxRow('침실',rx.space.bed)
+        +'<div class="rx-note">'+rx.space.note+'</div>'
+      +'</div>'
+      +'<div class="rx-card" style="border-left-color:'+rxAcc+'">'
+        +'<div class="rh"><h4>🧭 여행·나들이 테마</h4></div>'
+        +rxRow('방향',rx.travel.dir)
+        +rxRow('장소',rx.travel.places)
+        +'<p class="rx-sub" style="margin-top:4px">'+rx.travel.style+'</p>'
+      +'</div>'
+      +'<div class="rx-card" style="border-left-color:'+rxAcc+'">'
+        +'<div class="rh"><h4>🍵 웰니스·컨디션 루틴</h4></div>'
+        +rxRow('실천',rx.wellness['do'])
+        +'<p class="rx-sub" style="margin-top:4px">'+rx.wellness.why+'</p>'
+        +'<div class="rx-note">'+rx.wellness.note+'</div>'
+      +'</div>'
+      +'<div class="rx-card" style="border-left-color:'+rxAcc+'">'
+        +'<div class="rh"><h4>✨ 오늘의 행동 동기 한 줄</h4></div>'
+        +'<div class="rx-quote">'+rx.line+'</div>'
+        +'<p class="rx-sub" style="margin-top:6px">'+rx.levelLine+'</p>'
+      +'</div>';
+    $('rxList').innerHTML=rxh;
+    $('rxBasis').innerHTML='내 사주에서 가장 적은 <b>'+ELEM_KO[rx.elem]+'('+ELEM_HANJA[rx.elem]+')</b> 기운을 보완하는 기준으로 구성했습니다. 명식의 기운은 <b>'+rx.level+'</b>으로 읽혀 그에 맞춰 조언의 방향을 달리했습니다.';
+    window.__rx=rx;
+
     /* 월별 */
     var mh='';
     for(var k=0;k<r.months.length;k++){
@@ -997,6 +1150,11 @@ function scoreLabel(v){
       +'재물운 '+r.scores.money+'점 / 직장운 '+r.scores.work+'점 / 애정운 '+r.scores.love+'점 / 건강운 '+r.scores.health+'점\n'
       +'2027 키워드: '+TG_KEY[r.tgStem].join(', ')+'\n'
       +'개운: '+TIPS[r.stats.yongsin].c+' · '+TIPS[r.stats.yongsin].d+' · '+TIPS[r.stats.yongsin].n;
+    if(window.__rx){
+      txt+='\n공간: '+window.__rx.space.color+' · '+window.__rx.space.material
+        +'\n웰니스: '+window.__rx.wellness['do']
+        +'\n오늘의 한 줄: '+window.__rx.line;
+    }
     if(navigator.clipboard&&navigator.clipboard.writeText){
       navigator.clipboard.writeText(txt).then(function(){ toast('결과 요약을 복사했습니다.'); },function(){ toast('복사가 차단되었습니다. 길게 눌러 선택해 주세요.'); });
     } else {
@@ -1036,6 +1194,7 @@ function scoreLabel(v){
     {"@type":"Question","name":"태어난 시간을 모르면 어떻게 되나요?","acceptedAnswer":{"@type":"Answer","text":"시주를 세울 수 없으므로 여섯 글자(연·월·일)만으로 계산합니다. 재물운·직장운의 큰 틀은 동일하게 나오지만 오행 분포의 정밀도는 조금 낮아집니다."}},
     {"@type":"Question","name":"음력 생일인데 그대로 입력해도 되나요?","acceptedAnswer":{"@type":"Answer","text":"달력 기준을 음력으로 고르면 양력으로 변환해 계산합니다. 윤달 출생은 체크해 주세요. 1900~2049년을 지원합니다."}},
     {"@type":"Question","name":"같은 생일이면 결과가 똑같은가요?","acceptedAnswer":{"@type":"Answer","text":"태어난 해·월·일·시와 성별이 같다면 같은 명식이므로 결과도 같습니다. 명식에서 도출되는 십성·오행·합충 관계에 따라 문장을 조합합니다."}},
+    {"@type":"Question","name":"공간·웰니스 처방은 어떻게 정해지나요?","acceptedAnswer":{"@type":"Answer","text":"사주 여덟 글자의 오행 분포에서 가장 부족한 기운(보완 오행)과 일간의 강약을 기준으로 색감·소재·배치, 방향과 장소 유형, 생활 루틴을 구성합니다. 같은 오행이라도 신강·중화·신약에 따라 조언의 방향이 달라집니다."}},
     {"@type":"Question","name":"입력한 생년월일은 어디에 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"저장되지 않습니다. 서버가 없는 정적 페이지이며 계산은 전부 브라우저 안에서 이뤄집니다."}}
   ]
 }
