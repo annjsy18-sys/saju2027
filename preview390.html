@@ -20,5 +20,22 @@
     <iframe id="m390" src="./index.html?v=4g" title="390px 미리보기"></iframe>
   </div>
 </div>
+<script>
+  /* 미리보기 전용: 스크롤바를 숨겨 390px 화면을 그대로 캡처한다. (사이트 본문에는 영향 없음) */
+  (function(){
+    var f=document.getElementById('m390');
+    function hide(){
+      try{
+        var d=f.contentDocument; if(!d) return;
+        if(d.getElementById('pv-hide-sb')) return;
+        var s=d.createElement('style'); s.id='pv-hide-sb';
+        s.textContent='html{scrollbar-width:none!important}body::-webkit-scrollbar,html::-webkit-scrollbar{display:none!important;width:0!important}';
+        (d.head||d.documentElement).appendChild(s);
+      }catch(e){}
+    }
+    f.addEventListener('load',hide);
+    setTimeout(hide,800);
+  })();
+</script>
 </body>
 </html>
