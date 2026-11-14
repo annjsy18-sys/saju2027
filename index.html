@@ -263,7 +263,7 @@
   .cookie-out .cl{font-family:'Nanum Myeongjo','Noto Serif KR',serif;font-size:15.5px;font-weight:800;
     color:var(--wine);line-height:1.65}
   .cookie-meta{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:12px}
-  .cookie-meta div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 4px;text-align:center}
+  .cookie-meta>div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 4px;text-align:center}
   .cookie-meta .k{font-size:10px;color:#9a8b7c;font-weight:800;margin-bottom:2px}
   .cookie-meta .v{font-size:12.8px;font-weight:800;color:#3b3129;line-height:1.3}
 
@@ -479,6 +479,7 @@
       <div class="actions">
         <button class="btn-share" id="btnShare" type="button">💬 친구에게 운세 공유하기</button>
         <button class="btn-card" id="btnCard" type="button">🖼 내 사주 결과 카드 저장 (이미지)</button>
+        <button class="btn-card" id="btnGoCompat" type="button">💞 2인 궁합도 보기</button>
         <button class="btn-copy" id="btnCopy" type="button">결과 요약 복사하기</button>
         <button class="btn-copy" id="btnCopyUrl" type="button">주소 복사해서 공유하기</button>
         <button class="btn-retry" id="btnRetry" type="button">다른 생년월일로 다시 보기</button>
@@ -1292,13 +1293,13 @@ chung:{t:'일지 충(沖)', s:'부딪힘이 잦지만, 그만큼 서로를 바�
 };
 var COMPAT_BAND={
 love:[{min:85,t:'첫 만남의 온도가 높은 조합입니다. 대화가 길어지고, 사소한 것도 함께 하고 싶어집니다. 지금의 속도를 유지하면 관계가 자연스럽게 깊어집니다.'},
-      {min:70,t:'편안함이 먼저 오는 조합입니다. 극적인 설렘보다 오래 가는 온도라, 자주 만나고 자주 이야기하는 쪽이 유리합니다.'},
+      {min:74,t:'편안함이 먼저 오는 조합입니다. 극적인 설렘보다 오래 가는 온도라, 자주 만나고 자주 이야기하는 쪽이 유리합니다.'},
       {min:0, t:'감정의 온도 차이가 있는 조합입니다. 서두르지 말고 한 번에 하나씩 맞춰 가세요. 취향이 다른 부분을 고치려 하기보다 인정하는 편이 빠릅니다.'}],
 marriage:[{min:85,t:'생활 리듬과 돈의 감각이 잘 맞습니다. 함께 사는 결정을 해도 무리 없고, 가계와 역할 분담이 자연스럽게 정해집니다.'},
-      {min:70,t:'부딪혀도 풀 수 있는 조합입니다. 생활비·가사·돌봄의 몫을 처음에 글로 정해 두면 이후가 편합니다.'},
+      {min:74,t:'부딪혀도 풀 수 있는 조합입니다. 생활비·가사·돌봄의 몫을 처음에 글로 정해 두면 이후가 편합니다.'},
       {min:0, t:'생활 방식의 차이가 큰 조합입니다. 함께 살기 전에 돈과 시간을 쓰는 방식을 구체적으로 맞춰 보세요. 그 대화 하나가 갈등의 절반을 줄입니다.'}],
 work:[{min:85,t:'역할 분담이 자연스럽게 이뤄지는 조합입니다. 한 사람이 기획하고 다른 사람이 실행하는 구조가 잘 맞습니다.'},
-      {min:70,t:'무난하게 협업할 수 있는 조합입니다. 보고 주기와 담당만 미리 정하면 마찰이 거의 없습니다.'},
+      {min:74,t:'무난하게 협업할 수 있는 조합입니다. 보고 주기와 담당만 미리 정하면 마찰이 거의 없습니다.'},
       {min:0, t:'일하는 속도와 기준이 다릅니다. 함께 일한다면 업무 범위와 마감을 문서로 정하고 시작하세요.'}]
 };
 var CX_THEME=[
@@ -1807,7 +1808,7 @@ function compatHeadline(t){
       '대인':'먼저 연락하는 쪽이 되세요. 소개와 인연이 다음 일을 물고 옵니다.'
     }[lo.k];
     $('radarNote').innerHTML='가장 힘이 실린 운은 <b>'+hi.k+'운 '+hi.v+'점</b>, 보완이 필요한 운은 <b>'+lo.k+'운 '+lo.v+'점</b>입니다. '
-      +((lo.v>=84)
+      +((lo.v>=80)
         ? '다섯 운이 모두 84점 이상으로 고르게 높습니다. 어느 하나에 기대기보다 지금의 흐름을 유지하는 편이 좋습니다.'
         : lo.k+'운은 억지로 올리기보다 생활 습관으로 채우는 편이 효과적입니다. '+loAdv);
   }
@@ -1993,8 +1994,7 @@ function compatHeadline(t){
     }
     /* 개운 요약 */
     x.font='600 20px '+FONT; x.fillStyle=ink2;
-    x.fillText('개운 컬러 '+TIPS[lackE].c+' · 길한 방위 '+TIPS[lackE].d,90,1168);
-    x.fillText('두면 좋은 것: '+TIPS[lackE].i+' · 행운 숫자 '+TIPS[lackE].n,90,1192);
+    x.fillText('개운 컬러 '+TIPS[lackE].c+' · 길한 방위 '+TIPS[lackE].d,90,1168);    x.fillText('두면 좋은 것: '+TIPS[lackE].i+' · 행운 숫자 '+TIPS[lackE].n,90,1192);
 
     /* footer */
     x.fillStyle='#f3e9d7'; x.fillRect(0,1200,W,150);
@@ -2037,13 +2037,16 @@ function compatHeadline(t){
       if(!r){ toast('먼저 사주를 입력해 주세요.'); return; }
       try{
         var c=buildCard(r);
-        var nm=(r.input.name||'saju').replace(/[^0-9A-Za-z가-힣]/g,'');
-        saveCanvas(c,'2027-saju-card-'+(nm||'me')+'.png');
+        var nm=((r.input.name||'').replace(/[^0-9A-Za-z가-힣]/g,''))||'nae-saju';
+        saveCanvas(c,'2027-saju-card-'+nm+'.png');
         toast('결과 카드를 이미지로 저장했습니다. 사진첩이나 다운로드 폴더를 확인하세요.');
       }catch(e){
         toast('이 브라우저에서는 이미지 저장이 차단되었습니다. 화면 캡처를 이용해 주세요.');
       }
     });
+  }
+  if($('btnGoCompat')){
+    $('btnGoCompat').addEventListener('click',function(){ showTab('gunghap'); });
   }
   if($('btnCopyUrl')){
     $('btnCopyUrl').addEventListener('click',function(){
