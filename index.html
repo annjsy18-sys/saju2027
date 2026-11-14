@@ -346,10 +346,10 @@
   .tw-row{display:flex;gap:9px;border-top:1px dashed #e6d9c1;padding-top:7px}
   .tw-row .k{flex:0 0 52px;font-size:11.3px;font-weight:800;color:#9a7d2a;padding-top:2px}
   .tw-row .v{flex:1;font-size:12.7px;color:#4a3f34;line-height:1.62}
-  .tw-actions{display:flex;gap:7px;margin-top:12px;flex-wrap:wrap;width:100%}
-  .btn-go{flex:1;min-width:148px;border:none;border-radius:12px;padding:13px;font-size:13.5px;font-weight:800;
+  .tw-actions{display:grid;grid-template-columns:1fr;gap:7px;margin-top:12px;width:100%}
+  .btn-go{width:100%;border:none;border-radius:12px;padding:13px;font-size:13.5px;font-weight:800;
     background:var(--wine);color:#fff;cursor:pointer;font-family:inherit}
-  .btn-ghost{flex:0 0 auto;border:1.5px solid #e2d6c3;border-radius:12px;padding:13px 13px;font-size:12.5px;
+  .btn-ghost{width:100%;border:1.5px solid #e2d6c3;border-radius:12px;padding:12px 13px;font-size:12.8px;
     font-weight:700;background:#fff;color:#6b5e51;cursor:pointer;font-family:inherit}
 
   /* ── 2027 띠별 운세 ── */
@@ -372,7 +372,7 @@
   .zz-months{display:grid;gap:6px;margin-top:10px}
   .zz-mrow{display:flex;gap:8px}
   .zz-mrow .k{flex:0 0 58px;font-size:11.3px;font-weight:800;color:#9a7d2a;padding-top:3px}
-  .zz-mrow .v{flex:1;color:#4a3f34;font-size:12.5px;line-height:1.55}
+  .zz-mrow .v{flex:1;color:#4a3f34;font-size:12.5px;line-height:1.55;word-break:keep-all;overflow-wrap:anywhere}
   .zz-mrow .chip{display:inline-block;background:#fff;border:1px solid #e9ddc7;border-radius:8px;
     padding:1px 7px;margin:0 3px 3px 0;font-size:11.3px;font-weight:700;color:#5d5246}
   .zz-warn{background:#fff7f5;border:1px solid #f0d9d3;border-radius:10px;padding:9px 11px;
@@ -446,7 +446,7 @@
     <span class="badge">2027 정미년(丁未年) · 붉은 양의 해</span>
     <h1>2027년, 내 사주에 <span class="gold">어떤 한 해</span>가 오는가</h1>
     <p>생년월일시로 사주팔자(천간·지지·오행)를 계산하고<br>2027 정미년의 재물운·직장운·애정운·건강운을 풀어드립니다.</p>
-    <div class="meta"><span>무료</span><span>회원가입 없음</span><span>3초 계산</span><span>오늘의 타로</span><span>2027 띠별 운세</span><span>PDF 리포트</span><span>입력값 서버 전송 없음</span></div>
+    <div class="meta"><span>무료</span><span>3초 계산</span><span>오늘의 타로</span><span>2027 띠별 운세</span><span>PDF 리포트</span><span>입력값 서버 전송 없음</span></div>
   </div>
 </header>
 
