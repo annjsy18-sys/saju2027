@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>2027 정미년 무료 사주풀이 · AI 신년운세 테스트 | 재물운·건강운·개운법</title>
-<meta name="description" content="생년월일시로 사주팔자(천간·지지·오행)를 계산해 2027 정미년(丁未年) 신년운세를 풀이합니다. 재물운, 직장운, 애정운, 건강운과 월별 흐름, 오행으로 짜는 공간·웰니스 개운 처방까지 무료로 확인하세요. 설치 없이 3초, 모든 계산은 내 브라우저에서만 이뤄집니다.">
-<meta name="keywords" content="2027 신년운세, 정미년, 사주풀이, 무료 사주, 사주팔자, 오행, 재물운, 토정비결, 만세력">
+<meta name="description" content="생년월일시로 사주팔자(천간·지지·오행)를 계산해 2027 정미년(丁未年) 신년운세를 풀이합니다. 재물운, 직장운, 애정운, 건강운, 대인운과 12개월 흐름, 오각형 운세 그래프, 오늘의 포춘쿠키, 2인 궁합, 오행으로 짜는 공간·웰니스 개운 처방까지 무료로 확인하세요. 설치 없이 3초, 모든 계산은 내 브라우저에서만 이뤄집니다.">
+<meta name="keywords" content="2027 신년운세, 정미년, 사주풀이, 무료 사주, 사주팔자, 오행, 재물운, 궁합, 2인궁합, 포춘쿠키, 토정비결, 만세력">
+<link rel="canonical" href="https://annjsy18-sys.github.io/saju2027/">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#5d1313">
 <meta property="og:type" content="website">
@@ -212,6 +213,96 @@
     font-size:13px;padding:11px 18px;border-radius:24px;opacity:0;pointer-events:none;transition:.25s;z-index:99}
   #toast.on{opacity:1;transform:translate(-50%,0)}
 
+  /* ── 탭 ── */
+  .tabs{position:sticky;top:0;z-index:30;display:flex;gap:6px;background:rgba(253,247,236,.97);
+    border:1px solid var(--line);border-radius:16px;padding:5px;margin-top:14px;
+    box-shadow:0 4px 14px rgba(87,16,16,.06)}
+  .tabs .tab{flex:1;border:none;background:none;font-family:inherit;font-size:14px;font-weight:800;
+    color:#8a7a63;padding:11px 8px;border-radius:12px;cursor:pointer;transition:.15s;line-height:1.2}
+  .tabs .tab.on{background:#fff;color:var(--wine);box-shadow:0 3px 10px rgba(87,16,16,.1)}
+
+  /* ── 오각형 레이더 ── */
+  .radar-wrap{background:#fffdf9;border:1px solid var(--line);border-radius:14px;padding:6px 2px 0}
+  .radar-wrap svg{display:block;width:100%;height:auto;max-width:320px;margin:0 auto}
+  .radar-note{font-size:12.5px;color:#5d5246;line-height:1.68;margin-top:10px}
+  .radar-note b{color:var(--wine)}
+  .radar-legend{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
+  .radar-legend .rl{display:flex;align-items:center;gap:6px;font-size:11.8px;color:#5d5246}
+  .radar-legend .rl i{width:8px;height:8px;border-radius:50%;flex:0 0 8px}
+  .radar-legend .rl b{margin-left:auto;color:var(--wine);font-size:12.2px}
+
+  /* ── 12개월 캘린더 ── */
+  .cal-sum{font-size:12.5px;color:#5d5246;line-height:1.7;background:#fbf5e9;border:1px solid #f0e2c6;
+    border-radius:11px;padding:10px 12px;margin-bottom:10px}
+  .cal-sum b{color:var(--wine)}
+  .cal-legend{display:flex;gap:10px;flex-wrap:wrap;font-size:11px;color:#9a8b7c;margin-bottom:10px}
+  .cal-legend span{display:flex;align-items:center;gap:4px}
+  .cal-legend i{width:7px;height:7px;border-radius:50%;display:inline-block}
+  .mo .top{display:flex;align-items:center;gap:5px;margin-bottom:4px}
+  .mo .top .bd{margin-left:auto;font-size:9.5px;font-weight:800;color:#fff;padding:1px 7px;border-radius:9px;white-space:nowrap}
+  .mo.good{border-color:#e3cf9c;background:linear-gradient(180deg,#fffcf2,#fff9ea)}
+  .mo.warn{border-color:#e6d3cb;background:#fffaf8}
+  .bd.g{background:#b8901c} .bd.n{background:#9c8f7d} .bd.w{background:#a8595b}
+  .mo .scv{font-size:11px;font-weight:800;color:#9a7d2a;margin-left:2px}
+  .mo .act{font-size:11.3px;color:#4a3f34;line-height:1.5;margin-top:2px}
+  .mo .act:before{content:"· ";color:var(--gold)}
+
+  /* ── 포춘쿠키 ── */
+  .cookie{width:100%;border:1.5px dashed #e0cfa8;background:linear-gradient(160deg,#fff8e6,#f7ecd4);
+    border-radius:16px;padding:22px 18px;cursor:pointer;font-family:inherit;display:flex;
+    flex-direction:column;align-items:center;gap:6px;transition:.2s}
+  .cookie .ck{font-size:46px;line-height:1;transition:transform .35s cubic-bezier(.3,1.4,.4,1);display:block}
+  .cookie .ct{font-size:13px;font-weight:800;color:#8a6a2a}
+  .cookie:active{transform:scale(.99)}
+  .cookie.crack .ck{transform:scale(1.14) rotate(6deg)}
+  .cookie.shake{animation:cks .45s ease}
+  @keyframes cks{0%,100%{transform:none}25%{transform:translateX(-3px) rotate(-2deg)}75%{transform:translateX(3px) rotate(2deg)}}
+  .cookie-out{display:none;margin-top:10px;border:1px solid #f0e2c6;background:#fffaf0;border-radius:14px;padding:15px 16px}
+  .cookie-out.on{display:block;animation:pop .35s ease}
+  @keyframes pop{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+  .cookie-out .cl{font-family:'Nanum Myeongjo','Noto Serif KR',serif;font-size:15.5px;font-weight:800;
+    color:var(--wine);line-height:1.65}
+  .cookie-meta{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:12px}
+  .cookie-meta div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 4px;text-align:center}
+  .cookie-meta .k{font-size:10px;color:#9a8b7c;font-weight:800;margin-bottom:2px}
+  .cookie-meta .v{font-size:12.8px;font-weight:800;color:#3b3129;line-height:1.3}
+
+  /* ── 개운템 · 제휴 ── */
+  .items{display:grid;gap:8px}
+  .item{display:flex;gap:10px;border:1px solid var(--line);border-radius:12px;padding:12px 13px;background:#fffdf9}
+  .item .no{flex:0 0 21px;width:21px;height:21px;border-radius:50%;background:var(--wine);color:#fff;
+    font-size:11px;font-weight:800;display:grid;place-items:center;margin-top:2px}
+  .item .nm{font-size:13.8px;font-weight:800;color:#3b3129;line-height:1.45}
+  .item .w{font-size:12.3px;color:#6b5e51;line-height:1.55;margin-top:2px}
+  .btn-coupang{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;margin-top:12px;
+    background:linear-gradient(135deg,#ff6b3d,#e23a17);color:#fff;text-decoration:none;font-size:15px;
+    font-weight:800;border-radius:13px;padding:15px;box-shadow:0 8px 20px rgba(226,58,23,.22)}
+  .btn-coupang:active{transform:scale(.99)}
+  .aff{font-size:10.8px;color:#9a8b7c;line-height:1.6;margin-top:8px}
+
+  /* ── 궁합 ── */
+  .cp-grid{display:grid;gap:12px}
+  .cp-person{border:1px solid var(--line);border-radius:14px;padding:13px 13px 4px;background:#fffdf9}
+  .cp-h{font-size:12.5px;font-weight:800;color:var(--wine);margin-bottom:10px}
+  .cp-person .field{margin-bottom:11px}
+  .cp-person .field label,.cp-person .field .lbl{font-size:12.5px;margin-bottom:5px}
+  .cp-person .field input[type=text],.cp-person .field input[type=date],.cp-person .field select{padding:10px 11px;font-size:14px;border-radius:10px}
+  .cp-person .seg label{padding:9px 4px;font-size:13px;border-radius:9px}
+  .cp-person .leap{display:none;font-size:12px;font-weight:700;color:#6b5e51;margin-top:6px}
+  .cp-person .field.leapf{display:none}
+  .cp-person .field.leapf.on{display:block}
+  @media (min-width:700px){ .cp-grid{grid-template-columns:1fr 1fr} }
+  .cp-points{display:grid;gap:8px}
+  .cp-point{border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:11px;padding:11px 13px;background:#fffdf9}
+  .cp-point .k{font-size:11.5px;font-weight:800;color:#9a7d2a;margin-bottom:3px}
+  .cp-point .v{font-size:12.8px;color:#4a3f34;line-height:1.65}
+  .cp-theme{border:1px solid var(--line);border-radius:13px;padding:14px;background:linear-gradient(160deg,#fffaf0,#fbf3e2)}
+  .cp-theme .p{font-family:'Nanum Myeongjo','Noto Serif KR',serif;font-size:15px;font-weight:800;color:var(--wine);line-height:1.55}
+  .cp-theme .s{font-size:12.8px;color:#5d5246;line-height:1.65;margin-top:6px}
+  .btn-card{width:100%;border:1.5px solid var(--wine);border-radius:13px;padding:14px;font-size:14.5px;
+    font-weight:800;background:#fff6f4;color:var(--wine);cursor:pointer;font-family:inherit;margin-top:8px}
+  #cardHolder{position:fixed;left:-9999px;top:0;opacity:0;pointer-events:none}
+
   @media (max-width:360px){
     .hero h1{font-size:23px}
     .pil .ch{font-size:22px}
@@ -239,6 +330,13 @@
 
 <main class="wrap">
 
+  <nav class="tabs" role="tablist" aria-label="메뉴">
+    <button class="tab on" type="button" role="tab" data-tab="saju" aria-selected="true">2027 내 사주운세</button>
+    <button class="tab" type="button" role="tab" data-tab="gunghap" aria-selected="false">2인 궁합 보기</button>
+  </nav>
+
+  <div id="tabSaju">
+
   <!-- ═══ 입력 폼 ═══ -->
   <section class="card" id="formCard">
     <div class="form-lead">
@@ -251,7 +349,7 @@
     <form id="sajuForm" autocomplete="off" novalidate>
       <div class="field">
         <label for="name">이름 <span class="hint">(선택 · 결과지에 표시됩니다)</span></label>
-        <input type="text" id="name" maxlength="20" placeholder="예: 김선영">
+        <input type="text" id="name" maxlength="20" placeholder="예: 홍길동">
       </div>
 
       <div class="field">
@@ -318,6 +416,14 @@
         <div class="bars" id="bars"></div>
       </div>
 
+      <!-- 5대 운세 오각형 -->
+      <div class="sec" id="radarSec">
+        <div class="sec-t"><i class="dot"></i>5대 운세 오각형 <span class="sub">재물·직업·애정·건강·대인</span></div>
+        <div class="radar-wrap" id="radarWrap"></div>
+        <div class="radar-legend" id="radarLegend"></div>
+        <p class="radar-note" id="radarNote"></p>
+      </div>
+
       <!-- 4대 운세 -->
       <div class="sec">
         <div class="sec-t"><i class="dot"></i>2027 정미년 4대 핵심운</div>
@@ -333,8 +439,24 @@
 
       <!-- 월별 -->
       <div class="sec">
-        <div class="sec-t"><i class="dot"></i>2027년 월별 흐름 <span class="sub">절기 기준</span></div>
+        <div class="sec-t"><i class="dot"></i>2027 정미년 12개월 운세 캘린더 <span class="sub">절기 기준</span></div>
+        <p class="cal-sum" id="calSum"></p>
+        <div class="cal-legend">
+          <span><i style="background:#b8901c"></i>길한 달 84점↑</span>
+          <span><i style="background:#9c8f7d"></i>무난한 달 76~83</span>
+          <span><i style="background:#a8595b"></i>주의할 달 75점↓</span>
+        </div>
         <div class="months" id="months"></div>
+      </div>
+
+      <!-- 포춘쿠키 -->
+      <div class="sec" id="cookieSec">
+        <div class="sec-t"><i class="dot"></i>오늘의 포춘쿠키 <span class="sub">탭해서 깨보세요</span></div>
+        <button class="cookie" id="cookieBtn" type="button" aria-expanded="false">
+          <span class="ck">🥠</span>
+          <span class="ct">오늘의 한 줄이 들어 있습니다</span>
+        </button>
+        <div class="cookie-out" id="cookieOut"></div>
       </div>
 
       <!-- 개운 -->
@@ -344,19 +466,28 @@
         <div class="chips" id="chips"></div>
       </div>
 
+      <!-- 개운템 · 제휴 -->
+      <div class="sec" id="itemSec">
+        <div class="sec-t"><i class="dot"></i>부족한 기운을 채우는 개운템 3가지</div>
+        <div class="items" id="itemList"></div>
+        <a class="btn-coupang" id="coupangBtn" href="https://influencers.coupang.com/s/annsy" target="_blank" rel="noopener sponsored">🛒 쿠팡 마이스토어에서 개운템 보기 →</a>
+        <p class="aff">이 페이지의 쿠팡 링크는 제휴 활동으로, 링크를 통해 구매가 이뤄지면 일정 수수료를 받을 수 있습니다. 상품 가격과 조건은 쿠팡에서 확인해 주세요. 사주 풀이는 재미와 참고용입니다.</p>
+      </div>
+
       <p class="disclaimer" id="disclaimer"></p>
 
       <div class="actions">
         <button class="btn-share" id="btnShare" type="button">💬 친구에게 운세 공유하기</button>
+        <button class="btn-card" id="btnCard" type="button">🖼 내 사주 결과 카드 저장 (이미지)</button>
         <button class="btn-copy" id="btnCopy" type="button">결과 요약 복사하기</button>
+        <button class="btn-copy" id="btnCopyUrl" type="button">주소 복사해서 공유하기</button>
         <button class="btn-retry" id="btnRetry" type="button">다른 생년월일로 다시 보기</button>
       </div>
     </div>
   </section>
 
   <!-- ═══ 정적 정보 콘텐츠 ═══ -->
-  <section class="card info" id="guide">
-    <h2>2027 정미년(丁未年), 어떤 해인가</h2>
+  <section class="card info" id="guide">    <h2>2027 정미년(丁未年), 어떤 해인가</h2>
     <p><strong>2027년은 정미년(丁未年)</strong>입니다. 천간은 <strong>정화(丁火)</strong>, 지지의 자리는 <strong>미토(未土)</strong>입니다. 십이지에서 未는 양(羊), 그것도 양의 기운이 살아 있는 '붉은 양'의 해이고, 육십갑자로는 44번째에 해당합니다. 같은 정미년은 60년마다 돌아오며, 직전은 1967년, 다음은 2087년입니다.</p>
     <p>정화는 모닥불·촛불처럼 <strong>가까이 있는 것을 데우는 불</strong>이고, 미토는 곡식이 익을 무렵의 <strong>부드럽지만 알찬 흙</strong>입니다. 이 조합은 겉으로 크게 요란하기보다 안쪽에서 서서히 결실을 만드는 성질이 있어, 2027년은 '벌린 일정에 이름을 붙이고, 뿌려둔 씨앗의 열매를 거두는 해'로 읽습니다. 그래서 이 사이트도 연도 총운만 보여주지 않고, 내 사주의 일간(나)과 정미년의 기운이 <strong>십성(十星)</strong>으로 어떻게 맞물리는지를 계산해 결과를 냅니다.</p>
 
@@ -405,10 +536,154 @@
       <div class="ans">재미와 참고용입니다. 사주는 의학적 진단도, 투자 권유도, 법률 판단도 아닙니다. 건강 이상이 느껴지면 병원에, 돈이 걸린 결정은 숫자와 계약서를 확인하세요. 이 사이트의 운세는 그 결정을 돕는 '생각의 재료'로만 쓰시길 권합니다.</div>
     </details>
     <details>
+      <summary>2인 궁합은 무엇을 보고 점수를 내나요?</summary>
+      <div class="ans">두 사람의 사주를 각각 세운 뒤 일간(일주의 천간) 오행이 서로 상생하는지 상극인지, 일지가 육합·삼합·충·형·파·해 중 무엇을 이루는지, 한 사람에게 비어 있는 오행을 상대가 채워주는지, 두 명식을 합쳤을 때 다섯 오행이 고루 채워지는지를 함께 계산합니다. 여기에 연애·부부·직장 세 가지 상황에 맞춘 가중치를 달리 적용해 점수를 냅니다.</div>
+    </details>
+    <details>
+      <summary>개운템 추천과 쿠팡 링크는 광고인가요?</summary>
+      <div class="ans">개운템은 사주에서 가장 부족한 오행을 보완하는 기준으로 고른 생활용품 예시이고, 쿠팡 마이스토어 링크는 제휴 활동입니다. 링크를 통해 구매가 이뤄지면 이 사이트가 일정 수수료를 받을 수 있으며, 상품 가격과 조건은 쿠팡에서 확인하실 수 있습니다. 구매를 권하는 것이 아니라 필요한 사람만 참고하도록 안내드립니다.</div>
+    </details>
+    <details>
       <summary>입력한 생년월일은 어디에 저장되나요?</summary>
       <div class="ans">어디에도 저장되지 않습니다. 이 페이지는 서버가 없는 정적 페이지이며, 계산은 전부 사용자의 브라우저(자바스크립트) 안에서 이뤄집니다. 입력값이 네트워크로 전송되는 코드는 이 페이지에 존재하지 않습니다.</div>
     </details>
   </section>
+
+  </div><!-- /tabSaju -->
+
+  <!-- ═══ 2인 궁합 탭 ═══ -->
+  <div id="tabGunghap" style="display:none">
+
+    <section class="card" id="compatCard">
+      <div class="form-lead">
+        <div class="num">2</div>
+        <div>
+          <h2>2인 궁합 보기</h2>
+          <p>두 사람의 생년월일만 있으면 됩니다. 시간을 모르면 비워두세요.</p>
+        </div>
+      </div>
+      <form id="compatForm" autocomplete="off" novalidate>
+        <div class="cp-grid">
+          <div class="cp-person">
+            <div class="cp-h">🙋 나</div>
+            <div class="field">
+              <label for="aName">이름 <span class="hint">(선택)</span></label>
+              <input type="text" id="aName" maxlength="20" placeholder="예: 나">
+            </div>
+            <div class="field">
+              <span class="lbl">성별</span>
+              <div class="seg" role="radiogroup" aria-label="내 성별">
+                <label><input type="radio" name="aGender" value="여" checked>여성</label>
+                <label><input type="radio" name="aGender" value="남">남성</label>
+              </div>
+            </div>
+            <div class="field">
+              <span class="lbl">달력 기준</span>
+              <div class="seg" role="radiogroup" aria-label="내 달력 기준">
+                <label><input type="radio" name="aCal" value="s" checked>양력</label>
+                <label><input type="radio" name="aCal" value="l">음력</label>
+              </div>
+            </div>
+            <div class="field">
+              <label for="aBirth">생년월일</label>
+              <input type="date" id="aBirth" min="1901-01-01" max="2026-12-31" required>
+            </div>
+            <div class="field leapf" id="aLeapF">
+              <label style="font-weight:700"><input type="checkbox" id="aLeap" style="width:auto;margin-right:6px;vertical-align:-1px">윤달 출생</label>
+            </div>
+            <div class="field">
+              <label for="aHour">태어난 시간</label>
+              <select id="aHour"><option value="">시간 모름</option></select>
+            </div>
+          </div>
+
+          <div class="cp-person">
+            <div class="cp-h">💞 상대방</div>
+            <div class="field">
+              <label for="bName">이름 <span class="hint">(선택)</span></label>
+              <input type="text" id="bName" maxlength="20" placeholder="예: 상대">
+            </div>
+            <div class="field">
+              <span class="lbl">성별</span>
+              <div class="seg" role="radiogroup" aria-label="상대 성별">
+                <label><input type="radio" name="bGender" value="남" checked>남성</label>
+                <label><input type="radio" name="bGender" value="여">여성</label>
+              </div>
+            </div>
+            <div class="field">
+              <span class="lbl">달력 기준</span>
+              <div class="seg" role="radiogroup" aria-label="상대 달력 기준">
+                <label><input type="radio" name="bCal" value="s" checked>양력</label>
+                <label><input type="radio" name="bCal" value="l">음력</label>
+              </div>
+            </div>
+            <div class="field">
+              <label for="bBirth">생년월일</label>
+              <input type="date" id="bBirth" min="1901-01-01" max="2026-12-31" required>
+            </div>
+            <div class="field leapf" id="bLeapF">
+              <label style="font-weight:700"><input type="checkbox" id="bLeap" style="width:auto;margin-right:6px;vertical-align:-1px">윤달 출생</label>
+            </div>
+            <div class="field">
+              <label for="bHour">태어난 시간</label>
+              <select id="bHour"><option value="">시간 모름</option></select>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-main" style="margin-top:16px">궁합 점수 확인하기 →</button>
+        <p class="privacy">입력한 정보는 서버로 전송되지 않고, 이 브라우저 안에서만 계산됩니다.</p>
+      </form>
+    </section>
+
+    <section class="card" id="compatLoading" style="display:none" aria-live="polite">
+      <div class="spin"></div>
+      <h3>두 사람의 명식을 나란히 세우고 있습니다</h3>
+      <p>일간·일지 관계와 오행의 빈자리를 함께 계산합니다.</p>
+    </section>
+
+    <section class="card no-pad" id="compatResult" style="display:none">
+      <div class="res-head">
+        <div class="who" id="cpWho">궁합</div>
+        <h2>2인 궁합 종합</h2>
+        <div class="gauge" id="cpGauge" style="--p:0">
+          <div class="gauge-in"><div class="v" id="cpScore">0</div><div class="u">궁합 지수</div></div>
+        </div>
+        <p class="sum" id="cpSum"></p>
+      </div>
+      <div class="res-body">
+        <div class="sec">
+          <div class="sec-t"><i class="dot"></i>세 가지 궁합</div>
+          <div id="cpSubs"></div>
+        </div>
+        <div class="sec">
+          <div class="sec-t"><i class="dot"></i>오행 상생·보완 포인트</div>
+          <div class="cp-points" id="cpPoints"></div>
+        </div>
+        <div class="sec">
+          <div class="sec-t"><i class="dot"></i>관계별 조언</div>
+          <div id="cpAdvice"></div>
+        </div>
+        <div class="sec">
+          <div class="sec-t"><i class="dot"></i>함께 가면 좋은 곳 <span class="sub" id="cpThemeSub"></span></div>
+          <div class="cp-theme" id="cpTheme"></div>
+        </div>
+        <p class="disclaimer" id="cpBasis"></p>
+        <div class="actions">
+          <button class="btn-share" id="btnCpShare" type="button">💬 궁합 결과 공유하기</button>
+          <button class="btn-copy" id="btnCpCopy" type="button">궁합 요약 복사하기</button>
+          <button class="btn-retry" id="btnCpRetry" type="button">다른 사람과 다시 보기</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card info">
+      <h2>2인 궁합은 이렇게 봅니다</h2>
+      <p>두 사람의 사주를 각각 세운 뒤, <strong>일간(日干)의 오행이 서로 상생하는지 상극인지</strong>, <strong>일지(日支)가 육합·삼합·충·형·파·해 중 무엇을 이루는지</strong>, 그리고 <strong>한 사람에게 비어 있는 오행을 상대가 채워주는지</strong>를 함께 봅니다. 여기에 두 명식을 합쳤을 때 다섯 오행이 고르게 채워지는지까지 더해 하나의 점수로 정리합니다.</p>
+      <p>전통 명리에서 궁합은 '맞는다·안 맞는다'를 가르는 판정이 아니라, 두 사람이 어디서 부딪히고 어디서 서로를 채워주는지 아는 지도입니다. 점수가 낮게 나와도 관계를 피할 이유는 아니며, 어느 지점을 조심하면 되는지를 먼저 보세요.</p>
+      <p style="font-size:12.6px;color:#8b7c68">이 궁합 풀이는 재미와 참고용입니다. 결혼·동업·투자 같은 결정의 근거로 쓰지 마세요.</p>
+    </section>
+  </div><!-- /tabGunghap -->
 
   <footer>
     <p>2027 정미년 사주풀이 · 사주 명리학의 천간·지지·오행·십성 이론을 바탕으로 계산합니다.</p>
@@ -872,7 +1147,8 @@ function analyze(input){
   if(st.level==='신강'){ money+=2; }
 
   money=Math.min(97,money); work=Math.min(97,work); health=Math.min(96,health);
-  var total=Math.round(money*0.34+work*0.30+health*0.16+love*0.20);
+  var social=socialScore(st,rel);
+  var total=Math.round(money*0.30+work*0.26+health*0.14+love*0.16+social*0.14);
   total=Math.max(60,Math.min(97,total));
 
   /* 월별 */
@@ -887,6 +1163,7 @@ function analyze(input){
     var t=solarTermKST(ty,degs[i]);
     months.push({label:MONTH_LABEL[i],name:MONTH_NAMES[i],
       gan:S_HANJA[ms]+B_HANJA[mb],tg:tg,score:MONTH_SCORE[tg],line:MONTH_LINE[tg],
+      action:MONTH_ACTION[tg],band:monthBand(MONTH_SCORE[tg]),
       start:t.m+'/'+t.d});
   }
 
@@ -894,7 +1171,7 @@ function analyze(input){
     input:input, solar:{y:y,m:m,d:d}, lunarInfo:lunarInfo, lunar:solarToLunar(y,m,d),
     p:P, dayStem:dayStem, dayBranch:dayBranch, stats:st,
     tgStem:tg2027Stem, tgBranch:tg2027Branch, rel:rel,
-    scores:{money:money,work:work,love:love,health:health,total:total},
+    scores:{money:money,work:work,love:love,health:health,social:social,total:total},
     months:months, animal:B_ANIMAL[(P.solarYearPillar-4)%12<0?((P.solarYearPillar-4)%12+12):((P.solarYearPillar-4)%12)]
   };
 }
@@ -905,6 +1182,183 @@ function scoreLabel(v){
   if(v>=66) return '주의';
   return '신중';
 }
+/* ─────────── 5대 운세: 대인운 ─────────── */
+var REL_DELTA={hap:10,samhap:6,none:0,pa:-5,hae:-6,hyeong:-8,chung:-11};
+function socialScore(st,rel){
+  var same=st.cnt[st.dayElem], gen=st.cnt[(st.dayElem+1)%5];
+  var base=74+REL_DELTA[rel]*0.7+Math.min(3,same)*1.7+Math.min(3,gen)*1.1;
+  if(st.level==='중화') base+=2;
+  if(st.level==='신약') base-=2;
+  return Math.round(Math.max(58,Math.min(96,base)));
+}
+var MONTH_ACTION={
+비견:'내 이름이 걸린 결과물 하나를 끝까지 마무리한다.',
+겁재:'큰 계약·큰 지출 전에 서류와 금액을 다시 확인한다.',
+식신:'부업·콘텐츠 초안을 하나 이상 세상에 내놓는다.',
+상관:'공개 발언과 리뷰는 하루 묵혔다가 올린다.',
+편재:'새 수입 통로 하나를 작게 시험해 본다.',
+정재:'고정지출을 점검하고 자동이체를 정리한다.',
+편관:'맡은 일의 조건과 범위를 문서로 남긴다.',
+정관:'자격·공모·승진 서류를 미리 준비해 둔다.',
+편인:'배운 것을 한 장 요약으로 남긴다.',
+정인:'도움을 청할 사람 한 명을 정해 연락한다.'
+};
+function monthBand(score){ return score>=84?'길':(score>=76?'무난':'주의'); }
+
+/* ─────────── 오늘의 포춘쿠키 ─────────── */
+var COOKIE_LINES=[
+['오늘은 새로 시작하는 쪽이 유리합니다. 미뤄둔 첫 단계 하나만 해보세요.','누군가에게 먼저 연락해 보세요. 오늘의 인연이 다음 달의 일이 됩니다.','30분 걷고 나면 막혔던 답이 보입니다. 몸을 먼저 움직이세요.','작은 약속 하나를 지키는 것이 오늘의 가장 큰 개운입니다.'],
+['오늘은 말보다 표정이 먼저입니다. 웃는 얼굴 하나가 문을 열어 줍니다.','미뤄둔 연락과 발표를 오전에 끝내면 하루가 가벼워집니다.','따뜻한 차 한 잔으로 시작하세요. 서두르면 새는 것이 생깁니다.','고마웠던 사람에게 짧은 인사를 보내 보세요.'],
+['오늘은 정리하는 날입니다. 서랍 하나만 비워도 길이 트입니다.','식사를 정해진 시간에 하세요. 생활의 리듬이 곧 재물입니다.','결정을 미루지 말고 오늘 하나만 정해서 끝내세요.','오래 미뤄둔 서류나 청소 하나를 끝내면 마음이 가벼워집니다.'],
+['오늘은 결단의 날입니다. 망설이던 일에 기한을 붙여 보세요.','물건 하나를 버리면 들어올 자리가 생깁니다.','말은 짧게, 약속은 정확하게. 그게 오늘의 개운입니다.','숫자를 확인하세요. 가계부 한 줄이 새는 돈을 막습니다.'],
+['오늘은 조용히 생각할수록 답이 빨리 옵니다. 10분만 비워 두세요.','물을 자주 마시고 조금 일찍 잠자리에 드세요. 회복이 곧 실력입니다.','혼자 결정하지 말고 한 사람에게 물어보세요.','오늘 들은 이야기는 밖으로 옮기지 마세요. 신뢰가 쌓입니다.']
+];
+function fortuneCookie(r,now){
+  var d=now||new Date();
+  var seed=(d.getFullYear()*372+(d.getMonth()+1)*31+d.getDate())*7
+           +r.dayStem*13+r.dayBranch*17+r.scores.total*3+(r.stats.yongsin||0)*5;
+  var e=(r.stats.yongsin==null?0:r.stats.yongsin)%5;
+  var lines=COOKIE_LINES[e];
+  var nums=TIPS[e].n.split('·');
+  return {
+    elem:e,
+    line:lines[Math.abs(seed)%lines.length],
+    num:nums[Math.abs(seed>>2)%nums.length].trim(),
+    color:TIPS[e].c.split('·')[0].trim(),
+    colorFull:TIPS[e].c,
+    item:TIPS[e].i
+  };
+}
+
+/* ─────────── 제휴: 맞춤 개운템 ─────────── */
+var ITEMS=[
+[{n:'미니 스투키·산세베리아 화분',w:'물 주기가 길어 관리가 쉽고, 책상 왼쪽에 두면 눈이 쉬어 갑니다.'},
+ {n:'원목 데스크 트레이',w:'자주 쓰는 것만 남기게 되어 정리가 습관이 됩니다.'},
+ {n:'린넨 커튼',w:'아침 햇빛을 부드럽게 들여 하루의 시작을 돕습니다.'}],
+[{n:'시트러스·우디 아로마 캔들',w:'저녁 한 시간의 온기를 만들어 하루의 열을 내려 줍니다.'},
+ {n:'코랄·테라코타 쿠션 커버',w:'가장 오래 앉는 자리에 두면 기분이 먼저 바뀝니다.'},
+ {n:'따뜻한 색 스탠드 조명',w:'늦은 밤의 눈부심을 줄이고 방의 온도를 올려 줍니다.'}],
+[{n:'황토색 도자기 머그',w:'매일 손에 쥐는 물건이라 기운이 오래 붙습니다.'},
+ {n:'테라코타 화분',w:'흙을 만지는 짧은 시간이 그대로 휴식이 됩니다.'},
+ {n:'두툼한 면 러그',w:'발이 닿는 자리를 따뜻하게 해 숙면을 돕습니다.'}],
+[{n:'스테인리스 트레이·오거나이저',w:'서류와 소품이 제자리를 찾으면 결정이 빨라집니다.'},
+ {n:'금속 윈드차임·풍경',w:'창가에 두면 소리로 공간의 흐름을 바꿔 줍니다.'},
+ {n:'화이트 세라믹 무드 트레이',w:'무채색 하나로 책상이 정돈되어 보입니다.'}],
+[{n:'유리 화병·작은 오브제',w:'물이 보이는 소품 하나로 공간이 깊어집니다.'},
+ {n:'가습기',w:'건조한 방의 호흡을 편하게 해 수면의 질을 올립니다.'},
+ {n:'딥블루 물병·텀블러',w:'물을 자주 마시게 되어 수 기운을 채워 줍니다.'}]
+];
+var COUPANG_URL='https://influencers.coupang.com/s/annsy';
+
+/* ─────────── 2인 궁합 ─────────── */
+function elemRelation(a,b){
+  if(a===b) return 'same';
+  if((a+1)%5===b) return 'aToB';
+  if((b+1)%5===a) return 'bToA';
+  if((a+2)%5===b) return 'aKeB';
+  return 'bKeA';
+}
+var COMPAT_STEM={
+aToB:{t:'내 기운이 상대를 살리는 상생',
+ s:'내 일간의 기운이 상대의 일간을 북돋는 관계입니다. 내가 먼저 챙기고 밀어주는 자리에 서기 쉽고, 상대는 그 안에서 편안함을 느낍니다.',
+ love:'먼저 다가가는 쪽이 나입니다. 그게 부담이 되지 않도록 표현의 속도만 조절하면 좋습니다.',
+ marriage:'한 사람만 애쓰는 구조가 굳어지지 않게, 받는 쪽도 자기 몫을 만들도록 자리를 비워 주세요.',
+ work:'내가 기준을 제시하고 상대가 실행하는 분업이 잘 맞습니다. 다만 지시가 잔소리로 들리지 않게 확인하세요.'},
+bToA:{t:'상대의 기운이 나를 살리는 상생',
+ s:'상대의 일간 기운이 내 일간을 북돋는 관계입니다. 상대가 나를 챙겨주는 자리에 서기 쉽고, 나는 그 덕에 안정을 얻습니다.',
+ love:'받는 것에 익숙해지기 쉬운 조합입니다. 고마움을 말로 한 번씩 옮기면 관계가 훨씬 오래갑니다.',
+ marriage:'상대가 맞춰주는 일이 많아집니다. 생활비·가사·돌봄의 몫을 글로 정해 두면 서운함이 쌓이지 않습니다.',
+ work:'상대의 지원을 받아 성과를 내는 구조입니다. 상대의 이름도 함께 올려 주면 오래 갑니다.'},
+same:{t:'같은 기운을 나눠 가진 동질 관계',
+ s:'두 사람의 일간 기운이 같습니다. 취향과 속도가 비슷해 편하지만, 같은 약점을 함께 갖기 쉽습니다.',
+ love:'말하지 않아도 통하는 부분이 큽니다. 다만 서로 눈치만 보다 결정이 늦어질 수 있으니 한 사람이 먼저 말하세요.',
+ marriage:'생활 습관이 비슷해 부딪힘이 적습니다. 대신 둘 다 미루는 일은 기한을 정해 두세요.',
+ work:'역할이 겹치면 서로 비슷한 자리를 두고 겨루게 됩니다. 담당을 미리 나누면 시너지가 큽니다.'},
+aKeB:{t:'내 기운이 상대를 누르는 상극',
+ s:'내 일간의 기운이 상대의 기운을 제어하는 관계입니다. 내가 끌고 가는 힘은 좋지만, 상대는 압박을 느끼기 쉽습니다.',
+ love:'내 기준이 강하게 드러납니다. 상대의 속도를 한 번 물어보는 것만으로 분위기가 달라집니다.',
+ marriage:'결정권이 한쪽에 몰리기 쉽습니다. 중요한 결정은 서로 한 번씩 최종 결정권을 갖게 해 보세요.',
+ work:'추진력은 좋지만 상대가 말을 아끼게 됩니다. 의견을 먼저 묻는 순서를 지키세요.'},
+bKeA:{t:'상대의 기운이 나를 누르는 상극',
+ s:'상대의 일간 기운이 내 기운을 제어하는 관계입니다. 상대의 기준이 나를 조여 오는 느낌이 들 수 있습니다.',
+ love:'상대의 페이스에 끌려가지 않도록 내 속도를 말로 표현하세요.',
+ marriage:'상대의 요구가 많아지기 쉽습니다. 무엇이 불편한지 구체적인 사례로 이야기하면 풀립니다.',
+ work:'상대가 기준을 세우는 자리에 섭니다. 보고의 형식과 주기를 미리 맞춰 두면 편합니다.'}
+};
+var COMPAT_BRANCH={
+hap:{t:'일지 육합', s:'두 사람의 일지가 육합을 이뤄 생활 리듬과 취향이 잘 맞습니다.'},
+samhap:{t:'일지 삼합', s:'일지가 삼합의 기운으로 이어져 같은 방향을 볼 때 힘이 커집니다.'},
+none:{t:'일지 무관', s:'일지가 직접 부딪히지도 얽히지도 않아 담백하게 흐릅니다. 나쁜 관계가 아니라 자극이 적은 관계입니다.'},
+pa:{t:'일지 파(破)', s:'가까운 사이에서 사소한 서운함이 쌓이기 쉽습니다.'},
+hae:{t:'일지 해(害)', s:'말이 어긋나 오해가 생기기 쉬운 관계입니다.'},
+hyeong:{t:'일지 형(刑)', s:'가까울수록 예의가 흐려지기 쉬워, 선을 정해 두는 편이 좋습니다.'},
+chung:{t:'일지 충(沖)', s:'부딪힘이 잦지만, 그만큼 서로를 바꾸는 힘도 큰 관계입니다.'}
+};
+var COMPAT_BAND={
+love:[{min:85,t:'첫 만남의 온도가 높은 조합입니다. 대화가 길어지고, 사소한 것도 함께 하고 싶어집니다. 지금의 속도를 유지하면 관계가 자연스럽게 깊어집니다.'},
+      {min:70,t:'편안함이 먼저 오는 조합입니다. 극적인 설렘보다 오래 가는 온도라, 자주 만나고 자주 이야기하는 쪽이 유리합니다.'},
+      {min:0, t:'감정의 온도 차이가 있는 조합입니다. 서두르지 말고 한 번에 하나씩 맞춰 가세요. 취향이 다른 부분을 고치려 하기보다 인정하는 편이 빠릅니다.'}],
+marriage:[{min:85,t:'생활 리듬과 돈의 감각이 잘 맞습니다. 함께 사는 결정을 해도 무리 없고, 가계와 역할 분담이 자연스럽게 정해집니다.'},
+      {min:70,t:'부딪혀도 풀 수 있는 조합입니다. 생활비·가사·돌봄의 몫을 처음에 글로 정해 두면 이후가 편합니다.'},
+      {min:0, t:'생활 방식의 차이가 큰 조합입니다. 함께 살기 전에 돈과 시간을 쓰는 방식을 구체적으로 맞춰 보세요. 그 대화 하나가 갈등의 절반을 줄입니다.'}],
+work:[{min:85,t:'역할 분담이 자연스럽게 이뤄지는 조합입니다. 한 사람이 기획하고 다른 사람이 실행하는 구조가 잘 맞습니다.'},
+      {min:70,t:'무난하게 협업할 수 있는 조합입니다. 보고 주기와 담당만 미리 정하면 마찰이 거의 없습니다.'},
+      {min:0, t:'일하는 속도와 기준이 다릅니다. 함께 일한다면 업무 범위와 마감을 문서로 정하고 시작하세요.'}]
+};
+var CX_THEME=[
+{p:'숲·수목원·식물원·강변이 보이는 산책로',s:'걸으면서 이야기하면 대화가 오래 갑니다. 한 시간 코스로 잡으세요.'},
+{p:'노을 명소·전망대·공연장·전시',s:'해 질 무렵에 만나면 감정의 온도가 자연스럽게 올라갑니다.'},
+{p:'근교 농원·들길·온천·전통시장',s:'반나절 당일치기로 부담 없이 다녀오기 좋습니다.'},
+{p:'미술관·건축이 좋은 동네·정돈된 도심 산책로',s:'조용한 공간에서 대화하면 결정해야 할 일이 빨리 정리됩니다.'},
+{p:'바다·호수·강변 카페·물가 산책로',s:'물을 보는 자리에서 이야기하면 마음이 먼저 풀립니다.'}
+];
+var STEM_DELTA={aToB:11,bToA:9,same:5,aKeB:-7,bKeA:-9};
+var BR_DELTA={hap:11,samhap:7,none:0,pa:-5,hae:-6,hyeong:-8,chung:-10};
+function clampScore(v,lo,hi){ return Math.round(Math.max(lo,Math.min(hi,v))); }
+function compatBandText(kind,score){
+  var arr=COMPAT_BAND[kind];
+  for(var i=0;i<arr.length;i++){ if(score>=arr[i].min) return arr[i].t; }
+  return arr[arr.length-1].t;
+}
+function compatAnalyze(ia,ib){
+  var A=analyze(ia), B=analyze(ib);
+  if(A.error) return {error:A.error};
+  if(B.error) return {error:B.error};
+  var ea=S_ELEM[A.dayStem], eb=S_ELEM[B.dayStem];
+  var er=elemRelation(ea,eb);
+  var br=branchRelation(A.dayBranch,B.dayBranch);
+  var stemDelta=STEM_DELTA[er], brDelta=BR_DELTA[br];
+  var comp=0, compNotes=[];
+  for(var e=0;e<5;e++){
+    if(A.stats.cnt[e]===0 && B.stats.cnt[e]>=2){ comp+=3; compNotes.push({e:e,who:'상대',n:B.stats.cnt[e]}); }
+    else if(B.stats.cnt[e]===0 && A.stats.cnt[e]>=2){ comp+=3; compNotes.push({e:e,who:'나',n:A.stats.cnt[e]}); }
+  }
+  if(comp>9) comp=9;
+  var comb=[0,0,0,0,0], balanced=true;
+  for(var k=0;k<5;k++){ comb[k]=A.stats.cnt[k]+B.stats.cnt[k]; if(comb[k]===0) balanced=false; }
+  var lvDiff=(A.stats.level!==B.stats.level)?3:0;
+  var love=clampScore(74+stemDelta*0.75+brDelta*0.85+comp*0.6+(balanced?3:0),45,98);
+  var marriage=clampScore(72+brDelta*0.95+comp*0.9+(balanced?4:0)+lvDiff,45,98);
+  var work=clampScore(75+stemDelta*0.55+(er==='same'?5:0)+(balanced?3:0)-((er==='aKeB'||er==='bKeA')?4:0),45,98);
+  var total=clampScore(love*0.34+marriage*0.36+work*0.30,45,98);
+  var minE=0, minV=99;
+  for(var m=0;m<5;m++){ if(comb[m]<minV){ minV=comb[m]; minE=m; } }
+  return {
+    A:A, B:B, stemRel:er, brRel:br, comp:comp, compNotes:compNotes,
+    balanced:balanced, combined:comb, themeElem:minE,
+    scores:{total:total,love:love,marriage:marriage,work:work},
+    headline:compatHeadline(total),
+    basis:'일간 오행 관계('+ELEM_KO[ea]+'·'+ELEM_KO[eb]+' → '+COMPAT_STEM[er].t+'), 일지 관계('+COMPAT_BRANCH[br].t+'), 서로의 빈 오행 보완('+comp+'점), 두 명식의 오행 균형('+(balanced?'충족':'일부 비어 있음')+')을 합산했습니다.'
+  };
+}
+function compatHeadline(t){
+  if(t>=88) return '서로의 빈자리를 채워주는, 오래 가는 조합입니다.';
+  if(t>=80) return '편안함과 설렘이 함께 있는 좋은 조합입니다.';
+  if(t>=72) return '노력한 만큼 가까워지는 조합입니다. 대화가 가장 중요한 열쇠입니다.';
+  if(t>=62) return '다른 점이 많은 조합입니다. 그 차이를 이해하면 오히려 오래 갑니다.';
+  return '속도를 맞추는 데 시간이 필요한 조합입니다. 서두르지 마세요.';
+}
+
 /*CORE-END*/
 </script>
 
@@ -1120,6 +1574,7 @@ function scoreLabel(v){
       +'의료·투자·법률 판단의 근거로 사용하지 마세요. 입력한 생년월일시는 서버로 전송되지 않으며 어디에도 저장되지 않습니다.';
 
     window.__sajuResult=r;
+    if(window.__enhance) window.__enhance(r);
   }
 
   function relLabel(k){
@@ -1186,6 +1641,553 @@ function scoreLabel(v){
 })();
 </script>
 
+<script>
+/* ─────────── 확장 UI: 5대 오각형 · 12개월 캘린더 · 포춘쿠키 · 개운템 · 카드저장 · 2인 궁합 ─────────── */
+(function(){
+  var $=function(id){ return document.getElementById(id); };
+  var ELEM_COLOR=['#2f7d4f','#c0392b','#b07d2b','#8a94a0','#1f4e79'];
+  var CANON='https://annjsy18-sys.github.io/saju2027/';
+  var FONT='"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif';
+  var SERIF='"Nanum Myeongjo","Noto Serif KR",serif';
+
+  function esc(s){
+    return String(s==null?'':s).replace(/[&<>"]/g,function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];
+    });
+  }
+  function toast(msg){
+    var el=$('toast'); if(!el) return;
+    el.textContent=msg; el.classList.add('on');
+    clearTimeout(window.__toastT2);
+    window.__toastT2=setTimeout(function(){ el.classList.remove('on'); },2600);
+  }
+  function pad(n){ return (n<10?'0':'')+n; }
+  function copyText(txt,okMsg){
+    function fallback(){
+      var ta=document.createElement('textarea');
+      ta.value=txt; ta.style.position='fixed'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.select();
+      var ok=false;
+      try{ ok=document.execCommand('copy'); }catch(e){ ok=false; }
+      document.body.removeChild(ta);
+      toast(ok?okMsg:'복사가 차단되었습니다. 주소창의 링크를 직접 복사해 주세요.');
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(function(){ toast(okMsg); },fallback);
+    } else fallback();
+  }
+
+  /* ── 시간 선택지 ── */
+  function fillHours(sel){
+    if(!sel||sel.options.length>1) return;
+    for(var h=0;h<24;h++){
+      var o=document.createElement('option');
+      o.value=String(h);
+      o.textContent=pad(h)+':00 ~ '+pad(h)+':59  ('+B_KO[Math.floor((h+1)/2)%12]+'시)';
+      sel.appendChild(o);
+    }
+  }
+  fillHours($('aHour')); fillHours($('bHour'));
+
+  /* ── 탭 ── */
+  var TABS=document.querySelectorAll('.tabs .tab');
+  function syncSegs(scope){
+    if(!scope) return;
+    var ins=scope.querySelectorAll('.seg input');
+    for(var i=0;i<ins.length;i++) ins[i].parentNode.classList.toggle('on',ins[i].checked);
+  }
+  function showTab(name){
+    for(var i=0;i<TABS.length;i++){
+      var on=TABS[i].getAttribute('data-tab')===name;
+      TABS[i].classList.toggle('on',on);
+      TABS[i].setAttribute('aria-selected',on?'true':'false');
+    }
+    $('tabSaju').style.display=(name==='saju')?'block':'none';
+    $('tabGunghap').style.display=(name==='gunghap')?'block':'none';
+    if(name==='gunghap') prefillSelf();
+    try{ window.scrollTo({top:0,behavior:'smooth'}); }catch(e){ window.scrollTo(0,0); }
+  }
+  for(var ti=0;ti<TABS.length;ti++){
+    TABS[ti].addEventListener('click',function(){ showTab(this.getAttribute('data-tab')); });
+  }
+
+  var prefilled=false;
+  function prefillSelf(){
+    var r=window.__sajuResult;
+    if(!r||prefilled) return;
+    var inp=r.input;
+    $('aName').value=inp.name||'';
+    var gg=document.querySelector('input[name=aGender][value="'+(inp.gender==='남'?'남':'여')+'"]');
+    if(gg) gg.checked=true;
+    var cc=document.querySelector('input[name=aCal][value="'+(inp.cal==='l'?'l':'s')+'"]');
+    if(cc) cc.checked=true;
+    $('aBirth').value=inp.y+'-'+pad(inp.m)+'-'+pad(inp.d);
+    $('aLeap').checked=!!inp.leap;
+    $('aHour').value=(inp.hour==null?'':String(inp.hour));
+    $('aLeapF').classList.toggle('on',inp.cal==='l');
+    syncSegs($('compatForm'));
+    prefilled=true;
+  }
+
+  (function initCompatForm(){
+    var form=$('compatForm'); if(!form) return;
+    var ins=form.querySelectorAll('.seg input');
+    for(var i=0;i<ins.length;i++){
+      ins[i].addEventListener('change',function(){ syncSegs(form); });
+    }
+    var calRadios=form.querySelectorAll('input[name=aCal],input[name=bCal]');
+    for(var k=0;k<calRadios.length;k++){
+      calRadios[k].addEventListener('change',function(){
+        var isA=(this.name==='aCal');
+        $(isA?'aLeapF':'bLeapF').classList.toggle('on',this.value==='l');
+      });
+    }
+  })();
+
+  /* ── 오각형 레이더 ── */
+  function radarSVG(vals,labels){
+    var cx=150, cy=150, R=92, n=5, ang=[], i;
+    for(i=0;i<n;i++) ang.push(-Math.PI/2+i*2*Math.PI/n);
+    function pt(idx,f){ return [cx+Math.cos(ang[idx])*R*f, cy+Math.sin(ang[idx])*R*f]; }
+    var s='';
+    for(var g=1;g<=5;g++){
+      var d='';
+      for(i=0;i<n;i++){ var p=pt(i,g/5); d+=(i?'L':'M')+p[0].toFixed(1)+','+p[1].toFixed(1); }
+      s+='<path d="'+d+'Z" fill="'+(g===5?'rgba(201,162,39,.05)':'none')+'" stroke="#e9ddc7" stroke-width="1"/>';
+    }
+    for(i=0;i<n;i++){
+      var ae=pt(i,1);
+      s+='<line x1="'+cx+'" y1="'+cy+'" x2="'+ae[0].toFixed(1)+'" y2="'+ae[1].toFixed(1)+'" stroke="#ece1cc" stroke-width="1"/>';
+    }
+    var vd='';
+    for(i=0;i<n;i++){
+      var fv=Math.max(0.1,Math.min(1,vals[i]/100)), pv=pt(i,fv);
+      vd+=(i?'L':'M')+pv[0].toFixed(1)+','+pv[1].toFixed(1);
+    }
+    s+='<path d="'+vd+'Z" fill="rgba(122,27,27,.17)" stroke="#7a1b1b" stroke-width="2.2" stroke-linejoin="round"/>';
+    for(i=0;i<n;i++){
+      var fd=pt(i,Math.max(0.1,Math.min(1,vals[i]/100)));
+      s+='<circle cx="'+fd[0].toFixed(1)+'" cy="'+fd[1].toFixed(1)+'" r="3.6" fill="#c9a227" stroke="#fff" stroke-width="1.4"/>';
+    }
+    for(i=0;i<n;i++){
+      var lp=pt(i,1.2), ca=Math.cos(ang[i]), sa=Math.sin(ang[i]);
+      var anchor=Math.abs(ca)<0.25?'middle':(ca>0?'start':'end');
+      var ty=lp[1]+(sa<0?-14:(sa>0.5?8:0));
+      s+='<text x="'+lp[0].toFixed(1)+'" y="'+ty.toFixed(1)+'" text-anchor="'+anchor+'" font-size="11.5" font-weight="700" fill="#6b5e51" font-family="sans-serif">'+labels[i]+'</text>';
+      s+='<text x="'+lp[0].toFixed(1)+'" y="'+(ty+14).toFixed(1)+'" text-anchor="'+anchor+'" font-size="13.5" font-weight="800" fill="#7a1b1b" font-family="sans-serif">'+vals[i]+'</text>';
+    }
+    return '<svg viewBox="0 0 300 300" role="img" aria-label="5대 운세 오각형 그래프">'+s+'</svg>';
+  }
+
+  function pickByScore(arr,dir){
+    var best=arr[0];
+    for(var i=1;i<arr.length;i++){
+      if(dir==='max'?arr[i].v>best.v:arr[i].v<best.v) best=arr[i];
+    }
+    return best;
+  }
+
+  function renderRadar(r){
+    var five=[
+      {k:'재물',v:r.scores.money,c:'#b8901c'},
+      {k:'직업',v:r.scores.work,c:'#7a1b1b'},
+      {k:'애정',v:r.scores.love,c:'#c0392b'},
+      {k:'건강',v:r.scores.health,c:'#2f7d4f'},
+      {k:'대인',v:r.scores.social,c:'#1f4e79'}
+    ];
+    var vals=[],labels=[],lg='';
+    for(var i=0;i<five.length;i++){
+      vals.push(five[i].v); labels.push(five[i].k);
+      lg+='<div class="rl"><i style="background:'+five[i].c+'"></i><span>'+five[i].k+'운</span><b>'+five[i].v+'</b></div>';
+    }
+    $('radarWrap').innerHTML=radarSVG(vals,labels);
+    $('radarLegend').innerHTML=lg;
+    var hi=pickByScore(five,'max'), lo=pickByScore(five,'min');
+    var loAdv={
+      '재물':'큰 지출은 하루 묵혀 결정하고, 들어오는 돈의 일부를 먼저 떼어 두세요.',
+      '직업':'새 일을 벌이기보다 맡은 일의 마감을 지키는 쪽이 점수를 올립니다.',
+      '애정':'표현을 아끼지 마세요. 짧은 안부 한 번이 관계의 온도를 바꿉니다.',
+      '건강':'잠과 식사 시간을 먼저 고정하세요. 컨디션이 다른 운을 끌어올립니다.',
+      '대인':'먼저 연락하는 쪽이 되세요. 소개와 인연이 다음 일을 물고 옵니다.'
+    }[lo.k];
+    $('radarNote').innerHTML='가장 힘이 실린 운은 <b>'+hi.k+'운 '+hi.v+'점</b>, 보완이 필요한 운은 <b>'+lo.k+'운 '+lo.v+'점</b>입니다. '
+      +lo.k+'운은 억지로 올리기보다 생활 습관으로 채우는 편이 효과적입니다. '+loAdv;
+  }
+
+  /* ── 12개월 캘린더 ── */
+  function renderCalendar(r){
+    var ms=r.months, sorted=ms.slice().sort(function(a,b){ return b.score-a.score; });
+    var best=sorted.slice(0,3);
+    var worst=ms.filter(function(m){ return m.score<76; }).sort(function(a,b){ return a.score-b.score; });
+    var bestTxt=best.map(function(m){ return m.label+'('+m.score+')'; }).join(' · ');
+    var worstTxt=worst.length?worst.slice(0,3).map(function(m){ return m.label+'('+m.score+')'; }).join(' · '):'';
+    $('calSum').innerHTML='가장 힘이 실리는 달은 <b>'+bestTxt+'</b>, '
+      +(worstTxt?'주의할 달은 <b>'+worstTxt+'</b>':'주의할 달은 <b>없습니다</b>')
+      +'입니다. 길한 달에 큰 결정과 계약을, 주의할 달에 정비와 점검을 배치하세요.';
+    var h='';
+    for(var i=0;i<ms.length;i++){
+      var m=ms[i];
+      var cls=(m.band==='길')?'good':((m.band==='주의')?'warn':'');
+      var bcls=(m.band==='길')?'g':((m.band==='주의')?'w':'n');
+      h+='<div class="mo '+cls+'"><div class="top"><span class="m">'+m.label+'</span>'
+        +'<span class="scv">'+m.score+'</span><span class="bd '+bcls+'">'+m.band+'</span></div>'
+        +'<div class="gz">'+m.gan+' · '+m.start+'~</div>'
+        +'<div class="mini"><i data-w="'+m.score+'"></i></div>'
+        +'<p>'+m.line+'</p>'
+        +'<p class="act">'+m.action+'</p></div>';
+    }
+    $('months').innerHTML=h;
+    setTimeout(function(){
+      var bars=document.querySelectorAll('#months .mini i');
+      for(var k=0;k<bars.length;k++) bars[k].style.width=bars[k].getAttribute('data-w')+'%';
+    },90);
+  }
+
+  /* ── 포춘쿠키 ── */
+  function renderCookie(r){
+    var ck=fortuneCookie(r);
+    window.__cookie=ck;
+    var btn=$('cookieBtn'), out=$('cookieOut');
+    out.classList.remove('on');
+    btn.classList.remove('crack');
+    btn.querySelector('.ck').textContent='🥠';
+    btn.querySelector('.ct').textContent='오늘의 한 줄이 들어 있습니다';
+    btn.setAttribute('aria-expanded','false');
+    out.innerHTML='';
+    btn.onclick=function(){
+      if(out.classList.contains('on')) return;
+      btn.classList.add('shake');
+      setTimeout(function(){
+        btn.classList.remove('shake');
+        btn.classList.add('crack');
+        var d=new Date();
+        btn.querySelector('.ck').textContent='✨';
+        btn.querySelector('.ct').textContent='오늘의 포춘쿠키 · '+(d.getMonth()+1)+'월 '+d.getDate()+'일';
+        out.innerHTML='<div class="cl">“'+esc(ck.line)+'”</div>'
+          +'<div class="cookie-meta">'
+          +'<div><div class="k">행운 숫자</div><div class="v">'+esc(ck.num)+'</div></div>'
+          +'<div><div class="k">행운 컬러</div><div class="v">'+esc(ck.color)+'</div></div>'
+          +'<div><div class="k">개운 아이템</div><div class="v" style="font-size:11px;line-height:1.35">'+esc(ck.item)+'</div></div>'
+          +'</div>';
+        out.classList.add('on');
+        btn.setAttribute('aria-expanded','true');
+      },430);
+    };
+  }
+
+  /* ── 개운템 · 쿠팡 제휴 ── */
+  function renderItems(r){
+    var e=(r.stats.yongsin==null?0:r.stats.yongsin);
+    var list=ITEMS[e], h='';
+    for(var i=0;i<list.length;i++){
+      h+='<div class="item"><div class="no">'+(i+1)+'</div><div>'
+        +'<div class="nm">'+esc(list[i].n)+'</div>'
+        +'<div class="w">'+esc(list[i].w)+'</div></div></div>';
+    }
+    $('itemList').innerHTML=h;
+    var t=$('itemSec').querySelector('.sec-t');
+    if(t) t.innerHTML='<i class="dot"></i>부족한 '+ELEM_KO[e]+'('+ELEM_HANJA[e]+') 기운을 채우는 개운템 3가지';
+    $('coupangBtn').setAttribute('href',COUPANG_URL);
+  }
+
+  /* ── 결과 카드(Canvas → PNG) ── */
+  function wrapLines(ctx,text,maxW){
+    var lines=[], cur='', i, ch;
+    for(i=0;i<text.length;i++){
+      ch=text.charAt(i);
+      if(ch==='\n'){ lines.push(cur); cur=''; continue; }
+      if(ctx.measureText(cur+ch).width>maxW && cur.length){ lines.push(cur); cur=ch; }
+      else cur+=ch;
+    }
+    if(cur) lines.push(cur);
+    return lines;
+  }
+  function roundRect(ctx,x,y,w,h,r){
+    ctx.beginPath();
+    ctx.moveTo(x+r,y);
+    ctx.arcTo(x+w,y,x+w,y+h,r);
+    ctx.arcTo(x+w,y+h,x,y+h,r);
+    ctx.arcTo(x,y+h,x,y,r);
+    ctx.arcTo(x,y,x+w,y,r);
+    ctx.closePath();
+  }
+  function buildCard(r){
+    var W=1080, H=1350;
+    var c=document.createElement('canvas'); c.width=W; c.height=H;
+    var x=c.getContext('2d');
+    var wine='#7a1b1b', gold='#c9a227', goldL='#e9d18b', ink='#2a221c', ink2='#6b5e51';
+
+    x.fillStyle='#fdf7ec'; x.fillRect(0,0,W,H);
+
+    var g=x.createLinearGradient(0,0,W,380);
+    g.addColorStop(0,'#7a1b1b'); g.addColorStop(.65,'#4d0e0e'); g.addColorStop(1,'#350808');
+    x.fillStyle=g; x.fillRect(0,0,W,380);
+    x.fillStyle=gold; x.fillRect(0,380,W,6);
+
+    x.textAlign='center';
+    x.font='700 25px '+FONT; x.fillStyle=goldL;
+    x.fillText('2027 정미년(丁未年) 무료 사주풀이',W/2,74);
+
+    var nm=(r.input.name||'').trim();
+    x.font='800 48px '+SERIF; x.fillStyle='#ffffff';
+    x.fillText(nm?nm+'님의 사주':'나의 사주',W/2,152);
+
+    x.font='600 25px '+FONT; x.fillStyle='#f3e6d5';
+    x.fillText('일주 '+S_HANJA[r.dayStem]+B_HANJA[r.dayBranch]+' · '+S_KO[r.dayStem]+B_KO[r.dayBranch]+' · '+r.animal+'띠',W/2,203);
+
+    x.font='700 22px '+FONT; x.fillStyle='#e9d18b';
+    x.fillText('2027 종합 지수',W/2,258);
+    x.font='900 84px '+SERIF; x.fillStyle='#ffffff';
+    x.fillText(String(r.scores.total),W/2,344);
+
+    /* 5대 운세 */
+    x.textAlign='left';
+    x.font='800 26px '+FONT; x.fillStyle=wine;
+    x.fillText('5대 운세',90,436);
+    var five=[
+      {k:'재물운',v:r.scores.money,c:'#b8901c'},
+      {k:'직업·사업운',v:r.scores.work,c:'#7a1b1b'},
+      {k:'애정·관계운',v:r.scores.love,c:'#c0392b'},
+      {k:'건강운',v:r.scores.health,c:'#2f7d4f'},
+      {k:'대인운',v:r.scores.social,c:'#1f4e79'}
+    ];
+    for(var i=0;i<five.length;i++){
+      var y=484+i*52;
+      x.font='700 24px '+FONT; x.fillStyle=ink2;
+      x.fillText(five[i].k,90,y+6);
+      x.fillStyle='#efe6d5'; roundRect(x,330,y-12,600,26,13); x.fill();
+      x.fillStyle=five[i].c; roundRect(x,330,y-12,600*Math.max(0.04,Math.min(1,five[i].v/100)),26,13); x.fill();
+      x.font='800 24px '+FONT; x.fillStyle=ink;
+      x.fillText(String(five[i].v),950,y+6);
+    }
+
+    /* 오행 분포 */
+    x.font='800 26px '+FONT; x.fillStyle=wine;
+    x.fillText('오행 분포',90,790);
+    var e5=r.stats.cnt;
+    for(var k=0;k<5;k++){
+      var bx=90+k*186;
+      x.fillStyle='#fffdf9'; roundRect(x,bx,812,170,86,14); x.fill();
+      x.strokeStyle='#ebdfca'; x.lineWidth=2; roundRect(x,bx,812,170,86,14); x.stroke();
+      x.fillStyle=ELEM_COLOR[k];
+      x.font='800 24px '+FONT;
+      x.textAlign='center';
+      x.fillText(ELEM_KO[k]+' '+ELEM_HANJA[k],bx+85,846);
+      x.font='900 32px '+SERIF;
+      x.fillText(String(e5[k]),bx+85,884);
+      x.textAlign='left';
+    }
+    x.font='600 21px '+FONT; x.fillStyle='#8b7c68';
+    var lackE=r.stats.yongsin;
+    x.fillText('가장 부족한 기운: '+ELEM_KO[lackE]+'('+ELEM_HANJA[lackE]+') · 행운 컬러 '+TIPS[lackE].c.split('·')[0].trim(),90,946);
+
+    /* 한 줄 조언 */
+    var rx=window.__rx||{};
+    var line=(rx.line||'오늘 하나만 정해서 끝내면 충분한 하루입니다.');
+    x.strokeStyle='#ebdfca'; x.lineWidth=2;
+    x.beginPath(); x.moveTo(90,978); x.lineTo(990,978); x.stroke();
+    x.font='800 24px '+FONT; x.fillStyle=gold;
+    x.fillText('오늘의 한 줄',90,1016);
+    x.font='800 34px '+SERIF; x.fillStyle=wine;
+    var lines=wrapLines(x,line,880);
+    for(var li=0;li<lines.length&&li<3;li++){
+      x.fillText(lines[li],90,1060+li*40);
+    }
+    /* 개운 요약 */
+    x.font='600 20px '+FONT; x.fillStyle=ink2;
+    x.fillText('개운 컬러 '+TIPS[lackE].c+' · 길한 방위 '+TIPS[lackE].d,90,1168);
+    x.fillText('두면 좋은 것: '+TIPS[lackE].i+' · 행운 숫자 '+TIPS[lackE].n,90,1192);
+
+    /* footer */
+    x.fillStyle='#f3e9d7'; x.fillRect(0,1200,W,150);
+    x.textAlign='center';
+    x.font='700 24px '+FONT; x.fillStyle='#8b7c68';
+    x.fillText('2027 정미년 무료 사주풀이 · 2인 궁합 · 포춘쿠키',W/2,1252);
+    x.font='800 26px '+FONT; x.fillStyle=wine;
+    x.fillText('annjsy18-sys.github.io/saju2027',W/2,1296);
+    x.font='500 20px '+FONT; x.fillStyle='#a2947f';
+    x.fillText('재미와 참고용 · 의료·투자·법률 판단의 근거가 아닙니다',W/2,1332);
+    return c;
+  }
+  function saveCanvas(c,name){
+    function go(url,revoke){
+      var a=document.createElement('a');
+      a.href=url; a.download=name; a.rel='noopener';
+      document.body.appendChild(a); a.click();
+      setTimeout(function(){ if(revoke) URL.revokeObjectURL(url); a.parentNode&&a.parentNode.removeChild(a); },2000);
+    }
+    if(c.toBlob){
+      c.toBlob(function(b){
+        if(!b){ go(c.toDataURL('image/png')); return; }
+        go(URL.createObjectURL(b),true);
+      },'image/png');
+    } else go(c.toDataURL('image/png'));
+  }
+
+  /* ── 결과 화면 확장 ── */
+  window.__enhance=function(r){
+    try{ renderRadar(r); }catch(e){}
+    try{ renderCalendar(r); }catch(e){}
+    try{ renderCookie(r); }catch(e){}
+    try{ renderItems(r); }catch(e){}
+  };
+
+  /* ── 버튼: 카드 저장 / 주소 복사 ── */
+  if($('btnCard')){
+    $('btnCard').addEventListener('click',function(){
+      var r=window.__sajuResult;
+      if(!r){ toast('먼저 사주를 입력해 주세요.'); return; }
+      try{
+        var c=buildCard(r);
+        var nm=(r.input.name||'saju').replace(/[^0-9A-Za-z가-힣]/g,'');
+        saveCanvas(c,'2027-saju-card-'+(nm||'me')+'.png');
+        toast('결과 카드를 이미지로 저장했습니다. 사진첩이나 다운로드 폴더를 확인하세요.');
+      }catch(e){
+        toast('이 브라우저에서는 이미지 저장이 차단되었습니다. 화면 캡처를 이용해 주세요.');
+      }
+    });
+  }
+  if($('btnCopyUrl')){
+    $('btnCopyUrl').addEventListener('click',function(){
+      copyText(CANON,'주소를 복사했습니다. 붙여넣기만 하면 됩니다.');
+    });
+  }
+
+  /* ── 2인 궁합 ── */
+  function readInput(p){
+    var bd=$(p+'Birth').value;
+    if(!bd) return null;
+    var parts=bd.split('-');
+    var hv=$(p+'Hour').value;
+    return {
+      name:($(p+'Name').value||'').trim(),
+      gender:document.querySelector('input[name='+p+'Gender]:checked').value,
+      cal:document.querySelector('input[name='+p+'Cal]:checked').value,
+      leap:$(p+'Leap').checked,
+      y:parseInt(parts[0],10), m:parseInt(parts[1],10), d:parseInt(parts[2],10),
+      hour:(hv===''?null:parseInt(hv,10))
+    };
+  }
+  function point(k,v){
+    return '<div class="cp-point"><div class="k">'+esc(k)+'</div><div class="v">'+v+'</div></div>';
+  }
+  function renderCompat(res,A,B){
+    var nmA=A.name||'나', nmB=B.name||'상대';
+    $('cpWho').textContent=nmA+' × '+nmB+' · '+A.y+'.'+pad(A.m)+'.'+pad(A.d)+' · '+B.y+'.'+pad(B.m)+'.'+pad(B.d);
+    $('cpScore').textContent=res.scores.total;
+    var g=$('cpGauge');
+    g.style.setProperty('--p',0); void g.offsetWidth;
+    setTimeout(function(){ g.style.setProperty('--p',res.scores.total); },60);
+    $('cpSum').textContent='“'+res.headline+'”';
+
+    var subs=[
+      {t:'💗 연애 궁합',k:'love',s:res.scores.love},
+      {t:'🏠 부부·동거 궁합',k:'marriage',s:res.scores.marriage},
+      {t:'💼 직장·동업 궁합',k:'work',s:res.scores.work}
+    ];
+    var sh='';
+    for(var i=0;i<subs.length;i++){
+      var it=subs[i];
+      var cls=(it.s>=82)?'':((it.s>=72)?'mid':'low');
+      sh+='<div class="fbox"><div class="hd"><h4>'+it.t+'</h4>'
+        +'<span class="sc '+cls+'">'+it.s+'점 · '+scoreLabel(it.s)+'</span></div>'
+        +'<p>'+compatBandText(it.k,it.s)+'</p>'
+        +'<span class="tag">'+COMPAT_STEM[res.stemRel].t+' · '+COMPAT_BRANCH[res.brRel].t+'</span></div>';
+    }
+    $('cpSubs').innerHTML=sh;
+
+    var ph='';
+    ph+=point('일간 오행 · '+COMPAT_STEM[res.stemRel].t,esc(COMPAT_STEM[res.stemRel].s));
+    ph+=point('일지 관계 · '+COMPAT_BRANCH[res.brRel].t,esc(COMPAT_BRANCH[res.brRel].s));
+    if(res.compNotes.length){
+      var notes=[];
+      for(var k=0;k<res.compNotes.length;k++){
+        var n=res.compNotes[k];
+        notes.push((n.who==='상대')
+          ? (nmB+'에게 '+ELEM_KO[n.e]+'('+ELEM_HANJA[n.e]+') 기운이 '+n.n+'개, '+nmA+'에게는 없습니다 — '+nmB+'가 '+nmA+'의 빈자리를 채워 줍니다.')
+          : (nmA+'에게 '+ELEM_KO[n.e]+'('+ELEM_HANJA[n.e]+') 기운이 '+n.n+'개, '+nmB+'에게는 없습니다 — '+nmA+'가 '+nmB+'의 빈자리를 채워 줍니다.'));
+      }
+      ph+=point('오행 보완',notes.join(' '));
+    } else {
+      ph+=point('오행 보완','한쪽의 빈 오행을 다른 쪽이 채워주는 구조는 아닙니다. 각자 부족한 기운을 생활 습관과 환경으로 채우는 편이 좋습니다.');
+    }
+    if(res.balanced){
+      ph+=point('두 명식의 균형','두 사람의 여덟 글자를 합치면 다섯 오행(목·화·토·금·수)이 모두 채워집니다. 함께할수록 생활의 균형이 잡히는 조합입니다.');
+    } else {
+      var zero=[];
+      for(var e=0;e<5;e++) if(res.combined[e]===0) zero.push(ELEM_KO[e]+'('+ELEM_HANJA[e]+')');
+      ph+=point('두 명식의 균형','두 사람을 합쳐도 '+zero.join('·')+' 기운이 비어 있습니다. 그 기운을 채우는 장소·색·활동을 함께 시도해 보세요.');
+    }
+    $('cpPoints').innerHTML=ph;
+
+    var st=COMPAT_STEM[res.stemRel];
+    var ah='';
+    ah+=point('연애 · '+res.scores.love+'점 '+scoreLabel(res.scores.love),esc(st.love)+' '+esc(compatBandText('love',res.scores.love)));
+    ah+=point('부부·동거 · '+res.scores.marriage+'점 '+scoreLabel(res.scores.marriage),esc(st.marriage)+' '+esc(compatBandText('marriage',res.scores.marriage)));
+    ah+=point('직장·동업 · '+res.scores.work+'점 '+scoreLabel(res.scores.work),esc(st.work)+' '+esc(compatBandText('work',res.scores.work)));
+    $('cpAdvice').innerHTML=ah;
+
+    var th=CX_THEME[res.themeElem];
+    $('cpThemeSub').textContent='두 사람을 합쳐 가장 적은 '+ELEM_KO[res.themeElem]+'('+ELEM_HANJA[res.themeElem]+') 기운';
+    $('cpTheme').innerHTML='<div class="p">'+esc(th.p)+'</div><div class="s">'+esc(th.s)
+      +' 두 사람이 함께 가기 좋은 방위는 '+TIPS[res.themeElem].d+'입니다.</div>';
+
+    $('cpBasis').innerHTML='<b>계산 근거</b> — '+esc(res.basis)
+      +' 궁합은 두 사람의 관계를 재미로 읽는 참고용 풀이이며, 결혼·동업·투자 같은 결정의 근거가 아닙니다.';
+
+    window.__compatResult={res:res,A:A,B:B};
+  }
+
+  (function initCompat(){
+    var form=$('compatForm'); if(!form) return;
+    form.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      var A=readInput('a'), B=readInput('b');
+      if(!A||!B){ toast('두 사람의 생년월일을 모두 입력해 주세요.'); return; }
+      if(A.y<1901||A.y>2026||B.y<1901||B.y>2026){ toast('1901년 이후 출생만 계산할 수 있습니다.'); return; }
+      var res=compatAnalyze(A,B);
+      if(res.error){ toast(res.error); return; }
+      $('compatCard').style.display='none';
+      $('compatResult').style.display='none';
+      $('compatLoading').style.display='block';
+      try{ window.scrollTo({top:0,behavior:'smooth'}); }catch(e){}
+      setTimeout(function(){
+        $('compatLoading').style.display='none';
+        renderCompat(res,A,B);
+        $('compatResult').style.display='block';
+        try{ window.scrollTo({top:0,behavior:'smooth'}); }catch(e){}
+      },900);
+    });
+    $('btnCpRetry').addEventListener('click',function(){
+      $('compatResult').style.display='none';
+      $('compatCard').style.display='block';
+      try{ window.scrollTo({top:0,behavior:'smooth'}); }catch(e){}
+    });
+    $('btnCpShare').addEventListener('click',function(){
+      var w=window.__compatResult; if(!w) return;
+      var txt='2027 궁합 결과: '+$('cpWho').textContent.split(' · ')[0]+' 궁합 지수 '+w.res.scores.total+'점! '
+        +'연애 '+w.res.scores.love+'점, 부부 '+w.res.scores.marriage+'점, 직장 '+w.res.scores.work+'점. 너도 무료로 봐봐.';
+      if(navigator.share){
+        navigator.share({title:'2027 2인 궁합',text:txt,url:CANON}).catch(function(){});
+      } else copyText(txt+' '+CANON,'공유 문구와 링크를 복사했습니다.');
+    });
+    $('btnCpCopy').addEventListener('click',function(){
+      var w=window.__compatResult; if(!w) return;
+      var lines=['[2027 정미년 2인 궁합]'];
+      lines.push($('cpWho').textContent);
+      lines.push('궁합 지수 '+w.res.scores.total+'점 — '+w.res.headline);
+      lines.push('연애 '+w.res.scores.love+'점 / 부부·동거 '+w.res.scores.marriage+'점 / 직장·동업 '+w.res.scores.work+'점');
+      lines.push('일간: '+COMPAT_STEM[w.res.stemRel].t);
+      lines.push('일지: '+COMPAT_BRANCH[w.res.brRel].t);
+      lines.push('함께 가면 좋은 곳: '+CX_THEME[w.res.themeElem].p);
+      lines.push(CANON);
+      copyText(lines.join('\n'),'궁합 요약을 복사했습니다.');
+    });
+  })();
+})();
+
+</script>
+
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -1195,6 +2197,7 @@ function scoreLabel(v){
     {"@type":"Question","name":"음력 생일인데 그대로 입력해도 되나요?","acceptedAnswer":{"@type":"Answer","text":"달력 기준을 음력으로 고르면 양력으로 변환해 계산합니다. 윤달 출생은 체크해 주세요. 1900~2049년을 지원합니다."}},
     {"@type":"Question","name":"같은 생일이면 결과가 똑같은가요?","acceptedAnswer":{"@type":"Answer","text":"태어난 해·월·일·시와 성별이 같다면 같은 명식이므로 결과도 같습니다. 명식에서 도출되는 십성·오행·합충 관계에 따라 문장을 조합합니다."}},
     {"@type":"Question","name":"공간·웰니스 처방은 어떻게 정해지나요?","acceptedAnswer":{"@type":"Answer","text":"사주 여덟 글자의 오행 분포에서 가장 부족한 기운(보완 오행)과 일간의 강약을 기준으로 색감·소재·배치, 방향과 장소 유형, 생활 루틴을 구성합니다. 같은 오행이라도 신강·중화·신약에 따라 조언의 방향이 달라집니다."}},
+    {"@type":"Question","name":"2인 궁합은 무엇을 보고 점수를 내나요?","acceptedAnswer":{"@type":"Answer","text":"일간 오행의 상생·상극, 일지의 육합·삼합·충·형·파·해, 서로의 빈 오행 보완, 두 명식의 오행 균형을 계산하고 연애·부부·직장에 가중치를 달리 적용합니다."}},
     {"@type":"Question","name":"입력한 생년월일은 어디에 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"저장되지 않습니다. 서버가 없는 정적 페이지이며 계산은 전부 브라우저 안에서 이뤄집니다."}}
   ]
 }
