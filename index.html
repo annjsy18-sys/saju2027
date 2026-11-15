@@ -1405,6 +1405,7 @@ html{overflow-x:hidden}body{overflow-x:hidden}button,input,select,textarea{max-w
 <div class="shop-eyebrow">2027 맞춤 서면 리포트</div>
 <h2 id="consult-title">무료 풀이 다음, 나만의 서면 사주 리포트</h2>
 <p class="shop-intro">무료 명식과 오행을 먼저 확인하세요. 아래는 별도 상담 상품 안내입니다. 모든 상품은 서면 분석 리포트로만 제공됩니다. 전화·영상·채팅 상담은 진행하지 않습니다. 신청 버튼을 누르면 결제 페이지(리틀리)로 바로 이동합니다.</p>
+<p class="shop-question-tip">이직·재물·연애 등 지금 가장 궁금한 고민을 함께 적어주시면 맞춰서 풀어드립니다.</p>
 <div class="shop-grid">
 <article class="shop-plan"><span class="plan-type">입문 상담</span><h3>2027 신년운세</h3><p>재물·직장·애정·건강의 연간 흐름</p><div class="plan-price"><del>39,000원</del><strong>19,900원</strong></div><small>오픈 기념 자동 할인 9,900원</small><a class="shop-select" href="https://litt.ly/annsy18" rel="noopener" target="_blank">서면 리포트 신청</a></article>
 <article class="shop-plan featured"><span class="plan-type">인기 구성</span><h3>종합 사주 분석</h3><p>타고난 성향·오행·직업·재물·대인관계</p><div class="plan-price"><del>79,000원</del><strong>39,900원</strong></div><small>오픈 기념 자동 할인 29,900원</small><a class="shop-select" href="https://litt.ly/annsy18" rel="noopener" target="_blank">서면 리포트 신청</a></article>
@@ -3568,6 +3569,7 @@ status();
 </style><script id="ad-arrows-only">(()=>{const root=document.getElementById('adCarousel');if(!root)return;const slides=[...root.querySelectorAll('.ad-slide')];let index=0;function show(n){index=(n+slides.length)%slides.length;slides.forEach((x,i)=>{x.classList.toggle('is-active',i===index);x.hidden=i!==index;});}document.getElementById('adPrev')?.addEventListener('click',()=>show(index-1));document.getElementById('adNext')?.addEventListener('click',()=>show(index+1));show(0);})();</script><script id="coupon-redemption-v21">(()=>{'use strict';const discountFlat=10000;const prices={'신년운세':19900,'종합 사주 분석':39900,'연애·부부 궁합':29900};const $=id=>document.getElementById(id);const won=n=>n.toLocaleString('ko-KR')+'원';function set(id,v){const el=$(id);if(el)el.textContent=v;}function render(){const p=$('consultProduct');if(!p)return;const price=prices[p.value];const discount=price?Math.min(discountFlat,price):0;set('couponOriginal',price?won(price):'-');set('couponDiscount',price?'-'+won(discount):'-');set('couponTotal',price?won(price-discount):'-');set('couponApplied',price?'✓ 오픈 기념 1만 원 자동 할인이 적용된 금액입니다.':'상품을 선택하면 할인 금액이 자동으로 계산됩니다.');}const p=$('consultProduct');if(p){p.addEventListener('change',render);render();}})();</script><style id="qa-fix-v26">
 /* ── v26 정리: 페이지 내 앵커 위치(고정 탭바에 가리지 않게)·추천 소식 배너 화살표 여백 ── */
 #adCarousel .ad-nav{padding:0 12px!important}
+.shop-question-tip{display:block;margin:0 0 18px;padding:14px 16px;border-left:3px solid #b99554;background:#fbf6ea;border-radius:10px;font-size:13.5px;line-height:1.7;color:#3d4f45!important;word-break:keep-all}
 #adCarousel .ad-nav button{width:36px!important;height:36px!important;min-width:36px!important;min-height:36px!important;font-size:24px!important;line-height:1!important}
 #adCarousel .ad-slide-content{padding:26px 62px!important}
 .shop-plan .shop-select{display:flex!important;align-items:center!important;justify-content:center!important;min-height:48px!important;padding:13px 12px!important;text-align:center!important;text-decoration:none!important}
