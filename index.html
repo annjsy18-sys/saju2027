@@ -980,8 +980,45 @@ html{overflow-x:hidden}body{overflow-x:hidden}button,input,select,textarea{max-w
 .coupon-redemption .price-summary strong{font-size:clamp(15px,4vw,19px)!important}
 @media(max-width:640px){.hero .lux-hero-content{padding:30px 0 28px!important}.hero .lux-hero-content h1{font-size:clamp(28px,7.5vw,37px)!important;line-height:1.36!important}.hero .lux-proof{line-height:1.65!important}.ad-zone{margin-top:18px!important}#aiSajuChat .chat-main{padding:16px!important}#aiSajuChat .chat-head{padding:22px 17px!important}#aiSajuChat .chat-head h2{font-size:24px!important}.coupon-redemption{padding:16px!important}}
 @media(max-width:380px){#adCarousel .ad-slide-content{padding-inline:42px!important}#aiSajuChat .chat-input{grid-template-columns:minmax(0,1fr) 83px!important}#aiSajuChat .chat-input button{padding:0 8px!important}}
-</style></head>
-<body><div class="site-top"><a class="lux-logo" href="#top"><span class="seal">命</span><span><b>2027 사주</b><small>나의 운세를 읽는 시간</small></span></a><nav aria-label="주요 메뉴"><a href="#formCard">무료 사주</a><a href="#consulting">서면 리포트</a></nav></div>
+</style><style id="columns-home-v1">
+/* ── 사주·운세 읽을거리 칼럼 ── */
+.section-columns{padding:27px}
+.columns-lead{font-size:14px;line-height:1.72;color:#4d5c54;margin:0 0 15px;word-break:keep-all}
+.columns-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.columns-card{display:block;text-decoration:none;background:#FCFAF6;border:1px solid #E8E2D7;
+  border-radius:14px;padding:14px 14px 13px;transition:border-color .16s ease,transform .16s ease}
+.columns-card:hover,.columns-card:focus-visible{border-color:#C9A961;transform:translateY(-2px)}
+.columns-num{display:block;font-size:10.5px;font-weight:900;letter-spacing:.1em;color:#B88A44;margin-bottom:6px}
+.columns-card b{display:block;font-family:'Nanum Myeongjo','Noto Serif KR',serif;font-size:14.5px;line-height:1.48;
+  color:#2B1810;letter-spacing:-.02em;margin-bottom:5px}
+.columns-card small{display:block;font-size:11.5px;line-height:1.55;color:#8C7B6D;word-break:keep-all}
+.columns-all{display:inline-block;margin-top:16px;font-size:13.5px;font-weight:800;color:#7A2424;text-decoration:none;
+  border-bottom:1px solid rgba(122,36,36,.25);padding-bottom:2px}
+.columns-all:hover{color:#5A1919;border-bottom-color:#5A1919}
+/* 상단 메뉴에 세 번째 링크가 생겨 모바일에서도 보이도록 */
+.site-top nav{gap:15px}
+.site-top nav a{white-space:nowrap}
+@media(max-width:900px){.site-top nav{gap:11px!important}.site-top nav a{font-size:12px!important}}
+@media(max-width:640px){
+  .site-top nav a:nth-child(3){display:inline-block!important}
+  .site-top nav{gap:8px!important}
+  .site-top nav a{font-size:11px!important}
+  .columns-grid{grid-template-columns:1fr 1fr;gap:8px}
+  .columns-card{padding:12px 12px 11px}
+  .columns-card b{font-size:13.5px}
+  .columns-card small{font-size:11px}
+}
+@media(max-width:400px){
+  .site-top .lux-logo small{display:none!important}
+  .site-top nav{gap:6px!important}
+  .site-top nav a{font-size:10.5px!important;letter-spacing:-.02em}
+  .columns-grid{grid-template-columns:1fr}
+  .site-top{flex-wrap:nowrap!important}
+}
+@media(max-width:340px){.site-top nav a{font-size:9.8px!important}}
+</style>
+</head>
+<body><div class="site-top"><a class="lux-logo" href="#top"><span class="seal">命</span><span><b>2027 사주</b><small>나의 운세를 읽는 시간</small></span></a><nav aria-label="주요 메뉴"><a href="#formCard">무료 사주</a><a href="#consulting">서면 리포트</a><a href="columns/">운세 칼럼</a></nav></div>
 <header class="hero" id="top"><div aria-hidden="true" class="lux-landscape"><svg aria-hidden="true" class="premium-art" preserveaspectratio="xMidYMid slice" viewbox="0 0 900 450" xmlns="http://www.w3.org/2000/svg"><defs><radialgradient id="moonGlow"><stop stop-color="#f9e6b2"></stop><stop offset="1" stop-color="#bd9653"></stop></radialgradient><lineargradient id="mount" x2="0" y2="1"><stop stop-color="#255d50"></stop><stop offset="1" stop-color="#082b29"></stop></lineargradient></defs><circle cx="735" cy="103" fill="url(#moonGlow)" opacity=".9" r="70"></circle><circle cx="735" cy="103" fill="none" opacity=".15" r="91" stroke="#d8bd7b"></circle><g fill="none" opacity=".8" stroke="#c3a76a" stroke-width="2"><path d="M0 130Q95 120 180 34M54 112Q65 63 110 48M98 90Q130 53 166 55"></path><path d="M30 96q-26 -20 -27 -43m27 43q-11 -32 5 -52m18 42q-15 -29 2 -52m18 40q-4 -25 21 -41m13 33q4 -32 30 -40m-8 47q27 -22 52 -10"></path></g><g fill="#d5bc81" opacity=".85"><path d="M626 178q48 -34 82 -4q-29 -9 -46 15q47 6 91 -14q-21 30 -72 28l-27 30l8 -35q-22 2 -36 -20Z"></path><path d="M655 191l-60 -35q42 6 73 26Z"></path></g><path d="M0 420L150 320L240 375L400 260L560 366L700 280L900 385V450H0Z" fill="url(#mount)" opacity=".9"></path><g fill="none" opacity=".5" stroke="#a38a58" stroke-width="1.4"><path d="M0 430L150 337L240 392L400 280L560 385L700 300L900 400"></path><path d="M0 445L150 352L240 407L400 295L560 400L700 315L900 415"></path></g></svg></div><div class="lux-hero-content"><span class="lux-kicker">2027 丁未年 · 정미년 운세</span><h1>나의 2027년,<br/><span>사주로 미리 살펴보세요</span></h1><p>생년월일로 나의 사주와 한 해의 흐름을 확인하세요.<br/> 더 깊은 이야기는 개인 맞춤 서면 리포트로.</p><!-- 히어로 '준비 중' 버튼: 애드센스 심사 기간에는 hidden으로 숨깁니다. 심사가 끝나면 아래 span의 hidden 속성만 지우면 원래대로 돌아옵니다. --><div class="lux-cta"><a href="#formCard">무료 사주 보기 <span aria-hidden="true">›</span></a><span class="lux-pending" hidden>준비 중입니다. 서비스 준비가 끝나면 다시 안내드리겠습니다.</span></div><div class="lux-proof"><span>✦ 무료 사주풀이</span><span>✦ 무료 타로·궁합</span><span>✦ 맞춤 PDF 리포트</span></div></div></header><aside aria-label="추천 소식 배너" class="ad-zone">
 <div class="ad-zone-head"><strong>추천 소식</strong><span>사주 안내</span></div>
 <div aria-label="추천 소식 롤링 배너" aria-roledescription="캐러셀" class="ad-shell" id="adCarousel"><div aria-label="1 / 3" aria-roledescription="슬라이드" class="ad-slide is-active has-product" data-affiliate-slot="0" role="group"><div class="ad-slide-content"><span class="ad-banner-eyebrow">2027 신년운세</span><h3>2027년, 내 흐름을 미리 보기</h3><p>생년월일만 입력하면 명식·오행과 12개월 운세를 무료로 확인할 수 있어요.</p><a class="ad-cta" href="#formCard">무료 사주 보기 ›</a></div></div><div aria-label="2 / 3" aria-roledescription="슬라이드" class="ad-slide has-product" data-affiliate-slot="1" role="group"><div class="ad-slide-content"><span class="ad-banner-eyebrow">개인 맞춤 리포트</span><h3>맞춤 서면 리포트</h3><p>명식·십성·오행과 12개월 흐름을 정리한 개인 PDF 리포트로 받아보세요.</p><a class="ad-cta" href="#consulting">리포트 살펴보기 ›</a></div></div><div aria-label="3 / 3" aria-roledescription="슬라이드" class="ad-slide has-product" data-affiliate-slot="2" role="group"><div class="ad-slide-content"><span class="ad-banner-eyebrow">타로 · 궁합</span><h3>두 사람의 궁합, 타로로</h3><p>타로 22장과 2인 궁합으로 오늘의 마음과 관계의 흐름을 살펴보세요.</p><a class="ad-cta" href="#compatCard">궁합 확인하기 ›</a></div></div>
@@ -1444,6 +1481,19 @@ html{overflow-x:hidden}body{overflow-x:hidden}button,input,select,textarea{max-w
 <button class="btn-main" type="submit">서면 사주 신청하기</button>
 <p class="privacy" id="consultFeedback" role="status">신청서를 제출하면 접수번호가 즉시 발급되고, 결제·전달 일정은 운영자가 안내해 드립니다.</p>
 </form>
+</section>
+
+<section aria-labelledby="columnsTitle" class="card section-columns" id="columns">
+<div class="shop-eyebrow">READING · 운세 칼럼</div>
+<h2 id="columnsTitle">사주·운세 읽을거리</h2>
+<p class="columns-lead">처음 사주를 접해도 이해할 수 있도록 천간·지지의 기초부터 2027 정미년의 흐름, 대운·세운, 궁합, 타로까지 열 편으로 정리했습니다.</p>
+<div class="columns-grid">
+<a class="columns-card" href="columns/2027-jeongmi-year.html"><span class="columns-num">01</span><b>2027 정미년, 붉은 양의 해</b><small>정화와 미토가 만드는 한 해의 결</small></a>
+<a class="columns-card" href="columns/cheongan-jiji-basics.html"><span class="columns-num">02</span><b>천간·지지 기초</b><small>여덟 글자와 네 기둥 읽는 순서</small></a>
+<a class="columns-card" href="columns/daeun-seun.html"><span class="columns-num">05</span><b>대운과 세운의 차이</b><small>10년의 판과 1년의 날씨</small></a>
+<a class="columns-card" href="columns/gunghap-ilju-ohaeng.html"><span class="columns-num">08</span><b>궁합, 일주와 오행</b><small>띠보다 일주를 보는 이유</small></a>
+</div>
+<a class="columns-all" href="columns/">칼럼 10편 전체 보기 →</a>
 </section>
 
 <footer>
