@@ -148,6 +148,10 @@ footer.site-foot .foot-nav{margin:4px 0 10px}
 footer.site-foot .foot-nav a{color:var(--ink-2);text-decoration:none;font-weight:650;margin:0 7px}
 footer.site-foot a{color:var(--wine);text-decoration:none}
 
+@media(min-width:760px){
+  .list-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .list-grid.single{grid-template-columns:1fr}
+}
 @media(max-width:640px){
   .site-top{padding:11px 14px;gap:8px}
   .site-top .seal{width:34px;height:34px;font-size:19px}
