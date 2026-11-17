@@ -147,6 +147,8 @@ footer.site-foot p{margin-bottom:6px}
 footer.site-foot .foot-nav{margin:4px 0 10px}
 footer.site-foot .foot-nav a{color:var(--ink-2);text-decoration:none;font-weight:650;margin:0 7px}
 footer.site-foot a{color:var(--wine);text-decoration:none}
+footer.site-foot .foot-links{margin:0 0 10px;line-height:2.1}
+footer.site-foot .foot-links a{text-decoration:underline;font-weight:650}
 
 @media(min-width:760px){
   .list-grid{grid-template-columns:repeat(3,minmax(0,1fr))}

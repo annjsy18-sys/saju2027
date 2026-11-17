@@ -1499,7 +1499,7 @@ html{overflow-x:hidden}body{overflow-x:hidden}button,input,select,textarea{max-w
 <footer>
 <p>2027 정미년 사주풀이 · 사주 명리학의 천간·지지·오행·십성 이론을 바탕으로 계산합니다.</p>
 <p class="footer-links"><button class="terms-link" data-open-terms="privacyModal" type="button">개인정보 처리방침</button> · <button class="terms-link" data-open-terms="termsModal" type="button">이용약관</button> · <button class="terms-link" data-open-terms="refundModal" type="button">환불 및 청약철회 규정</button></p>
-<p class="footer-operator">운영: sy | 문의: <a href="mailto:sdfgo1015@nate.com">sdfgo1015@nate.com</a></p>
+<p class="footer-operator">운영자: 정선영 / 문의: <a href="mailto:sdfgo1015@nate.com">sdfgo1015@nate.com</a></p>
 <p style="margin-top:4px">© 2027 사주풀이. 재미와 참고용이며, 의료·투자·법률 판단의 근거가 아닙니다.</p>
 </footer>
 </main>
@@ -1525,19 +1525,21 @@ html{overflow-x:hidden}body{overflow-x:hidden}button,input,select,textarea{max-w
 <div class="terms-modal-body">
 <p class="terms-lead">2027 사주풀이(이하 “사이트”)가 무료 풀이와 서면 리포트 신청에서 처리하는 개인정보에 대한 안내입니다.</p>
 <h3>1. 수집하는 개인정보 항목</h3>
-<p><strong>무료 풀이</strong>의 생년월일·달력 기준·태어난 시간은 브라우저 안에서만 계산되며 서버로 전송하거나 저장하지 않습니다. <strong>서면 리포트 신청서를 제출한 경우에만</strong> 이름(또는 닉네임), 이메일, 생년월일, 달력 기준, 태어난 시간, 문의 내용(선택)을 수집합니다. 주민등록번호·연락처 등 그 밖의 정보는 받지 않습니다.</p>
+<p><strong>무료 풀이</strong>의 생년월일·달력 기준·태어난 시간은 브라우저 안에서만 계산되며 서버로 전송하거나 저장하지 않습니다. <strong>서면 리포트 신청서를 제출한 경우에만</strong> 이름(또는 닉네임), 수령 이메일(리포트를 받으실 이메일), 생년월일, 달력 기준, 태어난 시간, 문의 내용(선택)을 수집합니다. 주민등록번호·연락처 등 그 밖의 정보는 받지 않습니다.</p>
 <h3>2. 이용 목적</h3>
 <p>서면 사주 리포트 제작, 신청하신 이메일로의 PDF 발송, 접수 확인과 문의 응대에만 사용합니다. 광고나 마케팅 목적의 활용은 하지 않으며, 제3자에게 판매하거나 제공하지 않습니다.</p>
 <h3>3. 보관 기간</h3>
 <p>보관 기간은 <strong>서면 리포트 발송 완료 후 3개월</strong>이며, 보관 기간이 지나거나 이용 목적을 달성한 뒤에는 지체 없이 파기합니다. (무료 사주 풀이 입력 정보는 브라우저 내에서만 계산되며 서버에 저장되지 않습니다.)</p>
-<h3>4. 처리 위탁 및 보관 위치</h3>
+<h3>4. 파기 방법</h3>
+<p>보관 기간이 지나거나 이용 목적을 달성한 개인정보는 지체 없이 파기합니다. 전자적 파일 형태는 복구할 수 없는 기술적 방법으로 영구 삭제하고, 종이 문서로 출력된 경우에는 분쇄 또는 소각하여 파기합니다.</p>
+<h3>5. 처리 위탁 및 보관 위치</h3>
 <p>신청서 접수와 기록에는 Google 스프레드시트(Google LLC)를, 이메일 발송에는 이메일 서비스를 이용하며, 이 과정에서 신청 정보가 해당 서비스의 서버에 저장됩니다.</p>
-<h3>5. 쿠키와 광고</h3>
+<h3>6. 쿠키와 광고</h3>
 <p>사이트는 구글 애드센스를 통해 광고를 게재하며, 구글과 제3자 광고 사업자는 쿠키를 사용해 이용자의 이전 방문 기록에 기반한 광고를 게재할 수 있습니다. 이용자는 <a href="https://www.google.com/settings/ads" rel="noopener" target="_blank">구글 광고 설정</a>에서 맞춤 광고를 해제할 수 있습니다.</p>
-<h3>6. 이용자의 권리</h3>
+<h3>7. 이용자의 권리</h3>
 <p>본인이 제공한 개인정보의 열람·정정·삭제·처리정지를 요청하실 수 있으며, 요청은 아래 문의처로 보내주시면 확인 후 처리합니다.</p>
-<h3>7. 문의처</h3>
-<p>이메일: <a href="mailto:sdfgo1015@nate.com">sdfgo1015@nate.com</a></p>
+<h3>8. 문의처</h3>
+<p>운영자: 정선영 / 이메일: <a href="mailto:sdfgo1015@nate.com">sdfgo1015@nate.com</a></p>
 </div>
 </div>
 </div>
@@ -3793,6 +3795,14 @@ function close(restore){
   document.body.classList.remove('terms-open');
   if(restore!==false && lastFocus && typeof lastFocus.focus==='function') lastFocus.focus({preventScroll:true});
   lastFocus=null;
+  const h=(location.hash||'').slice(1);
+  if(h){const hm=document.getElementById(h);if(hm&&hm.classList.contains('terms-modal')){try{history.replaceState(null,'',location.pathname+location.search);}catch(e){}}}
+}
+function openFromHash(){
+  const h=(location.hash||'').slice(1);
+  if(!h) return;
+  const m=document.getElementById(h);
+  if(m && m.classList.contains('terms-modal')) open(h, null);
 }
 document.addEventListener('click',e=>{
   const t=e.target&&e.target.closest?e.target.closest(SEL):null;
@@ -3814,5 +3824,7 @@ document.addEventListener('keydown',e=>{
   if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
   else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
 });
+window.addEventListener('hashchange',openFromHash);
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',openFromHash);}else{openFromHash();}
 })();</script></body>
 </html>
