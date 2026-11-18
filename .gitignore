@@ -1,1 +1,14 @@
+# 로컬 전용 파일
 term.py
+
+# QA·미리보기용 임시 HTML (사이트에 올리지 않음)
+preview*.html
+_preview*.html
+qa*.html
+verify*.html
+_verify*.html
+mobile-check.html
+
+# OS·환경 설정
+.DS_Store
+.env
